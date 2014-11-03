@@ -1,1 +1,23 @@
+# Site settings
+title: "Stormwild"
+permalink: pretty
+
+# Environment settings
 timezone: Asia/Manila
+encoding: utf-8
+
+# Front matter defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "posts"
+      author: "Mr. Hyde"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default" # overrides previous default layout
