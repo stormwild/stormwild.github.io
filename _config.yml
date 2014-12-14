@@ -1,6 +1,14 @@
 # Site settings
 title: "Stormwild"
+email: artorrijos@gmail.com
+site.description: "Stormwild (Alexander R. Torrijos)"
+url: "http://stormwild.github.io"
+
+# Build settings
 permalink: pretty
+
+#exclude:
+#  - "bower_components"
 
 # Environment settings
 timezone: Asia/Manila
@@ -14,10 +22,11 @@ defaults:
       type: "posts"
     values:
       layout: "posts"
-      author: "Mr. Hyde"
+      author: "Alexander R. Torrijos"
   -
     scope:
       path: ""
       type: "pages"
     values:
       layout: "default" # overrides previous default layout
+      author: "Alexander R. Torrijos"
