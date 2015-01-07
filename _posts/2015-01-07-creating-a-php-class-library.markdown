@@ -2,31 +2,6 @@
 title: Creating a PHP class library
 ---
 
-Outline:
-
-Prerequisites
-PHP
-Git & Github
-PHPStorm/Editor/IDE
-Composer
-Packagist
-
-Steps
-Create Project
-    Create composer.json
-    Sample folder structure
-    Create class            
-Create a git repository 
-    Initialize git
-    Create Github repository
-    Add remote
-    Commit
-    Push changes
-    Tag
-    Push Tags
-Share on Packagist    
-Appendices:
-
 Today I created a PHP class library and shared it on Packagist. In this post I hope to share my experience. 
 
 The class library I created for this project is available on Github and Packagist:
@@ -91,6 +66,32 @@ Verify that the remote was added by running:
 This should output your the url to your Github repo.
 
 To be continued...
+
+Notes:
+Outline:
+
+Prerequisites
+PHP
+Git & Github
+PHPStorm/Editor/IDE
+Composer
+Packagist
+
+Steps
+Create Project
+    Create composer.json
+    Sample folder structure
+    Create class            
+Create a git repository 
+    Initialize git
+    Create Github repository
+    Add remote
+    Commit
+    Push changes
+    Tag
+    Push Tags
+Share on Packagist    
+Appendices:
 
 
 
