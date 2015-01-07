@@ -22,9 +22,9 @@ Create a PHP Project in PHPStorm
 
 I created a new PHP Project with the following files and folder structure:
 
-/ImageResizer
-/src/Stormwild/ImageResizer.php
-composer.json
+    /ImageResizer
+    /src/Stormwild/ImageResizer.php
+    composer.json
 
 Initialize Git
 --------------
