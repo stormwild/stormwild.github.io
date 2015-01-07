@@ -6,8 +6,8 @@ Today I created a PHP class library and shared it on Packagist. In this post I h
 
 The class library I created for this project is available on Github and Packagist:
 
-* https://github.com/stormwild/ImageResizer
-* https://packagist.org/packages/stormwild/image-resizer
+* [https://github.com/stormwild/ImageResizer](https://github.com/stormwild/ImageResizer)
+* [https://packagist.org/packages/stormwild/image-resizer](https://packagist.org/packages/stormwild/image-resizer)
 
 Before we start the following need to be installed on your development environment.
 
