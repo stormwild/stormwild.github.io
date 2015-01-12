@@ -9,7 +9,7 @@ The class library I created for this project is available on Github and Packagis
 * [https://github.com/stormwild/ImageResizer](https://github.com/stormwild/ImageResizer)
 * [https://packagist.org/packages/stormwild/image-resizer](https://packagist.org/packages/stormwild/image-resizer)
 
-Before we start the following need to be installed on your development environment.
+The following need to be installed on your development environment.
 
 * PHP
 * Git
@@ -22,9 +22,9 @@ Create a PHP Project in PHPStorm
 
 I created a new PHP Project with the following files and folder structure:
 
-    /ImageResizer
-    /src/Stormwild/ImageResizer.php
-    composer.json
+    ImageResizer/
+    ImageResizer/src/Stormwild/ImageResizer.php
+    ImageResizer/composer.json
 
 Initialize Git
 --------------
@@ -65,34 +65,66 @@ Verify that the remote was added by running:
 
 This should output your the url to your Github repo.
 
-To be continued...
+Tag your stable commit to set a version which Packagist will read and assign to your package.
 
-Notes:
-Outline:
+Create an Annotated Tag
+-----------------------
 
-Prerequisites
-PHP
-Git & Github
-PHPStorm/Editor/IDE
-Composer
-Packagist
+    git tag // Lists existing tags    
+    git tag -a v1.0.0 -m 'First version' // Creates an annotated tag
 
-Steps
-Create Project
-    Create composer.json
-    Sample folder structure
-    Create class            
-Create a git repository 
-    Initialize git
-    Create Github repository
-    Add remote
-    Commit
-    Push changes
-    Tag
-    Push Tags
-Share on Packagist    
-Appendices:
+Push Tags to Remote
+-------------------
 
+    git push origin v1.0.0 // pushes specific tag
+    git push origin --tags // pushes all tags 
 
+Create Composer Json
+--------------------
 
+    {
+        "name": "stormwild/image-resizer",
+        "description": "PHP class to resize images using GD",
+        "keywords": [
+            "php",
+            "image",
+            "resize",
+            "scale"
+        ],
+        "type": "library",
+        "license": "MIT",
+        "homepage": "https://github.com/stormwild/ImageResizer",
+        "authors": [
+            {
+                "name": "Alexander R. Torrijos",
+                "homepage": "http://stormwild.github.io/"
+            }
+        ],
+        "require": {
+            "php": ">=5.3.0",
+            "ext-gd": "*"
+        },
+        "autoload": {
+            "classmap": ["src"]
+        }
+    }
+
+Create An Account on Packagist
+------------------------------
+
+[Packagist](https://packagist.org/)
+
+Submit Package
+--------------
+
+Submit the package to packagist by providing the github/bitbucket url.
+
+Setup Service Hooks on Github
+-----------------------------
+
+You will need a token provided by Packagist
+
+For more information:
+
+[Service Hooks](https://developer.github.com/webhooks/#service-hooks)
 
