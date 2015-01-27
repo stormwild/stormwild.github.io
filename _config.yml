@@ -30,3 +30,6 @@ defaults:
     values:
       layout: "default" # overrides previous default layout
       author: "Alexander R. Torrijos"
+
+gems:
+  - jekyll-sitemap
