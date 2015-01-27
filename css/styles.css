@@ -851,7 +851,6 @@ section #title p {
 /* Line Nos /
 ============================ */
 
-/* Reference: https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html */
 .codecontainer pre code {
   white-space: pre-wrap; /* CSS3 */
   white-space: -moz-pre-wrap; /* Mozilla, post millennium */
