@@ -2,6 +2,8 @@
 title: Working With Jeykyll
 ---
 
+*Update {{ site.time | date_to_rfc822 }}*
+
 I'm still learning how to use Jekyll, a static-site generator, used with [Github Pages](https://pages.github.com/). It's basically a [ruby gem](http://guides.rubygems.org/what-is-a-gem/), which is a library of ruby code, that compiles a directory of various file formats, primarily Markdown, into html pages.
 
 >Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through Markdown (or Textile) and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free. 
@@ -10,7 +12,7 @@ Source [Jekyllrb.com](http://jekyllrb.com/)
 
 It has been a bit of a struggle for me to get the hang of Jekyll.  I hope to learn more about how to use it to generate my User Github Page.
 
-I just learned that I had to use Liquid template tags to get code highlighting. 
+I just learned that I had to use Liquid template tags to get code highlighting.
 
 >[Liquid](http://liquidmarkup.org/) is an extraction from the e-commerce system [Shopify](http://www.shopify.com/)
 
@@ -51,8 +53,20 @@ To display Liquid tags I had to use:
 {% raw %}
     { % raw % }
     { % endraw % }
-    // remove space between { and %
+    // but without the space between { and % as shown above
 {% endraw %}
+
+I also learned that you can specify line numbers by using ```linenos``` or ```linenos=table```:
+
+{% raw %}
+    {% highlight ruby linenos %}
+    def what?
+      42
+    end
+    {% endhighlight %}
+{% endraw %}
+
+However, due to problems with the mark-up generated, a better solution would be to create the line numbers using [css](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html) instead.
 
 References:
 
@@ -63,6 +77,6 @@ References:
 5. [Liquid](http://liquidmarkup.org/)
 6. [Escape Liquid template tags in Jekyll posts](http://sarathlal.com/escape-liquid-template-tags-in-jekyll-posts/)
 7. [Shopify](http://www.shopify.com/)
+8. [CSS Line Nos](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html)
 
 
-*Updated: 2014-12-16*

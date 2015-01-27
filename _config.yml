@@ -7,6 +7,8 @@ url: "http://stormwild.github.io"
 # Build settings
 permalink: pretty
 
+paginate: 20
+
 #exclude:
 #  - "bower_components"
 
