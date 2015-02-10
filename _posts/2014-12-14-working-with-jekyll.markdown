@@ -1,8 +1,6 @@
 ---
-title: Working With Jeykyll
+title: Working With Jekyll
 ---
-
-*Update {{ site.time | date_to_rfc822 }}*
 
 I'm still learning how to use Jekyll, a static-site generator, used with [Github Pages](https://pages.github.com/). It's basically a [ruby gem](http://guides.rubygems.org/what-is-a-gem/), which is a library of ruby code, that compiles a directory of various file formats, primarily Markdown, into html pages.
 
@@ -80,3 +78,4 @@ References:
 8. [CSS Line Nos](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html)
 
 
+*Update {{ site.time | date_to_rfc822 }}*
