@@ -818,6 +818,11 @@ section #title p {
   float: right;
 }
 
+.small {
+  font-size: 14px;
+  color: #afafaf;
+}
+
 @media print, screen and (max-width: 720px) {
   .credits {
     display: block;

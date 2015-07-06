@@ -6,9 +6,11 @@ Created a sample .NET MVC web application with sorting and pagination. The appli
 
 The requirements included being able to display with sorting and pagination a list of hotels. Each hotel may have one or more images.
 
-The source code of the application is available on [Github](https://github.com/stormwild/BCSHotels)
+This application was done in around 4 hours which was the time limit for the task.
 
-While a demo is deployed on [Azure websites](http://bcshotels.azurewebsites.net/)
+Source Code [https://github.com/stormwild/BCSHotels](https://github.com/stormwild/BCSHotels)
+
+Demo [http://bcshotels.azurewebsites.net/](http://bcshotels.azurewebsites.net/)
 
 References:
 
