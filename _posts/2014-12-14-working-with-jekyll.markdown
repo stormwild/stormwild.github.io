@@ -76,6 +76,7 @@ References:
 6. [Escape Liquid template tags in Jekyll posts](http://sarathlal.com/escape-liquid-template-tags-in-jekyll-posts/)
 7. [Shopify](http://www.shopify.com/)
 8. [CSS Line Nos](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html)
+9. [Build A Blog With Jekyll And GitHub Pages](http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
 
 
 
