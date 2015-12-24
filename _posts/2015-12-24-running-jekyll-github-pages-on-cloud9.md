@@ -2,7 +2,7 @@
 title: Running Jekyll Github Pages on Cloud9
 ---
 
-Develop and run your Jekyll Github Pages on Cloud9
+Develop and run your [Jekyll Github Pages](https://help.github.com/articles/using-jekyll-with-pages/) on [Cloud9](https://c9.io/?redirect=0)
 
 ## Create a new workspace
 
