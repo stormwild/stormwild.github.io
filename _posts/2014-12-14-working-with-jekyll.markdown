@@ -78,4 +78,4 @@ References:
 8. [CSS Line Nos](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html)
 
 
-*Update {{ site.time | date_to_rfc822 }}*
+
