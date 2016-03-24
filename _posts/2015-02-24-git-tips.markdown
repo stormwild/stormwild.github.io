@@ -1,5 +1,7 @@
 ---
 title: Git Tips (Rough Draft)
+permalink: git-tips
+redirect_from: 2015/02/24/git-tips/
 ---
 
 ### Git Tips (Rough Draft)

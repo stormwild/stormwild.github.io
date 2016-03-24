@@ -1,5 +1,7 @@
 ---
 title: Working With Jekyll
+permalink: working-with-jekyll
+redirect_from: 2014/12/14/working-with-jekyll/
 ---
 
 I'm still learning how to use Jekyll, a static-site generator, used with [Github Pages](https://pages.github.com/). It's basically a [ruby gem](http://guides.rubygems.org/what-is-a-gem/), which is a library of ruby code, that compiles a directory of various file formats, primarily Markdown, into html pages.

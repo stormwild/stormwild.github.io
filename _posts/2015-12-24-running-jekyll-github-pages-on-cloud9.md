@@ -1,5 +1,7 @@
 ---
 title: Running Jekyll Github Pages on Cloud9
+permalink: running-jekyll-github-pages-on-cloud9
+redirect_from: 2015/12/24/running-jekyll-github-pages-on-cloud9/ 
 ---
 
 Develop and run your [Jekyll Github Pages](https://help.github.com/articles/using-jekyll-with-pages/) on [Cloud9](https://c9.io/?redirect=0)

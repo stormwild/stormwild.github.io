@@ -1,5 +1,7 @@
 ---
 title: Creating a PHP class library
+permalink: creating-a-php-class-library
+redirect_from: 2015/01/07/creating-a-php-class-library/
 ---
 
 Today I created a PHP class library and shared it on Packagist. In this post I hope to share my experience. 

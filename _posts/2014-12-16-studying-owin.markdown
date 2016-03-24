@@ -1,5 +1,7 @@
 ---
 title: Studying Owin
+permalink: studying-owin
+redirect_from: 2014/12/16/studying-owin/
 ---
 
 [Owin](http://owin.org/) is a specification for an abstraction between an application and it's host. It can be implemented using a delegate to allow a host to invoke an application passing in a properties collection.

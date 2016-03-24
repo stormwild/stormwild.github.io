@@ -1,5 +1,7 @@
 ---
 title: BCSHotels - A Sample C# .NET MVC5 Application
+permalink: sample-dotnet-mvc-application
+redirect_from: 2015/02/10/sample-dotnet-mvc-application/
 ---
 
 Created a sample .NET MVC web application with sorting and pagination. The application was a test for my application to a .NET developer position with a local company.

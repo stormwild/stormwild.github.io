@@ -1,5 +1,7 @@
 ---
 title: Setup P4 Visual Merge Tool with Git
+permalink: p4-visual-merge-tool-with-git
+redirect_from: 2015/02/24/p4-visual-merge-tool-with-git/
 ---
 
 * [Download P4 Visual Merge Tool](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools)

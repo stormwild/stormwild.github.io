@@ -1,5 +1,7 @@
 ---
 title: ZF3 Roadmap Announced
+permalink: zf3-roadmap-announced
+redirect_from: 2015/01/25/zf3-roadmap-announced/
 ---
 
 The Zend Framework team recently announced the [ZF3 roadmap](http://framework.zend.com/blog/announcing-the-zend-framework-3-roadmap.html).
