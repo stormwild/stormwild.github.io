@@ -36,6 +36,6 @@ defaults:
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
-  
+  - jekyll-paginate
 whitelist:
   - jekyll-redirect-from  
