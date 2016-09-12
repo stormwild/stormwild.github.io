@@ -167,7 +167,7 @@ A wormhole from your VPC to your S3
 
 Resources:
 
-- [AWS re:Invent 2015 | (NET201) VPC Fundamentals and Connectivity Options](https://youtu.be/5_bQ6Dgk6k8)
+- [AWS re:Invent 2015 - VPC Fundamentals and Connectivity Options](https://youtu.be/5_bQ6Dgk6k8)
 - [Deep Dive: Amazon Virtual Private Cloud](https://youtu.be/B8vnhRJDujw)
 - [AWS - VPC Networking for Beginners](https://dzone.com/articles/aws-vpc-networking-beginners)
 - [Amazon VPC: 5 reasons to use and learn it… with Cloud Academy!](http://cloudacademy.com/blog/how-and-why-to-use-vpc-for-your-amazon-aws-infrastructure/)
