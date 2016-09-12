@@ -30,35 +30,39 @@ In 2011 marked enhancements to EC2.
 - Network ACLS to controll traffic between subnets
 
 The same year also saw updates to VPC.
+
 - Multiple IP addresses
 - Multiple network interfaces
 - Dedicated instances
 - Statically Routed VPN connections
 
 March 2013 saw the launch of default VPC to EC2.
+
 - Automatically provisioned VPC were called default VPC
 - DNS Hostnames
 - DNS name resolution
 - ElasticCache
 - RDS IP Addresses
-- 
 
 ## VPC
 
 ### Notes from the AWS ReInvent video
 
 ### Subnet
+
 - Create a subnet in all availability zones(AZ) in a region
 - For example: ![Subnet in AZ](uploads/aws-vpc-fig-1.png "AWS VPC: Assign Subnets to Each AZ")
 - Multiple subnets in each AZ
 - Enable auto assignment of public ip address to any EC2 instance launched in the VPC
 
 ### Route 
+
 - Each VPC comes with a default [Routing Table (RIB)](https://en.wikipedia.org/wiki/Routing_table)
 - Assign different Routing Tables to each subnet
 - Default Route Table has one rule ```172.31.0.0/16 local active``` which means that connections from EC2 instances in the VPC are routed locally.
 
 ### Internet Gateway
+
 - An Internet Gateway is a resource you can create an attached to your VPC
 - "A thing you send packets to if you want them to go to the internet"
 - In your Route Table create a rule as shown: ```0.0.0.0/0 igw-3376c756``` 
@@ -68,11 +72,13 @@ March 2013 saw the launch of default VPC to EC2.
 ### Authorizing Traffic: Network ACLs Security Groups
 
 #### Network ACLs
+
 - In a traditional network, Network ACLs are analogous to stateless firewall rules.
 - The rules in a network acl gets applied in the order specified, ex. 100 (Rule #) All Traffic(Type) All (Protocol) All(Port) 0.0.0.0/0 (Port Range) Allow (Allow\Deny)  
 - You can transfer rules from your network firewall to network acls
 
 #### Security Groups
+
 - Architect your security groups the way you architect your applications
 - For example you have instances that act as web servers and instances that function as your backend applications/database servers.
 - You would want internet traffic to be available to your web servers but not to your backend instances.
@@ -88,12 +94,14 @@ HTTP(80)  TCP         80      0.0.0.0/0
 ```
 
 For the backend services
+
 ```
 Type            Protocol    Port    Source 
 Custom Rule     TCP         2365    sg-123456
 ```
 
 Note: 
+
 - You can reference another security group as source of this rule. In the above example sg-12345 is the security group applied to the webservers. In an elastic setup where you are adding and removing web server instances this rules applies to any instances that are assigned to the specified security group.
 - Ingress (inbound), egress (outbound) rules can be defined
 - Best Practice is to reference other security groups as show in the backend rule above.
@@ -102,6 +110,7 @@ Note:
 ### Connectivity Options for VPC (aside from just internet connections)
 
 Three examples
+
 - Subnet routing
 - Connecting to other VPCs
 - Connecting to your corporate network
@@ -126,6 +135,7 @@ In a large corporate network you may want to give individual teams their own VPC
 #### Connecting to your network: AWS Hardware VPN, AWS Direct Connect
 
 Extend your network to your VPC
+
 - VPN
 - Direct Connect
 
@@ -145,11 +155,14 @@ For highest availability use both
 ### DNS in a VPC
 
 In your VPC settings:
+
 - DNS resolution: yes
 - DNS hostnames: yes
+
 Note: When set to yes, your VPC uses Amazon DNS servers
 
 EC2 instances in a VPC using Amazon DNS gets two hostnames:
+
 - Internet DNS hostname ```ip-12345``` which resolves to your instances private ip address
 - External DNS name when access from the internet resolves to the public ip and when accessed from within the VPC resolves to the private ip.
 
@@ -164,10 +177,6 @@ Full meta data dump of all packets to your EC2 instances, not only the packets t
 Amazon VPC Endpoints for S3
 
 A wormhole from your VPC to your S3
-
-
-
-
 
 Resources:
 
