@@ -10,9 +10,12 @@ Notes from initial research on VPC
 ## EC2
 
 In 2006 Amazon EC2 was launched. 
+
 - 1 Public IP adddress(/Elastic IP)
 - DNS hostname
 - Security Group Ingress Filtering
+
+Later they also provided
 
 - Private IP addresses
 - Internal DNS hostname to each instance
@@ -20,6 +23,7 @@ In 2006 Amazon EC2 was launched.
 In 2009 Amazon VPC was launched.
 
 In 2011 marked enhancements to EC2.
+
 - Security Group now provided ingress and egress filtering
 - Direct Internet connectivity
 - Routing Tables
