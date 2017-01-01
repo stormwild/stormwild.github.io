@@ -1,11 +1,9 @@
 ---
-title: AWS re:Invent 2015 | (SEC302) IAM Best Practices to Live By
-permalink: aws-iam-best-practices
+title: Notes on AWS Identity and Access Management
+permalink: notes-on-aws-iam
 ---
 
-## AWS Identity and Access Management (IAM)
-
-Enables user management to your AWS account. It allows you to create *users* and *groups* and assign *permissions* to groups.
+AWS Identity and Access Management (IAM) enables user management to your AWS account. It allows you to create *users* and *groups* and assign *permissions* to groups.
 
 These permissions specify what users can do within your AWS account.
 
