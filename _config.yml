@@ -1,7 +1,7 @@
 # Site settings
 title: "Stormwild (Alexander R. Torrijos)"
 email: artorrijos@gmail.com
-site.description: "Stormwild (Alexander R. Torrijos)"
+description: "Stormwild (Alexander R. Torrijos)"
 url: "http://stormwild.github.io"
 
 # Build settings

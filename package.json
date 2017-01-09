@@ -1,0 +1,29 @@
+{
+  "name": "stormwild-github-io",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.html",
+  "dependencies": {
+    "materialize-css": "^0.97.8"
+  },
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormwild/stormwild.github.io.git"
+  },
+  "keywords": [
+    "github",
+    "stormwild"
+  ],
+  "author": "Alexander R. Torrijos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stormwild/stormwild.github.io/issues"
+  },
+  "homepage": "https://github.com/stormwild/stormwild.github.io#readme"
+}
