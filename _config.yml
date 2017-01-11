@@ -32,7 +32,7 @@ defaults:
     values:
       layout: "default" # overrides previous default layout
       author: "Alexander R. Torrijos"
-
+include: ["_pages"]
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
