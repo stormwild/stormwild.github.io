@@ -1,17 +1,16 @@
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractCSS = new ExtractTextPlugin({
-    filename: '[name].bundle.css',
-    allChunks: true
-})
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const extractCSS = new ExtractTextPlugin('styles.css')
 
 const config = {
     context: path.resolve(__dirname, 'assets'),
-    entry: './js/main.js',
+    entry: {
+        app: './js/main.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'), 
-        filename: './js/bundle.js'
+        filename: './js/bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -26,22 +25,10 @@ const config = {
                         ]
                     }
                 }]
-            },
-            {
-                test: /\.scss$/,
-                loader: extractCSS.extract(['css-loader','sass-loader'])
-            },
-            {
-              test: /\.(png|jpg)$/,
-              use: [{
-                loader: 'url-loader',
-                options: { limit: 10000 } // Convert images < 10k to base64 strings
-              }]
             }
         ]
     },
     plugins: [
-        extractCSS
     ]
 }
 

@@ -4,6 +4,7 @@
   "description": "Personal website",
   "main": "index.html",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "materialize-css": "^0.97.8"
   },
   "devDependencies": {
@@ -15,6 +16,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "sass-loader": "^6.0.5",
@@ -25,6 +27,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
+    "dev": "webpack --progress --colors",
     "build": "webpack -p"
   },
   "repository": {
