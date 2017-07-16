@@ -5987,13 +5987,4 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important; } }
 
-html, body {
-  font: 16px/1.5 sans-serif; }
-
-pre {
-  padding: 20px;
-  color: #dedede;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  /*background: $bluegrey url('../../img/code.png') no-repeat center center / 32px 32px;*/ }
-
 /*# sourceMappingURL=styles.css.map*/

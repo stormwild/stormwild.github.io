@@ -60,6 +60,12 @@ const config = {
         new ExtractTextPlugin({
             filename: 'css/styles.css'
         }),
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery',
+          Tether: 'tether'
+        }),
         ],
     resolve: {
         modules: [path.resolve(__dirname, './src'), 'node_modules']

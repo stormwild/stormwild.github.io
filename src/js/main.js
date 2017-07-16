@@ -1,6 +1,8 @@
 /*import React from 'react';
 import ReactDOM from 'react-dom';*/
 import '../scss/main.scss';
+import 'jquery';
+import 'bootstrap';
 /*import codeURL from '../img/code.png';*/
 
 //ReactDOM.render(<h1 className="title">Hellos World</h1>, document.getElementById('greeting'));

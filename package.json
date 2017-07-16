@@ -5,7 +5,9 @@
   "main": "index.html",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
-    "materialize-css": "^0.97.8"
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.97.8",
+    "tether": "^1.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
