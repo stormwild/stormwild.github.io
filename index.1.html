@@ -1,0 +1,51 @@
+---
+title: Home
+---
+
+<section>
+	<div id="title">
+		<h1>Alexander R. Torrijos</h1>
+		<p>Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p>
+		<hr>
+	</div>	
+
+	<h2><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Latest Posts</h3>
+
+	<ul class="posts">  
+		{% for post in paginator.posts %}  
+		   <li>
+		   		<h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> <span><small>{{ post.date | date_to_string }}</small></span></h3>
+			   {{ post.excerpt }}
+		   </li>  
+		{% endfor %}  
+	</ul>
+
+
+	{% if paginator.total_pages > 1 %}
+	<div class="pagination">
+	  {% if paginator.previous_page %}
+	    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+	  {% else %}
+	    <span>&laquo; Prev</span>
+	  {% endif %}
+
+	  {% for page in (1..paginator.total_pages) %}
+	    {% if page == paginator.page %}
+	      <em>{{ page }}</em>
+	    {% elsif page == 1 %}
+	      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+	    {% else %}
+	      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+	    {% endif %}
+	  {% endfor %}
+
+	  {% if paginator.next_page %}
+	    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+	  {% else %}
+	    <span>Next &raquo;</span>
+	  {% endif %}
+	</div>
+	{% endif %}
+
+</section>
+

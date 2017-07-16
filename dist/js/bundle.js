@@ -60,19 +60,29 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_main_scss__);
 /*import React from 'react';
 import ReactDOM from 'react-dom';*/
-/*import '../scss/main.scss';*/
+
 /*import codeURL from '../img/code.png';*/
 
 //ReactDOM.render(<h1 className="title">Hellos World</h1>, document.getElementById('greeting'));
@@ -84,9 +94,10 @@ img.style.padding = "20px"
 img.width = 32
 document.body.appendChild(img)
 */
-var root = document.querySelector('#greeting');
-var greeting = 'Hello world';
-root.innerHTML = '<pre>' + greeting + ' greeting</pre>';
+/*const root = document.querySelector('#greeting')
+let greeting = 'Hello world';
+root.innerHTML = `<pre>${greeting} greeting</pre>`*/
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

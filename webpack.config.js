@@ -1,35 +1,69 @@
 const webpack = require('webpack')
 const path = require('path')
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// const extractCSS = new ExtractTextPlugin('styles.css')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const config = {
-    context: path.resolve(__dirname, 'assets'),
+    devtool: 'source-map',
+    context: path.resolve(__dirname, 'src'),
     entry: {
         app: './js/main.js'
     },
     output: {
-        filename: './js/bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename: 'js/bundle.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['es2015', { modules: false } ]
-                        ]
-                    }
-                }]
+        rules: [{
+            test: /\.jsx$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        ['env', 'react', {
+                            modules: false
+                        }]
+                    ]
+                }
+            }]
+        }, {
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'sass-loader']
+            })
+        }, {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: {
+                loader: 'url-loader',
+                options: {
+                    name: 'img/[name].[ext]', // check the path
+                }
             }
-        ]
+        }, {
+            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            use: [{
+                loader: 'url-loader'
+            }]
+        }]
     },
     plugins: [
-    ]
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({ 
+            filename: '../_layouts/index.html', 
+            template: 'html/material-home.html'
+        }),
+        new ExtractTextPlugin({
+            filename: 'css/styles.css'
+        }),
+        ],
+    resolve: {
+        modules: [path.resolve(__dirname, './src'), 'node_modules']
+    }
 }
 
 module.exports = config

@@ -23,14 +23,14 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "posts"
+      layout: "index"
       author: "Alexander R. Torrijos"
   -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "default" # overrides previous default layout
+      layout: "index" # overrides previous default layout
       author: "Alexander R. Torrijos"
 include: ["_pages"]
 gems:
