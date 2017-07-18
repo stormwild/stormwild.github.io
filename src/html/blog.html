@@ -8,8 +8,27 @@
 </head>
 <body>
     {% include header.html %}
-    <main>
-        {{ content }}
+    <main class="main" role="main">
+        <header class="main-header">
+            <div class="container">
+                <h1 class="page-header">{{ page.title }}</h1>
+                {% if page.date %}
+                <p class="text-muted"><small>{{ page.date | date_to_string }}</small></p>
+                {% elsif page.title == 'Blog' %}
+                <p class="lead">Just some notes mostly</p>
+                {% endif %}
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {{ content }}
+                    <br> {% include paginator.html %}
+                </div>
+                <div class="col-md-4">
+                    {% include sidebar.html %}
+                </div>
+            </div>
     </main>
     {% include footer.html %}
 </body>

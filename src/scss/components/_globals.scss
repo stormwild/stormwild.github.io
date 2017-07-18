@@ -1,9 +1,27 @@
+html, body {
+    background-color: #f5f5f5;    
+}
+
+.main {
+    overflow: auto;
+    background-color: #fff;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;    
+    
+    .main-header {
+        background-color: #e7e7De;
+        overflow: auto;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
 .footer {
     background-color: #f5f5f5;
     font-size: .8rem;
     padding: 1rem 0;
 }
 
-.blog-header {
+.page-header {
     margin-top: 3rem;
 }

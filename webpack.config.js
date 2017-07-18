@@ -71,19 +71,26 @@ const config = {
             template: 'html/includes/header.html',
             inject: false
         }),
-
         new HtmlWebpackPlugin({
             filename: '../_includes/footer.html',
             template: 'html/includes/footer.html',
             inject: false
         }),
-        
         new HtmlWebpackPlugin({
             filename: '../_includes/jumbotron.html',
             template: 'html/includes/jumbotron.html',
             inject: false
         }),
-        
+        new HtmlWebpackPlugin({
+            filename: '../_includes/paginator.html',
+            template: 'html/includes/paginator.html',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: '../_includes/sidebar.html',
+            template: 'html/includes/sidebar.html',
+            inject: false
+        }),
         new ExtractTextPlugin({
             filename: 'css/styles.css'
         }),

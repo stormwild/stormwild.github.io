@@ -25,14 +25,14 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "blog"
       author: "Alexander R. Torrijos"
   -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "post" # overrides previous default layout
+      layout: "blog" # overrides previous default layout
       author: "Alexander R. Torrijos"
   -
     scope:
