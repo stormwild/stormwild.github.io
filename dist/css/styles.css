@@ -5988,7 +5988,20 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important; } }
 
 html, body {
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  color: #0f3057; }
+  html a, body a {
+    color: #008891; }
+    html a:hover, body a:hover {
+      color: #00b8c4; }
+
+.jumbotron {
+  background-color: #00587a;
+  border-radius: 0; }
+  .jumbotron .jumbotron-heading {
+    color: #e7e7de; }
+  .jumbotron .text-muted {
+    color: #cdcba6 !important; }
 
 .main {
   overflow: auto;
