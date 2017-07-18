@@ -8,6 +8,8 @@ url: "http://stormwild.github.io"
 permalink: pretty
 
 paginate: 20
+paginate_path: "/blog/page:num/"
+
 
 #exclude:
 #  - "bower_components"
@@ -23,14 +25,14 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "index"
+      layout: "post"
       author: "Alexander R. Torrijos"
   -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "index" # overrides previous default layout
+      layout: "post" # overrides previous default layout
       author: "Alexander R. Torrijos"
 include: ["_pages"]
 gems:

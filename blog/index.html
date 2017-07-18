@@ -1,7 +1,8 @@
 ---
-layout: home
-title: Home
+layout: blog
+title: Blog
 ---
+
 
 <section>
 	<div id="title">
@@ -11,7 +12,7 @@ title: Home
 	</div>	
 
 	<h2><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Latest Posts</h3>
-
+ 
 	<ul class="posts">  
 		{% for post in paginator.posts %}  
 		   <li>
@@ -20,7 +21,6 @@ title: Home
 		   </li>  
 		{% endfor %}  
 	</ul>
-
 
 	{% if paginator.total_pages > 1 %}
 	<div class="pagination">

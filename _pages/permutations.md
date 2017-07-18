@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: Permutations
 permalink: permutations
 ---

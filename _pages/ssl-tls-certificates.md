@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: SSL TLS Certificates
 permalink: ssl-tls-certificates
 ---

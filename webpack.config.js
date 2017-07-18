@@ -19,7 +19,7 @@ const config = {
     module: {
         rules: [{
             test: /\.jsx$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /(node_modules)/,
             use: [{
                 loader: 'babel-loader',
                 options: {
@@ -53,20 +53,44 @@ const config = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin({ 
-            filename: '../_layouts/index.html', 
-            template: 'html/material-home.html'
+        new HtmlWebpackPlugin({
+            filename: '../_layouts/home.html',
+            template: 'html/home.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: '../_layouts/blog.html',
+            template: 'html/blog.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: '../_layouts/post.html',
+            template: 'html/post.html'
+        }),
+        
+        new HtmlWebpackPlugin({
+            filename: '../_includes/header.html',
+            template: 'html/includes/header.html'
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: '../_includes/footer.html',
+            template: 'html/includes/footer.html'
+        }),
+        
+        new HtmlWebpackPlugin({
+            filename: '../_includes/jumbotron.html',
+            template: 'html/includes/jumbotron.html'
+        }),
+        
         new ExtractTextPlugin({
             filename: 'css/styles.css'
         }),
         new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery',
-          Tether: 'tether'
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Tether: 'tether'
         }),
-        ],
+    ],
     resolve: {
         modules: [path.resolve(__dirname, './src'), 'node_modules']
     }

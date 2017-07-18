@@ -1,5 +1,4 @@
 ---
-layout: material-home
 title: Binary
 permalink: binary
 ---
