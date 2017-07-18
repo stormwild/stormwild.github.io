@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
@@ -65,20 +66,22 @@ const config = {
             filename: '../_layouts/post.html',
             template: 'html/post.html'
         }),
-        
         new HtmlWebpackPlugin({
             filename: '../_includes/header.html',
-            template: 'html/includes/header.html'
+            template: 'html/includes/header.html',
+            inject: false
         }),
 
         new HtmlWebpackPlugin({
             filename: '../_includes/footer.html',
-            template: 'html/includes/footer.html'
+            template: 'html/includes/footer.html',
+            inject: false
         }),
         
         new HtmlWebpackPlugin({
             filename: '../_includes/jumbotron.html',
-            template: 'html/includes/jumbotron.html'
+            template: 'html/includes/jumbotron.html',
+            inject: false
         }),
         
         new ExtractTextPlugin({

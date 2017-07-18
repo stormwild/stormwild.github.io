@@ -10,19 +10,7 @@
     {% include header.html %}
     <main>
         {% include jumbotron.html %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    {{ content }}
-                    
-                    <ul>
-                    {% for page in site.pages %}
-                      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </div>    
-        </div>
+        {{ content }}
     </main>
     {% include footer.html %}
 <script type="text/javascript" src="/dist/js/bundle.js"></script></body>

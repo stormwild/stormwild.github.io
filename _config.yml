@@ -34,6 +34,12 @@ defaults:
     values:
       layout: "post" # overrides previous default layout
       author: "Alexander R. Torrijos"
+  -
+    scope:
+      path: "_pages"
+      type: "pages"      
+    values:
+      type: "page"
 include: ["_pages"]
 gems:
   - jekyll-sitemap
