@@ -5987,4 +5987,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important; } }
 
+.footer {
+  background-color: #f5f5f5;
+  font-size: .8rem;
+  padding: 1rem 0; }
+
 /*# sourceMappingURL=styles.css.map*/
