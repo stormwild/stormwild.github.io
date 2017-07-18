@@ -3,11 +3,8 @@ import ReactDOM from 'react-dom';*/
 import '../scss/main.scss';
 import 'jquery';
 import 'bootstrap';
+import './components/linenos';
 
-$('#myDropdown').on('show.bs.dropdown', function (e) {
-  // do something…
-  console.log(e);
-})
 
 /*import codeURL from '../img/code.png';*/
 

@@ -25961,22 +25961,21 @@ return Tether;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_main_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_bootstrap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_linenos__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_linenos___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_linenos__);
 /*import React from 'react';
 import ReactDOM from 'react-dom';*/
 
 
 
 
-$('#myDropdown').on('show.bs.dropdown', function (e) {
-  // do something…
-  console.log(e);
-})
+
 
 /*import codeURL from '../img/code.png';*/
 
@@ -25992,7 +25991,47 @@ document.body.appendChild(img)
 /*const root = document.querySelector('#greeting')
 let greeting = 'Hello world';
 root.innerHTML = `<pre>${greeting} greeting</pre>`*/
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+
+/***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(jQuery) {(function ($, window) {
+
+	/* Reference: https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html */
+
+	var $code = $('pre code'),
+		$line = $('pre code .line');
+
+	$code.html(function(index, html){
+		return html.trim().replace(/^(.*)$/mg, '<span class="line">$1</span>');
+	});
+
+	$code.each(function(index){
+		var codetype = $(this).data('lang'),
+			$hilite = $(this).parent();
+
+		$hilite.wrap('<div class="codecontainer"></div>');
+		
+	    if(codetype) {
+	      $hilite.before('<span class="codelabel">code: ' + codetype + '</span>');
+	    } 		
+	});
+
+	$line.html(function(index, html) {
+	    if(!html) {
+	    	return "&nbsp";
+	    } else {
+	    	return html;
+        }
+  	});
+
+})(jQuery, window, undefined);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
