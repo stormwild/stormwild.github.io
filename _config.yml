@@ -48,3 +48,4 @@ gems:
   - jekyll-gist
 whitelist:
   - jekyll-redirect-from  
+github: [metadata]
