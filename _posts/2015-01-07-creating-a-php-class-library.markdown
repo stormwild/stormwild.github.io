@@ -24,16 +24,20 @@ Create a PHP Project in PHPStorm
 
 I created a new PHP Project with the following files and folder structure:
 
-    ImageResizer/
-    ImageResizer/src/Stormwild/ImageResizer.php
-    ImageResizer/composer.json
+```shell
+ImageResizer/
+ImageResizer/src/Stormwild/ImageResizer.php
+ImageResizer/composer.json
+```
 
 Initialize Git
 --------------
 
 From the git bash run:
 
-    git init    
+```shell
+git init    
+```
 
 Create Github Repository
 ------------------------
@@ -45,8 +49,10 @@ Create Initial Commit
 
 On your local machine add and commit your initial files. Run:
 
-    git add --all
-    git commit -am 'Initial commit'
+```shell
+git add --all
+git commit -am 'Initial commit'
+```
 
 The command `git add --all` adds or stages all unstaged files in your working directory to git.
 
@@ -57,13 +63,17 @@ Add Git Remote
 
 Add your Github repository as a remote for your local git repo. Run:
 
-    git remote add origin git@github.com:stormwild/ImageResizer.git
+```shell
+git remote add origin git@github.com:stormwild/ImageResizer.git
+```
 
 Replace git@github.com:stormwild/ImageResizer.git with the url of your own repository.
 
 Verify that the remote was added by running:
 
-    git config --get remote.origin.url
+```shell
+git config --get remote.origin.url
+```
 
 This should output your the url to your Github repo.
 
@@ -72,44 +82,50 @@ Tag your stable commit to set a version which Packagist will read and assign to 
 Create an Annotated Tag
 -----------------------
 
-    git tag // Lists existing tags    
-    git tag -a v1.0.0 -m 'First version' // Creates an annotated tag
+```shell
+git tag // Lists existing tags    
+git tag -a v1.0.0 -m 'First version' // Creates an annotated tag
+```
 
 Push Tags to Remote
 -------------------
 
-    git push origin v1.0.0 // pushes specific tag
-    git push origin --tags // pushes all tags 
+```shell
+git push origin v1.0.0 // pushes specific tag
+git push origin --tags // pushes all tags 
+```
 
 Create Composer Json
 --------------------
 
-    {
-        "name": "stormwild/image-resizer",
-        "description": "PHP class to resize images using GD",
-        "keywords": [
-            "php",
-            "image",
-            "resize",
-            "scale"
-        ],
-        "type": "library",
-        "license": "MIT",
-        "homepage": "https://github.com/stormwild/ImageResizer",
-        "authors": [
-            {
-                "name": "Alexander R. Torrijos",
-                "homepage": "http://stormwild.github.io/"
-            }
-        ],
-        "require": {
-            "php": ">=5.3.0",
-            "ext-gd": "*"
-        },
-        "autoload": {
-            "classmap": ["src"]
+```json
+{
+    "name": "stormwild/image-resizer",
+    "description": "PHP class to resize images using GD",
+    "keywords": [
+        "php",
+        "image",
+        "resize",
+        "scale"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/stormwild/ImageResizer",
+    "authors": [
+        {
+            "name": "Alexander R. Torrijos",
+            "homepage": "http://stormwild.github.io/"
         }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-gd": "*"
+    },
+    "autoload": {
+        "classmap": ["src"]
     }
+}
+```
 
 Create An Account on Packagist
 ------------------------------

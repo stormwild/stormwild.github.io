@@ -41,7 +41,11 @@ defaults:
     values:
       type: "page"
 include: ["_pages"]
-plugins_dir: [jekyll-sitemap, jekyll-redirect-from, jekyll-paginate, jekyll-gist]
+gems:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-paginate
+  - jekyll-gist
 whitelist:
   - jekyll-redirect-from  
 github: [metadata]

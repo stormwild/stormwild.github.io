@@ -37,7 +37,7 @@ Demonstrates usage of SQLite and EF6 in a console app
     Column 'InvariantName' is constrained to be unique.  
     Value 'System.Data.SQLite' is already present.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <entityFramework>
@@ -68,7 +68,7 @@ Demonstrates usage of SQLite and EF6 in a console app
         </DbProviderFactories>
       </system.data>
 </configuration>
-{% endhighlight %}    
+```
     
 Not sure why, but make sure to have the config for entityFramework and DbProviderFactories this way.    
 
@@ -77,7 +77,7 @@ Not sure why, but make sure to have the config for entityFramework and DbProvide
     SQL logic error or missing database
     no such column: Extent1.Artist_ArtistId
 
-{% highlight csharp %}
+```csharp
 namespace SQLiteSample.Entities
 {
     public class Album
@@ -92,7 +92,7 @@ namespace SQLiteSample.Entities
         public virtual Artist Artist { get; set; }
     }
 }
-{% endhighlight %}
+```
 
 ## Caveats
 

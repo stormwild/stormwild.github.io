@@ -88,14 +88,14 @@ Example Rule:
 
 For the web server instances
 
-```
+```shell
 Type      Protocol    Port    Source 
 HTTP(80)  TCP         80      0.0.0.0/0
 ```
 
 For the backend services
 
-```
+```shell
 Type            Protocol    Port    Source 
 Custom Rule     TCP         2365    sg-123456
 ```

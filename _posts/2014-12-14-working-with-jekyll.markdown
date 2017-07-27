@@ -17,14 +17,14 @@ I just learned that I had to use Liquid template tags to get code highlighting.
 >[Liquid](http://liquidmarkup.org/) is an extraction from the e-commerce system [Shopify](http://www.shopify.com/)
 
 Ruby
-{% highlight ruby %}
+```ruby
 def what?
   42
 end
-{% endhighlight %}
+```
 
 CSharp (C#)
-{% highlight csharp %}
+```csharp
 public class Greeting 
 {
     private string _greeting = "Hello World.";
@@ -36,7 +36,7 @@ public class Greeting
 
     public string Greeting { get { return _greeting; } }
 }
-{% endhighlight %}
+```
 
 
 Example Liquid snippet:

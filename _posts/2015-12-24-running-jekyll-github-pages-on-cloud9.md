@@ -18,27 +18,37 @@ Git is configured to ignore this folder.
 
 ## Install Jekyll and Github Pages
 
-{% highlight bash %}$ gem install jekyll github-pages{% endhighlight %}
+```shell
+$ gem install jekyll github-pages
+```
 
 ## Initial Git Repository on Workspace Folder
 
 Initial a git repository in the workspace folder.
 
-{% highlight bash %}$ git init{% endhighlight %}
+```shell
+$ git init
+```
 
 Add your github pages repository as remote.
 
-{% highlight bash %}$ git remote add origin <your repository>{% endhighlight %}
+```
+$ git remote add origin <your repository>
+```
 
 Pull from the remote.
 
-{% highlight bash %}$ git pull origin master{% endhighlight %}
+```shell
+$ git pull origin master
+```
 
 ## Run the Jekyll Server
 
-{% highlight bash %}$ jekyll serve --host $IP --port $PORT{% endhighlight %}
+```shell
+$ jekyll serve --host $IP --port $PORT
+```
 
-$IP and $PORT provide the environment's host ip and port.
+`$IP` and `$PORT` provide the environment's host ip and port.
 
 
 

@@ -10,7 +10,7 @@ redirect_from: 2015/02/24/p4-visual-merge-tool-with-git/
 
 You can display list of supported tools by running:
 
-```
+```shell
 git mergetool --tool-help
 ```
 
@@ -18,13 +18,13 @@ You should see p4merge in either available or valid list. If not, please update 
 
 If p4merge was listed as available, it is in your PATH and you only have to set merge.tool:
 
-```
+```shell
 git config --global merge.tool p4merge
 ```
 
 If it was listed as valid, you have to define mergetool.p4merge.path in addition to merge.tool:
 
-```
+```shell
 git config --global mergetool.p4merge.path c:/Users/my-login/AppData/Local/Perforce/p4merge.exe
 ```
 

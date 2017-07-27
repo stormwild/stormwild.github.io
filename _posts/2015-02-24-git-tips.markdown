@@ -4,11 +4,9 @@ permalink: git-tips
 redirect_from: 2015/02/24/git-tips/
 ---
 
-### Git Tips (Rough Draft)
+Git Tips (Rough Draft)
 
-#### Integration 
-
-##### Creating keys
+#### Creating keys
 
     $ ls -al ~/.ssh
     # Lists the files in your .ssh directory, if they exist
@@ -182,11 +180,8 @@ you haven't pushed commits of your own on those branches.
 
 References:
 
-http://stackoverflow.com/questions/2003505/how-to-delete-a-git-branch-both-locally-and-remotely
-
-http://www.grymoire.com/Unix/Sed.html#uh-13
-
-http://junaidpven.wordpress.com/2011/12/29/how-to-update-remote-branch-list-on-local-machine/
-
-http://stackoverflow.com/questions/15779740/how-to-update-my-fork-to-have-the-same-branches-and-tags-as-the-original-reposit
+- [How To Delete a Git Branch Locally and Remotely](http://stackoverflow.com/questions/2003505/how-to-delete-a-git-branch-both-locally-and-remotely)
+- [Sed](http://www.grymoire.com/Unix/Sed.html#uh-13)
+- [How To Update Remote branch List on Local Machine](http://junaidpven.wordpress.com/2011/12/29/how-to-update-remote-branch-list-on-local-machine/)
+- [How To Update My Fork To Have The Same Branches and Tags as the Original Repository](http://stackoverflow.com/questions/15779740/how-to-update-my-fork-to-have-the-same-branches-and-tags-as-the-original-reposit)
 
