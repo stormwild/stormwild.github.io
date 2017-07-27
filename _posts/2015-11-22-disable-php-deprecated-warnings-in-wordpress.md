@@ -8,27 +8,29 @@ When moving a WordPress site to a new server running the latest version of PHP5 
 
 The following code will turn off these warnings even when WP_DEBUG is set to true
 
-In your ```wp-includes/load.php``` 
+In your `wp-includes/load.php`
 
-    function wp_debug_mode() {
-    	if ( WP_DEBUG ) {
-    		error_reporting( E_ALL ^ E_NOTICE ^ E_USER_NOTICE ); // changed from error_reporting( E_ALL );
-    
-    		if ( WP_DEBUG_DISPLAY )
-    			ini_set( 'display_errors', 1 );
-    		elseif ( null !== WP_DEBUG_DISPLAY )
-    			ini_set( 'display_errors', 0 );
-    
-    		if ( WP_DEBUG_LOG ) {
-    			ini_set( 'log_errors', 1 );
-    			ini_set( 'error_log', WP_CONTENT_DIR . '/debug.log' );
-    		}
-    	} else {
-    		error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
-    	}
-    	if ( defined( 'XMLRPC_REQUEST' ) )
-    		ini_set( 'display_errors', 0 );
-    }
+```php
+function wp_debug_mode() {
+	if ( WP_DEBUG ) {
+		error_reporting( E_ALL ^ E_NOTICE ^ E_USER_NOTICE ); // changed from error_reporting( E_ALL );
+
+		if ( WP_DEBUG_DISPLAY )
+			ini_set( 'display_errors', 1 );
+		elseif ( null !== WP_DEBUG_DISPLAY )
+			ini_set( 'display_errors', 0 );
+
+		if ( WP_DEBUG_LOG ) {
+			ini_set( 'log_errors', 1 );
+			ini_set( 'error_log', WP_CONTENT_DIR . '/debug.log' );
+		}
+	} else {
+		error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
+	}
+	if ( defined( 'XMLRPC_REQUEST' ) )
+		ini_set( 'display_errors', 0 );
+}
+```
 
 Reference:
 ['PHP Deprecated' warnings on every screen](https://wordpress.org/support/topic/php-deprecated-warnings-on-every-screen)
