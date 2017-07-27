@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';*/
 import '../scss/main.scss';
 import 'jquery';
 import 'bootstrap';
-import './components/linenos';
+/*import './components/linenos';*/
 
 
 /*import codeURL from '../img/code.png';*/
