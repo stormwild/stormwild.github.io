@@ -4,4 +4,19 @@
         height: auto;
         max-width: 22rem;
     }
+    
+    .btn-outline-primary {
+        color: $link-color;
+        border-color: $link-color;
+        
+        &:hover, &:active {
+            color: $white;
+            background-color: $link-color;
+        }
+        
+        @include media-breakpoint-down('xs') {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
 }
