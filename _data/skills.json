@@ -1,0 +1,21 @@
+[{
+    "skill": "Html",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "html5-logo.svg"
+}, {
+    "skill": "Css",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "css3-logo.svg"
+}, {
+    "skill": "Js",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "js-logo.svg"
+}, {
+    "skill": "PHP",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "php-logo.svg"
+}]

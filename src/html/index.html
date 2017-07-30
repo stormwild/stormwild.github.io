@@ -1,0 +1,29 @@
+---
+layout: home
+title: Home
+---
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="text-center">Available for work :)</h1>
+		</div>
+	</div>
+	<div class="row">
+		{% for skill in site.data.skills %}
+		<div class="col-md-3">
+			<div class="card" style="width: 20rem;">
+			  <img class="card-img-top" src="{{ site.base_url }}/dist/img/<%=require("../../img/{{ skill.logo }}")%>" alt="{{ skill.skill }}">
+			  <div class="card-block">
+			    <h4 class="card-title">{{ skill.skill }}</h4>
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			  </div>
+			  <ul class="list-group list-group-flush">
+			    <li class="list-group-item">Proficiency: <span class="badge badge-pill badge-info">{{ skill.proficiency }}</span></li>
+			    <li class="list-group-item">{{ skill.label }}</li>
+			  </ul>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

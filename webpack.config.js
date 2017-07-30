@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
@@ -39,16 +38,16 @@ const config = {
             })
         }, {
             test: /\.(png|svg|jpg|gif)$/,
-            use: {
-                loader: 'url-loader',
+            use: [{
+                loader: 'file-loader',
                 options: {
                     name: 'img/[name].[ext]', // check the path
                 }
-            }
+            }]
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
             use: [{
-                loader: 'url-loader'
+                loader: 'file-loader'
             }]
         }]
     },
