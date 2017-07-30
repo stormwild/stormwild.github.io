@@ -13,13 +13,13 @@ title: Home
 	<div class="row">
 		{% for skill in site.data.skills %}
 		<div class="col-md-3">
-			<div class="card">
+			<div class="card mb-3">
 			  <img class="card-img-top img-fluid" src="{{ site.base_url }}/dist/img/{{ skill.logo }}" alt="{{ skill.skill }}">
 			  <div class="card-block">
 			    <h4 class="card-title">{{ skill.skill }}</h4>
 			  </div>
 			  <ul class="list-group list-group-flush">
-			    <li class="list-group-item">Proficiency: <span class="float-right badge badge-pill badge-info">{{ skill.proficiency }}</span></li>
+			    <li class="list-group-item">Proficiency: <span class="ml-2 badge badge-pill badge-info">{{ skill.proficiency }}/10</span></li>
 			    <li class="list-group-item">{{ skill.label }}</li>
 			  </ul>
 			</div>

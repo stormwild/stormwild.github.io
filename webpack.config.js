@@ -14,7 +14,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: 'js/bundle.js'
+        filename: 'js/bundle-[hash:6].js'
     },
     module: {
         rules: [{
@@ -91,7 +91,7 @@ const config = {
             inject: false
         }),
         new ExtractTextPlugin({
-            filename: 'css/styles.css'
+            filename: 'css/styles-[hash:6].css'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
