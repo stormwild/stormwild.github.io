@@ -37,7 +37,7 @@ const config = {
                 use: ['css-loader', 'sass-loader']
             })
         }, {
-            test: /\.(png|svg|jpg|gif)$/,
+            test: /\.(png|svg|jpg|gif|ico)$/,
             use: [{
                 loader: 'file-loader',
                 options: {
@@ -88,6 +88,11 @@ const config = {
         new HtmlWebpackPlugin({
             filename: '../_includes/sidebar.html',
             template: 'html/includes/sidebar.html',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: '../_includes/head.html',
+            template: 'html/includes/head.html',
             inject: false
         }),
         new ExtractTextPlugin({
