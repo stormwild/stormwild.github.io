@@ -26,5 +26,6 @@ If `r` is the number of selections, the total number of permutations would be `n
 Resources:
 
 1. [Permutation](https://en.wikipedia.org/wiki/Permutation)
+2. [Permutations: Introduction](https://www.cut-the-knot.org/do_you_know/permutation.shtml)
 2. [Easy Permutations and Combinations](https://betterexplained.com/articles/easy-permutations-and-combinations/)
 3. [Combinations and Permutations](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
