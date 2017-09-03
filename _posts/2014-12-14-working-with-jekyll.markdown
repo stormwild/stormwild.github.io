@@ -68,6 +68,29 @@ I also learned that you can specify line numbers by using ```linenos``` or ```li
 
 However, due to problems with the mark-up generated, a better solution would be to create the line numbers using [css](https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html) instead.
 
+## Styling HTML Output
+
+Basics
+In order to specify additional attributes to output in the html on the element, you start it with:
+
+```
+{: }
+```
+
+To specify a class it is
+
+```
+{:.MyClass}
+```
+
+To specify a title attribute it is
+
+```
+{:title="My Title"}
+```
+
+- [Jekyll Tip: Adding Styling To Html Output](http://digitaldrummerj.me/styling-jekyll-markdown/)
+
 References:
 
 1. [Github Pages](https://pages.github.com/)

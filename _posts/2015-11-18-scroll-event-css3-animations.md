@@ -2,6 +2,7 @@
 title: Scroll Event and CSS3 Animations
 permalink: scroll-event-css3-animations
 redirect_from: 2015/11/18/scroll-event-css3-animations/
+excerpt: Listening for scroll events
 ---
 
 ### Listening for scroll event

@@ -33,10 +33,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "dev": "webpack --progress --colors",
-    "build": "webpack -p",
-    "watch-prod": "webpack -w -p"
+    "start": "webpack -w -p",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
