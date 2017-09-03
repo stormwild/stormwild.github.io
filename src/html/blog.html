@@ -23,8 +23,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    {{ content }}
-                    <br> {% include paginator.html %}
+                    <article class="main-article">
+                        {{ content }}
+                    </article>
+                    <br> 
+                    {% include paginator.html %}
                 </div>
                 <div class="col-md-4">
                     {% include sidebar.html %}

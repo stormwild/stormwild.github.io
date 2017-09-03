@@ -6,7 +6,7 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include head.html %}
-<link href="/dist/css/styles-aa4df5.css" rel="stylesheet"></head>
+<link href="/dist/css/styles-df9071.css" rel="stylesheet"></head>
 <body>
     {% include header.html %}
     <main class="main" role="main">
@@ -23,8 +23,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    {{ content }}
-                    <br> {% include paginator.html %}
+                    <article class="main-article">
+                        {{ content }}
+                    </article>
+                    <br> 
+                    {% include paginator.html %}
                 </div>
                 <div class="col-md-4">
                     {% include sidebar.html %}
@@ -32,5 +35,5 @@
             </div>
     </main>
     {% include footer.html %}
-<script type="text/javascript" src="/dist/js/bundle-aa4df5.js"></script></body>
+<script type="text/javascript" src="/dist/js/bundle-df9071.js"></script></body>
 </html>
