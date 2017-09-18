@@ -46,6 +46,8 @@ gems:
   - jekyll-redirect-from
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-feed
 whitelist:
   - jekyll-redirect-from  
 github: [metadata]
+  
