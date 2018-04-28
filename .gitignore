@@ -14,5 +14,11 @@ coverage
 .ruby-version
 .sass-cache
 
+node_modules/
+dist/
+dist/css/
+dist/js/
+dist/img/
 
 !.gitkeep
+
