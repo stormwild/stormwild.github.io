@@ -1,18 +1,18 @@
-const webpack = require('webpack')
-const path = require('path')
+import { ProvidePlugin, HotModuleReplacementPlugin } from 'webpack';
+import { resolve as _resolve } from 'path';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin, { extract } from 'extract-text-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const config = {
     devtool: 'source-map',
-    context: path.resolve(__dirname, 'src'),
+    context: _resolve(__dirname, 'src'),
     entry: {
         app: './js/main.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: _resolve(__dirname, 'dist'),
         publicPath: '/dist/',
         filename: 'js/bundle-[hash:6].js'
     },
@@ -32,7 +32,7 @@ const config = {
             }]
         }, {
             test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
+            use: extract({
                 fallback: 'style-loader',
                 use: ['css-loader', 'sass-loader']
             })
@@ -98,16 +98,17 @@ const config = {
         new ExtractTextPlugin({
             filename: 'css/styles-[hash:6].css'
         }),
-        new webpack.ProvidePlugin({
+        new ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Tether: 'tether'
         }),
+        new HotModuleReplacementPlugin()
     ],
     resolve: {
-        modules: [path.resolve(__dirname, './src'), 'node_modules']
+        modules: [_resolve(__dirname, './src'), 'node_modules']
     }
-}
+};
 
-module.exports = config
+export default config;
