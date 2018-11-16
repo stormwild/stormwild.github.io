@@ -18,7 +18,7 @@ Git clone this repository
 npm install
 bundle install
 jekyll serve --host $IP --port $PORT --watch --drafts
-npm run watch-prod
+npm run start
 ```
 
 ## References
