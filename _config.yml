@@ -41,7 +41,7 @@ defaults:
     values:
       type: "page"
 include: ["_pages"]
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
