@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 permalink: test-post-using-prose
 excerpt: Prose.io is an online editor for Github Repositories
 ---
