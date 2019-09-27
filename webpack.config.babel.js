@@ -3,7 +3,7 @@ import { resolve as _resolve } from 'path';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin, { extract } from 'extract-text-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config = {
     devtool: 'source-map',
@@ -18,19 +18,12 @@ const config = {
     },
     module: {
         rules: [{
-            test: /\.jsx$/,
-            exclude: /(node_modules)/,
-            use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        ['env', 'react', {
-                            modules: false
-                        }]
-                    ]
-                }
-            }]
-        }, {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader"
+            }
+          }, {
             test: /\.scss$/,
             use: extract({
                 fallback: 'style-loader',
@@ -52,7 +45,7 @@ const config = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: '../_layouts/home.html',
             template: 'html/home.html'
