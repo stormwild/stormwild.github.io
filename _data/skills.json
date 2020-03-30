@@ -18,4 +18,19 @@
     "proficiency": "7",
     "label": "Intermediate-Advanced",
     "logo": "php-logo.svg"
-}]
+},{
+    "skill": "C#",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "c-sharp.svg"
+},{
+    "skill": "Angular",
+    "proficiency": "7",
+    "label": "Intermediate-Advanced",
+    "logo": "angular.svg"
+},{
+    "skill": "ReactJs",
+    "proficiency": "6",
+    "label": "Intermediate",
+    "logo": "React-icon.svg"
+},]

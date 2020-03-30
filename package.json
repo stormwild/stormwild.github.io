@@ -41,7 +41,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.babel.js -w -p",
-    "build": "webpack --config webpack.config.babel.js -p"
+    "build": "webpack --config webpack.config.babel.js -p",
+    "serve": "bundle exec jekyll serve"
   },
   "repository": {
     "type": "git",
