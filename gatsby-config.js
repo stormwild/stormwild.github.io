@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ['gatsby-plugin-root-import', `gatsby-plugin-typescript`],
+  plugins: [
+    'gatsby-plugin-root-import',
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sass`,
+  ],
 };
