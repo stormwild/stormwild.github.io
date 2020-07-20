@@ -10,7 +10,7 @@ Stackbit Fresh Theme original README is located [here](./README.theme.md).
 
 1. Install npm dependencies:
 
-        npm install
+        yarn
 
 1. Get "stackbit-api-key" from project menu in [Stackbit dashboard](https://app.stackbit.com/dashboard)
 
@@ -24,6 +24,6 @@ Stackbit Fresh Theme original README is located [here](./README.theme.md).
 
 1. Start a local development server:
 
-        npm run develop
+        yarn develop
 
 1. Browse to [http://localhost:8000/](http://localhost:8000/)

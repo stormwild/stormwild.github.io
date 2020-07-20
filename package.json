@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve"
   },
