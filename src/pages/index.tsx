@@ -1,13 +1,14 @@
 import React from 'react';
-import { Layout } from '../components/index';
+import { Helmet } from 'react-helmet';
 
 import 'src/scss/main.scss';
+import { Layout } from '../components/index';
 
 export default ({ message = 'hi' }: { message: string }) => {
   return (
     <Layout>
-      <div>Hello world! {message} </div>
-      <div>yo</div>
+      <Helmet title="Home" />
+      <h2>Welcome! {message}</h2>
     </Layout>
   );
 };
