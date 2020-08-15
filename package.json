@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "gatsby": "^2.21.22",
+    "gatsby-plugin-manifest": "^2.4.23",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

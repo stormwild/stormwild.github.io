@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import 'src/scss/main.scss';
+
 type LayoutProps = {
   children?: ReactNode;
 };

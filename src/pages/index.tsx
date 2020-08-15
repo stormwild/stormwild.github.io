@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import 'src/scss/main.scss';
 import { Layout } from '../components/index';
 
 export default ({ message = 'hi' }: { message: string }) => {
