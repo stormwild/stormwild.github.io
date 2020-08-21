@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: npm install && npm run build && bundle install
-    command: npm run start
+    command: bundle exec jekyll serve --port 3000
