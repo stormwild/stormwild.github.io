@@ -28,5 +28,6 @@ module.exports = {
         icon: `static/assets/img/icon/stormwild-logo.svg`,
       },
     },
+    `gatsby-plugin-theme-ui`,
   ],
 };

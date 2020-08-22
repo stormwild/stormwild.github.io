@@ -26,17 +26,14 @@ export default ({ children }: LayoutProps) => {
   );
 
   const head = {
-    title: title,
+    title,
     titleTemplate: `%s | ${title}`,
   };
 
   return (
     <>
       <Helmet {...head} />
-      <div>
-        <h1>Stormwild</h1>
-        {children}
-      </div>
+      {children}
     </>
   );
 };
