@@ -31,3 +31,9 @@ yarn add -D @types/react-helmet
 Write pages using Markdown and use transformer plugins to convert markdown to html and use templates to generate pages in Gatsby
 
 [Transformer plugins](https://www.gatsbyjs.org/tutorial/part-six/)
+
+## Enable Markdown pages
+
+```sh
+yarn add gatsby-source-filesystem gatsby-transformer-remark
+```
