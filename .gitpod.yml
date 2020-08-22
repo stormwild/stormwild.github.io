@@ -3,10 +3,10 @@ image:
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
-  - port: 9000
-    onOpen: open-preview
+  - port: 8000
+    # onOpen: open-preview
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: npx yarn && npx gatsby build # runs during prebuild
-    command: npx gatsby serve
+  - init: yarn && npx gatsby build # runs during prebuild
+    command: npx gatsby develop

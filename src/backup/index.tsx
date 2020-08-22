@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { Global } from '@emotion/core';
 
@@ -54,6 +54,7 @@ export default ({ data }: QueryResult) => {
             <h3>{node.frontmatter.title}</h3>
             <p>{node.excerpt}</p>
             <pre>{node.html}</pre>
+            <Link to={node.url}></Link>
           </li>
         ))}
       </ul>
