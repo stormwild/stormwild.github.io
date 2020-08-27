@@ -1,0 +1,197 @@
+{
+  "path": "/about/",
+  "location": {
+    "pathname": "/about/",
+    "search": "",
+    "hash": "",
+    "href": "https://8000-fd1dcd41-b6dc-4be0-a58f-4a7aa60c5995.ws-us02.gitpod.io/about/",
+    "origin": "https://8000-fd1dcd41-b6dc-4be0-a58f-4a7aa60c5995.ws-us02.gitpod.io",
+    "protocol": "https:",
+    "host": "8000-fd1dcd41-b6dc-4be0-a58f-4a7aa60c5995.ws-us02.gitpod.io",
+    "hostname": "8000-fd1dcd41-b6dc-4be0-a58f-4a7aa60c5995.ws-us02.gitpod.io",
+    "port": "",
+    "state": {
+      "key": "1598102101630"
+    },
+    "key": "1598102101630"
+  },
+  "pageResources": {
+    "json": {
+      "data": {
+        "sitePage": {
+          "id": "SitePage /about/"
+        }
+      },
+      "pageContext": {
+        "url": "/about/",
+        "relativePath": "about.md",
+        "relativeDir": "",
+        "base": "about.md",
+        "name": "about",
+        "frontmatter": {
+          "title": "About",
+          "template": "advanced"
+        },
+        "html": "<h1>About</h1>\n<p>Hello world!</p>",
+        "pages": [
+          {
+            "url": "/about/",
+            "relativePath": "about.md",
+            "relativeDir": "",
+            "base": "about.md",
+            "name": "about",
+            "frontmatter": {
+              "title": "About",
+              "template": "advanced"
+            },
+            "html": "<h1>About</h1>\n<p>Hello world!</p>"
+          },
+          {
+            "url": "/",
+            "relativePath": "index.md",
+            "relativeDir": "",
+            "base": "index.md",
+            "name": "index",
+            "frontmatter": {
+              "title": "Home",
+              "template": "index"
+            },
+            "html": ""
+          },
+          {
+            "url": "/page2/",
+            "relativePath": "page2.md",
+            "relativeDir": "",
+            "base": "page2.md",
+            "name": "page2",
+            "frontmatter": {
+              "title": "Page2",
+              "template": "advanced"
+            },
+            "html": "<h1>Page2</h1>\n<p>Page 2</p>"
+          }
+        ],
+        "site": {
+          "pathPrefix": ""
+        }
+      }
+    },
+    "page": {
+      "componentChunkName": "component---src-templates-advanced-tsx",
+      "path": "/about/",
+      "webpackCompilationHash": "2a9c8a7bb5d271cbef4e"
+    }
+  },
+  "uri": "/about",
+  "data": {
+    "sitePage": {
+      "id": "SitePage /about/"
+    }
+  },
+  "pageContext": {
+    "url": "/about/",
+    "relativePath": "about.md",
+    "relativeDir": "",
+    "base": "about.md",
+    "name": "about",
+    "frontmatter": {
+      "title": "About",
+      "template": "advanced"
+    },
+    "html": "<h1>About</h1>\n<p>Hello world!</p>",
+    "pages": [
+      {
+        "url": "/about/",
+        "relativePath": "about.md",
+        "relativeDir": "",
+        "base": "about.md",
+        "name": "about",
+        "frontmatter": {
+          "title": "About",
+          "template": "advanced"
+        },
+        "html": "<h1>About</h1>\n<p>Hello world!</p>"
+      },
+      {
+        "url": "/",
+        "relativePath": "index.md",
+        "relativeDir": "",
+        "base": "index.md",
+        "name": "index",
+        "frontmatter": {
+          "title": "Home",
+          "template": "index"
+        },
+        "html": ""
+      },
+      {
+        "url": "/page2/",
+        "relativePath": "page2.md",
+        "relativeDir": "",
+        "base": "page2.md",
+        "name": "page2",
+        "frontmatter": {
+          "title": "Page2",
+          "template": "advanced"
+        },
+        "html": "<h1>Page2</h1>\n<p>Page 2</p>"
+      }
+    ],
+    "site": {
+      "pathPrefix": ""
+    }
+  },
+  "pathContext": {
+    "url": "/about/",
+    "relativePath": "about.md",
+    "relativeDir": "",
+    "base": "about.md",
+    "name": "about",
+    "frontmatter": {
+      "title": "About",
+      "template": "advanced"
+    },
+    "html": "<h1>About</h1>\n<p>Hello world!</p>",
+    "pages": [
+      {
+        "url": "/about/",
+        "relativePath": "about.md",
+        "relativeDir": "",
+        "base": "about.md",
+        "name": "about",
+        "frontmatter": {
+          "title": "About",
+          "template": "advanced"
+        },
+        "html": "<h1>About</h1>\n<p>Hello world!</p>"
+      },
+      {
+        "url": "/",
+        "relativePath": "index.md",
+        "relativeDir": "",
+        "base": "index.md",
+        "name": "index",
+        "frontmatter": {
+          "title": "Home",
+          "template": "index"
+        },
+        "html": ""
+      },
+      {
+        "url": "/page2/",
+        "relativePath": "page2.md",
+        "relativeDir": "",
+        "base": "page2.md",
+        "name": "page2",
+        "frontmatter": {
+          "title": "Page2",
+          "template": "advanced"
+        },
+        "html": "<h1>Page2</h1>\n<p>Page 2</p>"
+      }
+    ],
+    "site": {
+      "pathPrefix": ""
+    }
+  }
+}

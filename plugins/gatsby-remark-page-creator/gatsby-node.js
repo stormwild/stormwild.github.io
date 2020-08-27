@@ -1,53 +1,7 @@
 const path = require('path');
+const { get, keyBy, dataKeyBy, findFileNode } = require('./utils');
+
 const { createFilePath } = require('gatsby-source-filesystem');
-
-const keyBy = (array, key) =>
-  (array || []).reduce((r, x) => ({ ...r, [key ? x[key] : x]: x }), {});
-
-const dataKeyBy = (data, key) => {
-  const d = data || {};
-  return Array.isArray(d) ? keyBy(d, key) : Object.values(keyBy(d, key));
-};
-
-const get = (obj, path, defaultValue = undefined) => {
-  const travel = regexp =>
-    String.prototype.split
-      .call(path, regexp)
-      .filter(Boolean)
-      .reduce(
-        (res, key) => (res !== null && res !== undefined ? res[key] : res),
-        obj
-      );
-  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
-  return result === undefined || result === obj ? defaultValue : result;
-};
-
-function findFileNode({ node, getNode }) {
-  let fileNode = node;
-  let ids = [fileNode.id];
-
-  while (fileNode && fileNode.internal.type !== `File` && fileNode.parent) {
-    fileNode = getNode(fileNode.parent);
-
-    if (!fileNode) {
-      break;
-    }
-
-    if (ids.includes(fileNode.id)) {
-      console.log(`found cyclic reference between nodes`);
-      break;
-    }
-
-    ids.push(fileNode.id);
-  }
-
-  if (!fileNode || fileNode.internal.type !== `File`) {
-    console.log('did not find ancestor File node');
-    return null;
-  }
-
-  return fileNode;
-}
 
 exports.onCreateNode = ({ node, getNode, actions }, options) => {
   const { createNodeField } = actions;
@@ -107,7 +61,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
     const siteNode = getNode('Site');
     const siteDataNode = getNode('SiteData');
     const sitePageNodes = getNodesByType('SitePage');
-    const sitePageNodesByPath = dataKeyBy(sitePageNodes, 'path');
+    // const sitePageNodesByPath = dataKeyBy(sitePageNodes, 'path');
     // console.log(`sitePageNodesByPath: ${JSON.stringify(sitePageNodesByPath)}`);
     // console.log(`siteDataNode: ${JSON.stringify(siteDataNode)}`);
     // const siteData = get(siteDataNode, 'data', {});
@@ -133,7 +87,7 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
       const url = node.fields.url;
       const template = node.frontmatter.template;
       const component = path.resolve(`./src/templates/${template}.tsx`);
-      const existingPageNode = get(sitePageNodesByPath, url);
+      //   const existingPageNode = get(sitePageNodesByPath, url);
 
       // const { 'site-metadata', ...rest } = siteData;
 
@@ -157,9 +111,9 @@ exports.createPages = ({ graphql, getNode, actions, getNodesByType }) => {
         },
       };
 
-      if (existingPageNode && !get(page, 'context.menus')) {
-        page.context.menus = get(existingPageNode, 'context.menus');
-      }
+      //   if (existingPageNode && !get(page, 'context.menus')) {
+      //     page.context.menus = get(existingPageNode, 'context.menus');
+      //   }
 
       createPage(page);
     });
