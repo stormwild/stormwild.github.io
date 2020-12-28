@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Global } from '@emotion/core';
 
 import 'src/scss/main.scss';
 
@@ -32,6 +33,22 @@ export default ({ children }: LayoutProps) => {
 
   return (
     <>
+      <Global
+        styles={() => ({
+          html: {
+            boxSizing: 'border-box',
+          },
+          '*': {
+            boxSizing: 'inherit',
+          },
+          '*:before': {
+            boxSizing: 'inherit',
+          },
+          '*:after': {
+            boxSizing: 'inherit',
+          },
+        })}
+      />
       <Helmet {...head} />
       {children}
     </>

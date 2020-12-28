@@ -37,3 +37,8 @@ Write pages using Markdown and use transformer plugins to convert markdown to ht
 ```sh
 yarn add gatsby-source-filesystem gatsby-transformer-remark
 ```
+
+https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u
+
+https://app.pluralsight.com/guides/react-typescript-module-create
+

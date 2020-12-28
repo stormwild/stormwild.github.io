@@ -14,9 +14,9 @@ export const query = graphql`
 const Advanced = (props: any) => {
   return (
     <Layout>
-      {/* <p>
-        <pre>{JSON.stringify(props)}</pre>
-      </p> */}
+      <div>
+        <pre><code>{JSON.stringify(props, null, '  ')}</code></pre>
+      </div>
       <h1>{props.pageContext.frontmatter?.title}</h1>
       <Link to={props.pageContext?.url}>{props.pageContext?.name}</Link>
       <hr />
