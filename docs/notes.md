@@ -42,3 +42,11 @@ https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-u
 
 https://app.pluralsight.com/guides/react-typescript-module-create
 
+## Choco
+
+### Python
+
+```
+choco install python --override --installarguments "'TargetDir=D:\'"
+choco install python --params "/InstallDir:D:\"
+```
