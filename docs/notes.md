@@ -37,3 +37,11 @@ Write pages using Markdown and use transformer plugins to convert markdown to ht
 ```sh
 yarn add gatsby-source-filesystem gatsby-transformer-remark
 ```
+
+## Unit Testing
+
+[Unit Testing](https://www.gatsbyjs.com/docs/how-to/testing/unit-testing/)
+
+```
+npm install --save-dev jest babel-jest react-test-renderer babel-preset-gatsby identity-obj-proxy
+```

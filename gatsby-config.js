@@ -39,6 +39,7 @@ module.exports = {
       },
     },
     {
+      // local plugin
       resolve: `gatsby-remark-page-creator`,
       options: {},
     },
