@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Global } from '@emotion/core';
 
 import { Link, graphql } from 'gatsby';
 import { Layout } from '../components';
@@ -17,22 +16,6 @@ export const query = graphql`
 const Index = (props: any) => {
   return (
     <Layout>
-      <Global
-        styles={() => ({
-          html: {
-            boxSizing: 'border-box',
-          },
-          '*': {
-            boxSizing: 'inherit',
-          },
-          '*:before': {
-            boxSizing: 'inherit',
-          },
-          '*:after': {
-            boxSizing: 'inherit',
-          },
-        })}
-      />
       <Helmet title="Home" />
       <Greeting />
       <h1>{props.pageContext.frontmatter.title}</h1>

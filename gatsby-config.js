@@ -29,6 +29,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-theme-ui`,
+    `gatsby-theme-style-guide`,
     `gatsby-transformer-remark`,
     {
       // resolve: `yarn add gatsby-source-filesystem gatsby-transformer-remark`
