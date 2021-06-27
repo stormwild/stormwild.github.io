@@ -1,0 +1,11 @@
+
+:root {
+    --color-h: 16;
+    --color-s: 71%;
+    --color-l: 51%;
+    --color-a: 1;
+
+    font-family: 'system';
+    color: $white;
+    background-color: hsl(var(--color-h), var(--color-s), var(--color-l), var(--color-a));
+}

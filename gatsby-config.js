@@ -8,8 +8,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Pandas Eating Lots`,
+    description: `Some description`
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

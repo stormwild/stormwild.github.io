@@ -28,7 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  console.log(JSON.stringify(result, null, 4))
+  
+  // console.log(JSON.stringify(result, null, 4))
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({

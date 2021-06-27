@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 export default function Home({ data }) {
   return (
@@ -33,7 +33,9 @@ export default function Home({ data }) {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <h3>
-              {node.frontmatter.title}{" "}
+              <Link to={node.fields.slug}>
+              {node.frontmatter.title}{" "} 
+              </Link>
               <span>
                 — {node.frontmatter.date}
               </span>
@@ -68,6 +70,9 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt
+          fields {
+            slug
+          }
         }
       }
     }
