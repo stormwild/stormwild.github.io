@@ -1,9 +1,9 @@
 
 :root {
-    --color-h: 16;
-    --color-s: 71%;
-    --color-l: 51%;
-    --color-a: 1;
+    --color-h: #{$h};
+    --color-s: #{$s}%;
+    --color-l: #{$l}%;
+    --color-a: #{$a};
 
     font-family: 'system';
     color: $white;
