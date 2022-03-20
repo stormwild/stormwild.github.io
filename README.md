@@ -1,3 +1,11 @@
+# stormwild.github.io
+
+Website of Alexander R. Torrijos
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/stormwild/stormwild.github.io)
+
+## NextJs
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -32,3 +40,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Notes
+
+[Using MDX with Next.js](https://nextjs.org/docs/advanced-features/using-mdx)
+
+Steps:
+
+1. Install the required packages:
+
+   ```sh
+   npm install @next/mdx @mdx-js/loader
+   ```
+
+2. Require the package and configure to support top level .mdx pages. The following adds the options object key allowing you to pass in any plugins:
+
+   ```js
+   // next.config.js
+
+   const withMDX = require("@next/mdx")({
+     extension: /\.mdx?$/,
+     options: {
+       remarkPlugins: [],
+       rehypePlugins: [],
+       // If you use `MDXProvider`, uncomment the following line.
+       // providerImportSource: "@mdx-js/react",
+     },
+   });
+   module.exports = withMDX({
+     // Append the default value with md extensions
+     pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+   });
+   ```
