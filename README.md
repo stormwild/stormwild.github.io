@@ -41,7 +41,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Notes
+## MDX Enabled
 
 [Using MDX with Next.js](https://nextjs.org/docs/advanced-features/using-mdx)
 
@@ -72,3 +72,13 @@ Steps:
      pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
    });
    ```
+
+## Resources
+
+[Using MDX with Next.js](https://nextjs.org/docs/advanced-features/using-mdx)
+
+[Create a Next.js and MDX blog](https://blog.logrocket.com/create-next-js-mdx-blog/)
+
+[How to Source MDX Content in Next.js to Dynamically Create Pages for a Blog](https://spacejelly.dev/posts/how-to-source-mdx-content-in-next-js-to-dynamically-create-pages-for-a-blog/)
+
+[Comparison of MDX integration strategies with Next.js](https://dev.to/tylerlwsmith/quick-comparison-of-mdx-integration-strategies-with-next-js-1kcm)
