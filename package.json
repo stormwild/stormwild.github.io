@@ -12,9 +12,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.6",
+    "@astrojs/image": "^0.14.0",
     "@astrojs/mdx": "^0.16.0",
+    "@astrojs/react": "^2.0.2",
     "@astrojs/rss": "^2.1.0",
-    "@astrojs/sitemap": "^1.0.1"
+    "@astrojs/sitemap": "^1.0.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.6",
+    "modern-normalize": "^1.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.14.0"
   }
 }

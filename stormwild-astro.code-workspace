@@ -1,11 +1,26 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../stormwild.github.io"
-	}
-],
+    {
+      "path": "."
+    },
+    {
+      "path": "../stormwild.github.io"
+    },
+    {
+      "path": "../../../Web/astro/astro-blog-template"
+    },
+    {
+      "path": "../../../Web/astro/astro-docs"
+    },
+    {
+      "path": "../../../Web/astro/astro-auth"
+    },
+    {
+      "path": "../../../Web/astro/sleepy-spectrum"
+    },
+    {
+      "path": "../bak"
+    }
+  ],
   "settings": {}
 }
