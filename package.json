@@ -11,20 +11,29 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "workspaces": [],
   "dependencies": {
     "@astrojs/image": "^0.14.0",
     "@astrojs/mdx": "^0.16.0",
     "@astrojs/react": "^2.0.2",
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/tailwind": "^3.0.1",
+    "@mui/material": "^5.11.7",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.0.6",
     "modern-normalize": "^1.1.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "rollup": "^3.14.0"
+    "rollup": "^3.14.0",
+    "sharp": "^0.31.3"
+  },
+  "engines": {
+    "node": ">=16.12.0",
+    "pnpm": ">=7.9.5"
   }
 }

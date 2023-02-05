@@ -1,9 +1,15 @@
 ---
-import Layout from '@src/layouts/main.astro'
+import MainLayout from '@src/layouts/MainLayout.astro'
 ---
 
-<Layout title='Home'>
-  <div>
+<MainLayout title='Home'>
+  <header class='bg-slate-300'>
     <h1>Home</h1>
-  </div>
-</Layout>
+  </header>
+  <main
+    class='border border-3 border-red-300 border-dotted border-spacing-44 border-'
+  >
+    <p>Yo</p>
+  </main>
+  <footer>Some footer</footer>
+</MainLayout>
