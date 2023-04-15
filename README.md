@@ -1,6 +1,6 @@
 # Astro Starter Kit: Basics
 
-```
+```sh
 npm create astro@latest -- --template basics
 ```
 
@@ -11,7 +11,6 @@ npm create astro@latest -- --template basics
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
 
 ## 🚀 Project Structure
 
@@ -53,3 +52,21 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## ESLint
+
+[Editor Setup 🚀 Astro Documentation](https://docs.astro.build/en/editor-setup/)
+
+[eslint-plugin-astro](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/)
+
+```sh
+pnpm i -D eslint eslint-plugin-astro @typescript-eslint/parser eslint-plugin-jsx-a11y
+```
+
+### Configure
+
+[Configure ESLint - ESLint - Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/configure/)
+
+[Editor Setup 🚀 Astro Documentation](https://docs.astro.build/en/editor-setup/)
+
+[Get VSCode, eslint & prettier working with Astro - Geek's blog](https://patheticgeek.dev/blog/astro-prettier-eslint-vscode)

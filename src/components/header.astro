@@ -1,0 +1,51 @@
+---
+---
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/astronaughts">Astronaughts</a></li>
+    <li><a href="/astronauts/1">Astronauts</a></li>
+    <li><a href="/hello">Hello</a></li>
+    <li><a href="/html">HTML</a></li>
+  </ul>
+</nav>
+
+<style>
+  :root {
+    --background-color-hsl: hsl(0, 0%, 20%);
+    --background-color-hsl-hover: hsl(0, 0%, 30%);
+  }
+  nav {
+    background: var(--background-color-hsl);
+    color: #fff;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+
+  nav li:first-child {
+    padding-left: 1rem;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 0.75rem;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    background-color: var(--background-color-hsl-hover);
+  }
+</style>

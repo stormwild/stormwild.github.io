@@ -1,0 +1,19 @@
+---
+import astronaughts from '../data/astronaughts'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Astronaughts">
+  <div>
+    <h1>Astronaughts</h1>
+    <ul>
+      {
+        astronaughts.map(({ slug, astronaut }) => (
+          <li>
+            <a href={'/' + slug}>{astronaut}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
