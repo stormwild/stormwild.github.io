@@ -1,15 +1,25 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro'
+const { title = 'Home', serverCounter = 24 } = Astro.props
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout content={title}>
+  <h1>Astro</h1>
+  <p>Counter: <span class='counter'></span></p>
+  <p>{serverCounter}</p>
+  <button class='counter-btn'>+</button>
+</BaseLayout>
+
+<script>
+  let counter: number = 0
+  const counterDisplay: HTMLSpanElement | null =
+    document.querySelector('.counter')
+  const btn: HTMLButtonElement | null = document.querySelector('.counter-btn')
+
+  counterDisplay!.innerHTML = counter.toString()
+
+  btn!.addEventListener('click', () => {
+    counter++
+    counterDisplay!.innerHTML = counter.toString()
+  })
+</script>

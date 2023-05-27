@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+const { title = '404 Not Found' } = Astro.props
+---
+
+<BaseLayout content={title}>
+  <h1>404 Not Found</h1>
+</BaseLayout>

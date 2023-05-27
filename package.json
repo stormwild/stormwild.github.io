@@ -11,5 +11,10 @@
   },
   "dependencies": {
     "astro": "^2.5.5"
+  },
+  "devDependencies": {
+    "@jridgewell/sourcemap-codec": "^1.4.15",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@vite-pwa/astro": "^0.0.5"
   }
 }
