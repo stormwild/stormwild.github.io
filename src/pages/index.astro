@@ -1,14 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-const { title = 'Home', serverCounter = 24 } = Astro.props
+import MainLayout from '@src/layouts/MainLayout.astro'
+const { serverCounter = 24 } = Astro.props
 ---
 
-<BaseLayout content={title}>
+<MainLayout
+  title='Home'
+  description='Home page'
+  keywords={['Stormwild', 'Home']}
+>
   <h1>Astro</h1>
   <p>Counter: <span class='counter'></span></p>
   <p>{serverCounter}</p>
   <button class='counter-btn'>+</button>
-</BaseLayout>
+</MainLayout>
 
 <script>
   let counter: number = 0

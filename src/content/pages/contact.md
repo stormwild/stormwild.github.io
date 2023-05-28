@@ -1,6 +1,7 @@
 ---
 title: Contact
-description: Contact the site author.
+meta:
+  description: Contact site owner.
 ---
 
 This is the contact page

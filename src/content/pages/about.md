@@ -1,6 +1,8 @@
 ---
-title: About
-description: About the site and the author.
+title: "About"
+meta:
+  description: About the site and the author.
+  keywords: ["about", "author"]
 ---
 
-This is the about page
+This is the About page

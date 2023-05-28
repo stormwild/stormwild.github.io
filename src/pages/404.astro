@@ -1,8 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-const { title = '404 Not Found' } = Astro.props
+import MainLayout from "@src/layouts/MainLayout.astro";
 ---
 
-<BaseLayout content={title}>
+<MainLayout
+  title="404 Not Found"
+  description="404 Not Found Page"
+  keywords={["404", "not found", "missing"]}
+>
   <h1>404 Not Found</h1>
-</BaseLayout>
+</MainLayout>
