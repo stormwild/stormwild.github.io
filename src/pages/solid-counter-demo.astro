@@ -1,0 +1,13 @@
+---
+import Counter from "@src/components/solid/Counter";
+import MainLayout from "@src/layouts/MainLayout.astro";
+import "@src/styles/common.css";
+---
+
+<MainLayout
+    title="SolidJs Counter Demo"
+    description="Sample counter demo using SolidJs component"
+    keywords={["Stormwild", "Counter Demo", "SolidJs", "Component"]}
+>
+    <Counter client:load />
+</MainLayout>

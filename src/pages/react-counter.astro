@@ -1,0 +1,12 @@
+---
+import MainLayout from "@src/layouts/MainLayout.astro";
+import Main from "@src/components/react/Counter";
+---
+
+<MainLayout
+    title="React Counter Demo"
+    description="Sample counter demo using React component"
+    keywords={["Stormwild", "Counter Demo", "React", "Component"]}
+>
+    <Main client:load />
+</MainLayout>

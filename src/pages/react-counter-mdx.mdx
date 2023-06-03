@@ -1,0 +1,12 @@
+---
+layout: "@src/layouts/MainLayout.astro"
+title: React Counter MDX
+---
+
+import "@src/styles/common.css";
+import Counter from "@src/components/react/Counter";
+
+<div class="container">
+  <p>Here is my counter component, working in MDX:</p>
+  <Counter client:load />
+</div>

@@ -5,9 +5,9 @@ module.exports = {
     node: true,
   },
   extends: [
-    "plugin:astro/recommended",
-    // 'plugin:react/recommended',
+    // "plugin:react/recommended",
     // 'standard-with-typescript',
+    "plugin:astro/recommended",
   ],
   overrides: [
     {

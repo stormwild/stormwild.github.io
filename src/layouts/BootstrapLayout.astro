@@ -1,0 +1,24 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+const { title, description, keywords } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords?.join(", ")} />
+        <title set:text={`${title || "Page"} - Stormwild`} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<script src="@popperjs/core"></script>
+<script src="bootstrap"></script>
