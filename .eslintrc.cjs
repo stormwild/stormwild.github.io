@@ -5,33 +5,32 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:astro/recommended',
+    "plugin:astro/recommended",
+    // 'plugin:react/recommended',
+    // 'standard-with-typescript',
   ],
   overrides: [
     {
       // Define the configuration for `.astro` file.
-      files: ['*.astro'],
+      files: ["*.astro"],
       // Allows Astro components to be parsed.
-      parser: 'astro-eslint-parser',
+      parser: "astro-eslint-parser",
       // Parse the script in `.astro` as TypeScript by adding the following configuration.
       // It's the setting you need when using TypeScript.
       parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
       },
       rules: {
         // override/add rules settings here, such as:
-        // "astro/no-set-html-directive": "error"
-        'comma-dangle': ['always-multiline'],
+        "comma-dangle": [1, "always-multiline"],
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['react'],
+  plugins: ["react"],
   rules: {},
-}
+};

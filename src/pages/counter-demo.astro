@@ -4,18 +4,12 @@ import MainLayout from "@src/layouts/MainLayout.astro";
 ---
 
 <MainLayout
-  title="Home"
-  description="Home page"
-  keywords={["Stormwild", "Home"]}
+  title="Counter Demo"
+  description="Sample counter demo in Astro component"
+  keywords={["Stormwild", "Counter Demo", "Astro", "Component"]}
 >
   <div class="container">
-    <h1>Home</h1>
+    <h1>Astro</h1>
+    <Counter />
   </div>
 </MainLayout>
-
-<style>
-  .container {
-    padding: 1rem;
-    height: 100%;
-  }
-</style>

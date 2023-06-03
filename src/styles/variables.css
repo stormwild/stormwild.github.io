@@ -1,0 +1,5 @@
+:root {
+  --color-gray-100: #cfcfcf;
+  --color-gray-900: hsla(0, 0%, 13%, 1);
+  --text-color: var(--color-gray-900);
+}
