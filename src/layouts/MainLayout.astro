@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import "./MainLayout.module.css";
-const { title, description, keywords } = Astro.props;
+const { title, description, keywords, frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} keywords={keywords}>
+<BaseLayout
+  title={title || frontmatter.title}
+  description={description || frontmatter.description}
+  keywords={keywords || frontmatter.keywords}
+>
   <main role="main">
     <slot />
   </main>
