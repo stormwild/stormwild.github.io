@@ -1,5 +1,6 @@
 {
-  "name": "",
+  "name": "stormwild.github.io",
+  "description": "Website of Alexander Torrijos - Web Developer",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +10,20 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormwild/stormwild.github.io.git"
+  },
+  "keywords": [
+    "github",
+    "stormwild"
+  ],
+  "author": "Alexander R. Torrijos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stormwild/stormwild.github.io/issues"
+  },
+  "homepage": "https://github.com/stormwild/stormwild.github.io#readme",
   "dependencies": {
     "astro": "^3.2.0"
   }
