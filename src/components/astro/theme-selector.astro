@@ -1,0 +1,54 @@
+---
+
+---
+
+<div class='container'>
+  <h1>Theme Switcher Example</h1>
+  <label for='theme'>Select Theme:</label>
+  <select id='theme'>
+    <option value='auto'>Auto</option>
+    <option value='light'>Light</option>
+    <option value='dark'>Dark</option>
+  </select>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeSelector: HTMLSelectElement | null =
+      document.querySelector('#theme')
+
+    if (themeSelector !== null) {
+      // Load saved theme from localStorage or default to 'auto'
+      const savedTheme = localStorage.getItem('theme') || 'auto'
+      themeSelector.value = savedTheme
+      applyTheme(savedTheme)
+
+      themeSelector?.addEventListener('change', (e) => {
+        const selectedTheme = (e.target as HTMLSelectElement).value
+        localStorage.setItem('theme', selectedTheme)
+        applyTheme(selectedTheme)
+      })
+    }
+  })
+
+  function applyTheme(theme: string) {
+    if (theme === 'auto') {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        document.documentElement.setAttribute('data-theme', 'dark')
+      } else {
+        document.documentElement.removeAttribute('data-theme')
+      }
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+  }
+</script>
+
+<style>
+  .container {
+    padding: 1rem;
+  }
+</style>
