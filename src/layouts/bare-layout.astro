@@ -1,12 +1,9 @@
 ---
-import '@styles/tw-base.css'
-
 interface Props {
   title: string
-  bodyClasses: string
 }
 
-const { title, bodyClasses } = Astro.props
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -18,7 +15,7 @@ const { title, bodyClasses } = Astro.props
     <meta name='generator' content={Astro.generator} />
     <title>{title} - Stormwild</title>
   </head>
-  <body class={bodyClasses}>
+  <body>
     <slot />
   </body>
 </html>

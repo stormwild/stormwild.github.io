@@ -1,10 +1,11 @@
 ---
-import '@styles/tw-base.css'
-// import DefaultLayout from '@layouts/DefaultLayout.astro'
 import TailwindLayout from '@layouts/tailwind-layout.astro'
 ---
 
-<TailwindLayout title='Tailwind Sample Page'>
+<TailwindLayout
+  title='Tailwind Sample Page'
+  bodyClasses='antialiased bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400'
+>
   <header>
     <nav
       class='flex flex-wrap
