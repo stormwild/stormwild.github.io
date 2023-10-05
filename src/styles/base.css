@@ -1,7 +1,8 @@
 :root {
   /* Typography */
-  --font-family: 'Helvetica, Arial, sans-serif';
-  --font-size-base: 16px;
+  --font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-size-base: 1.375rem;
   --line-height: 1.5;
 
   /* Colors */
@@ -21,6 +22,12 @@
   --dark-bg: #121212;
   --dark-text: #ffffff;
   --dark-border: #333333;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
 }
 
 [data-theme='light'] {

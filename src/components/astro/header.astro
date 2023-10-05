@@ -1,0 +1,27 @@
+---
+import ThemeSelector from '@components/astro/theme-selector.astro'
+import Logo from '@components/astro/logo.astro'
+---
+
+<header>
+  <Logo />
+  <ThemeSelector />
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-4);
+  }
+
+  [data-theme='light'] header {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+  }
+
+  [data-theme='dark'] header {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+</style>

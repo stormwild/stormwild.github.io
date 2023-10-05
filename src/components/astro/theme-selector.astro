@@ -2,20 +2,16 @@
 
 ---
 
-<div class='container'>
-  <h1>Theme Switcher Example</h1>
-  <label for='theme'>Select Theme:</label>
-  <select id='theme'>
-    <option value='auto'>Auto</option>
-    <option value='light'>Light</option>
-    <option value='dark'>Dark</option>
-  </select>
-</div>
+<select id='theme-selector'>
+  <option value='auto'>Auto</option>
+  <option value='light'>Light</option>
+  <option value='dark'>Dark</option>
+</select>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const themeSelector: HTMLSelectElement | null =
-      document.querySelector('#theme')
+      document.querySelector('#theme-selector')
 
     if (themeSelector !== null) {
       // Load saved theme from localStorage or default to 'auto'
