@@ -1,0 +1,79 @@
+---
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+---
+
+<BootstrapLayout title='Bootstrap'>
+  <div class='container-fluid'>
+    ...
+    <h1>Bootstrap</h1>
+    <p>Sample bootstrap page</p>
+
+    <table class='table'>
+      <thead>
+        <tr>
+          <th scope='col'>#</th>
+          <th scope='col'>First</th>
+          <th scope='col'>Last</th>
+          <th scope='col'>Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope='row'>1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope='row'>2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope='row'>3</th>
+          <td colspan='2'>Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class='toast'>toast</div>
+
+    <p class='d-inline-flex gap-1'>
+      <a
+        class='btn btn-primary'
+        data-bs-toggle='collapse'
+        href='#collapseExample'
+        role='button'
+        aria-expanded='false'
+        aria-controls='collapseExample'
+      >
+        Link with href
+      </a>
+      <button
+        class='btn btn-primary'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#collapseExample'
+        aria-expanded='false'
+        aria-controls='collapseExample'
+      >
+        Button with data-bs-target
+      </button>
+    </p>
+    <div class='collapse' id='collapseExample'>
+      <div class='card card-body'>
+        Some placeholder content for the collapse component. This panel is
+        hidden by default but revealed when the user activates the relevant
+        trigger.
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>
+
+<script>
+  import 'bootstrap/js/dist/collapse.js'
+
+  console.log('bootstrap loaded')
+</script>
