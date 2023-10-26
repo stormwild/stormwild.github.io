@@ -1,0 +1,15 @@
+---
+import Header from '@components/astro/old-site/header.astro'
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<BootstrapLayout title={title}>
+  <Header />
+  <slot />
+</BootstrapLayout>
