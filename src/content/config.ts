@@ -1,6 +1,6 @@
 import { z, defineCollection } from 'astro:content'
 
-const skillsCollection = defineCollection('skills', {
+const skillsCollection = defineCollection({
   type: 'data',
   schema: z.object({
     skill: z.string(),
@@ -11,5 +11,5 @@ const skillsCollection = defineCollection('skills', {
 })
 
 export const collections = {
-  skills: skillsCollection,
+  'skills': skillsCollection,
 }
