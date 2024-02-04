@@ -1,0 +1,32 @@
+:root {
+    /* Primary */
+    --color-primary: hsl(208, 100%, 53%); /* #007bff */
+    --color-primary-light: hsl(208, 100%, 66%); /* #3d9bff */
+    --color-primary-dark: hsl(208, 100%, 35%); /* #0056b3 */
+  
+    /* Secondary */
+    --color-secondary: hsl(210, 9%, 47%); /* #6c757d */
+    --color-secondary-light: hsl(0, 0%, 63%); /* #a1a1a1 */
+    --color-secondary-dark: hsl(210, 9%, 30%); /* #494f54 */
+  
+    /* Success */
+    --color-success: hsl(123, 64%, 41%); /* #28a745 */
+    --color-success-light: hsl(123, 64%, 60%); /* #62d96b */
+    --color-success-dark: hsl(123, 64%, 23%); /* #1e7e34 */
+  
+    /* Error */
+    --color-error: hsl(354, 70%, 54%); /* #dc3545 */
+    --color-error-light: hsl(354, 100%, 66%); /* #ff6b75 */
+    --color-error-dark: hsl(354, 70%, 39%); /* #c82333 */
+  
+    /* Warning */
+    --color-warning: hsl(45, 100%, 50%); /* #ffc107 */
+    --color-warning-light: hsl(45, 100%, 67%); /* #ffd454 */
+    --color-warning-dark: hsl(45, 100%, 55%); /* #ffca2c */
+  
+    /* Info */
+    --color-info: hsl(188, 78%, 41%); /* #17a2b8 */
+    --color-info-light: hsl(188, 78%, 63%); /* #53c7d1 */
+    --color-info-dark: hsl(188, 78%, 30%); /* #127991 */
+  }
+  

@@ -1,0 +1,12 @@
+:root {
+    /* Light theme */
+    --color-text: hsl(210, 10%, 13%); /* #212529 */
+    --color-background: hsl(0, 0%, 100%); /* #ffffff */
+    --color-border: hsl(210, 16%, 82%); /* #dee2e6 */
+  
+    /* Dark theme */
+    --color-text-dark: hsl(210, 4%, 98%); /* #f8f9fa */
+    --color-background-dark: hsl(217, 12%, 23%); /* #343a40 */
+    --color-border-dark: hsl(214, 9%, 31%); /* #495057 */
+  }
+  
