@@ -29,16 +29,13 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "latest"
     }
-  },
+  }
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": [
-    ". ${NVM_DIR}/nvm.sh && nvm install --lts",
-    "npm install"
-  ]
+  // "postCreateCommand": {}
 
   // Configure tool-specific properties.
   // "customizations": {},
