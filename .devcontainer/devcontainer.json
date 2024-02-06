@@ -12,24 +12,12 @@
     "vscode": {
       "extensions": [
         "ginfuru.vscode-jekyll-syntax",
-        "yzhang.markdown-all-in-one",
-        "neilding.language-liquid",
-        "rebornix.Ruby",
-        "leizongmin.node-module-intellisense",
-        "dbaeumer.vscode-eslint",
-        "christian-kohler.npm-intellisense",
-        "eg2.vscode-npm-script",
-        "ritwickdey.liveserver",
         "shopify.ruby-lsp"
       ]
     }
   },
   // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "latest"
-    }
-  }
+  "features": {  }
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
