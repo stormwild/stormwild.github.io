@@ -16,8 +16,8 @@ Website of Alexander R. Torrijos
 
 Git clone this repository
 
-```
-npm install
+```sh
+pnpm install
 bundle install
 bundle exec jekyll serve --host $IP --port $PORT --watch --drafts
 npm run start
