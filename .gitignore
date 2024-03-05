@@ -89,7 +89,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+#dist
 
 # Gatsby files
 .cache/
@@ -144,7 +144,6 @@ site/_site/
 coverage
 .ruby-version
 .sass-cache
-
 
 .c9/
 
