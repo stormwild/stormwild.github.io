@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>DBA - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">DBA</h1></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Database Administration Notes</p>
+
+<p>Database replication and synchronization</p>
+
+<p>Resources:</p>
+
+<p><a href="http://stackoverflow.com/questions/7707859/mysql-database-sync-between-two-databases">Mysql database sync between two databases</a></p>
+
+<p><a href="https://dba.stackexchange.com/questions/65351/sync-two-mysql-databases-in-two-different-locations">Sync two MySQL databases in two different locations</a></p>
+
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication.html">Replication</a></p>
+
+<p><a href="https://dev.mysql.com/doc/workbench/en/wb-database-synchronization.html">Database Synchronization</a></p>
+
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/binary-log.html">Binary Log</a></p>
+
+<p><a href="http://codeinthehole.com/tips/how-to-sync-a-mysql-table-between-two-remote-databases/">How to sync a MySQL table between two remote databases.</a></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nv">$tableName</span> <span class="o">=</span> <span class="s1">'some_table'</span><span class="p">;</span>
+<span class="nv">$sql</span> <span class="o">=</span>
+   <span class="s2">"SELECT * 
+    FROM </span><span class="nv">$tableName</span><span class="s2">"</span><span class="p">;</span>
+<span class="nv">$pathToCsv</span> <span class="o">=</span> <span class="s1">'/tmp/some-file.csv'</span><span class="p">;</span>
+<span class="nv">$command</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s2">"mysql -h %s -u %s  --password=%s -D %s -e '%s' &gt; %s"</span><span class="p">,</span>
+    <span class="s1">'10.0.0.2'</span><span class="p">,</span> 
+    <span class="s1">'db-user'</span><span class="p">,</span> 
+    <span class="s1">'db-password'</span><span class="p">,</span> 
+    <span class="s1">'database_name'</span><span class="p">,</span> 
+    <span class="nv">$sql</span><span class="p">,</span> 
+    <span class="nv">$pathToCsv</span><span class="p">);</span>
+<span class="nb">exec</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+
+<span class="nv">$sql</span> <span class="o">=</span>
+   <span class="s2">"LOAD DATA LOCAL INFILE '</span><span class="nv">$pathToCsv</span><span class="s2">'
+    REPLACE INTO TABLE `</span><span class="nv">$tableName</span><span class="s2">`
+    CHARACTER SET 'utf8'
+    IGNORE 1 LINES"</span><span class="p">;</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span> <span class="c1">// Using your favourite database adapter</span>
+</code></pre></div></div>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"> </ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

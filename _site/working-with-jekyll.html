@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Working With Jekyll - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Working With Jekyll</h1><p class="text-muted"><small>14 Dec 2014</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>I’m still learning how to use Jekyll, a static-site generator, used with <a href="https://pages.github.com/">Github Pages</a>. It’s basically a <a href="http://guides.rubygems.org/what-is-a-gem/">ruby gem</a>, which is a library of ruby code, that compiles a directory of various file formats, primarily Markdown, into html pages.</p>
+
+<blockquote>
+  <p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through Markdown (or Textile) and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
+
+  <p>Source <a href="http://jekyllrb.com/">Jekyllrb.com</a></p>
+</blockquote>
+
+<p>It has been a bit of a struggle for me to get the hang of Jekyll.  I hope to learn more about how to use it to generate my User Github Page.</p>
+
+<p>I just learned that I had to use Liquid template tags to get code highlighting.</p>
+
+<blockquote>
+  <p><a href="http://liquidmarkup.org/">Liquid</a> is an extraction from the e-commerce system <a href="http://www.shopify.com/">Shopify</a></p>
+</blockquote>
+
+<p>Ruby</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">what?</span>
+  <span class="mi">42</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>CSharp (C#)</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Greeting</span> 
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">_greeting</span> <span class="p">=</span> <span class="s">"Hello World."</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">Greeting</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Greeting</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_greeting</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Example Liquid snippet:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% highlight php %}
+    // your code here
+    echo "Hello";
+{% endhighlight %}
+</code></pre></div></div>
+
+<p>To display Liquid tags I had to use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ % raw % }
+{ % endraw % }
+// but without the space between { and % as shown above
+</code></pre></div></div>
+
+<p>I also learned that you can specify line numbers by using <code class="language-plaintext highlighter-rouge">linenos</code> or <code class="language-plaintext highlighter-rouge">linenos=table</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% highlight ruby linenos %}
+def what?
+  42
+end
+{% endhighlight %}
+</code></pre></div></div>
+
+<p>However, due to problems with the mark-up generated, a better solution would be to create the line numbers using <a href="https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html">css</a> instead.</p>
+
+<h2 id="styling-html-output">Styling HTML Output</h2>
+
+<p>Basics
+In order to specify additional attributes to output in the html on the element, you start it with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{: }
+</code></pre></div></div>
+
+<p>To specify a class it is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{:.MyClass}
+</code></pre></div></div>
+
+<p>To specify a title attribute it is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{:title="My Title"}
+</code></pre></div></div>
+
+<ul>
+  <li><a href="http://digitaldrummerj.me/styling-jekyll-markdown/">Jekyll Tip: Adding Styling To Html Output</a></li>
+</ul>
+
+<p>References:</p>
+
+<ol>
+  <li><a href="https://pages.github.com/">Github Pages</a></li>
+  <li><a href="http://guides.rubygems.org/what-is-a-gem/">What is a gem?</a></li>
+  <li><a href="http://jekyllrb.com/">Jekyllrb.com</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
+  <li><a href="http://liquidmarkup.org/">Liquid</a></li>
+  <li><a href="http://sarathlal.com/escape-liquid-template-tags-in-jekyll-posts/">Escape Liquid template tags in Jekyll posts</a></li>
+  <li><a href="http://www.shopify.com/">Shopify</a></li>
+  <li><a href="https://reanimus.github.io/2014/04/14/fun-times-with-jekylls-code-highlighting.html">CSS Line Nos</a></li>
+  <li><a href="http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/">Build A Blog With Jekyll And GitHub Pages</a></li>
+</ol>
+
+</article><br><nav aria-label="Page navigation"><ul class="pagination"> <li class="page-item"><a class="page-link" href="/studying-owin">Studying Owin &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Binary - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Binary</h1></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Notes on understanding binary, decimal, hexadecimal numbers and conversions.</p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+
+<ul>
+  <li>Convert from binary to decimal and vice versa</li>
+  <li>Convert from binary to hexadecimal and vice versa</li>
+  <li>Convert from hexadecimal to decimal and vice versa</li>
+</ul>
+
+<h3 id="decimals-or-base-10">Decimals or Base 10</h3>
+
+<p>Decimal system uses 10 as a base and the numbers range from 0 to 9.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>129 = 100 + 20 + 9
+
+9 = 9 * 10^0 (Note that 10^0 is equal to 1)
+20 = 2 * 10^1
+100 = 1 * 10^2
+
+Powers of ten
+
+10^0 = 1
+10^1 = 10
+10^2 = 100
+10^3 = 1000
+</code></pre></div></div>
+
+<h3 id="binary-or-base-2">Binary or Base 2</h3>
+
+<p>Binary numbers are base 2 numbers and have only two values: 0 and 1.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Binary 101 has 1 in the units column, 0 in the 2s column and 1 in the 4s column.
+
+1 = 1 * 2^0 units
+0 = 0 * 2^1 twos
+1 = 1 * 2^2 fours
+
+2^0 = 1
+2^1 = 2
+2^2 = 4
+2^3 = 8
+</code></pre></div></div>
+
+<h3 id="binary-to-decimal-conversion">Binary To Decimal Conversion</h3>
+
+<p>Convert <code class="language-plaintext highlighter-rouge">101</code> to decimal</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1 * 1) + (0 * 2) + (1 * 4) = 5
+</code></pre></div></div>
+
+<p>Convert <code class="language-plaintext highlighter-rouge">111</code> to decimal</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1 * 1) + (1 * 2) + (1 * 4) = 7
+</code></pre></div></div>
+
+<p>8 bits equals 1 byte</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  0   0   0   0  0  0  0  0
+128  64  32  16  8  4  2  1
+</code></pre></div></div>
+
+<p>Resources</p>
+
+<p><a href="http://www.steves-internet-guide.com/binary-numbers-explained/">Binary Numbers Explained – Beginners Guide</a></p>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"> </ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

@@ -1,0 +1,1047 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Blog - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Blog</h1><p class="lead">Just some notes mostly</p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><div class="list-group">
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/flexbox-notes">Flexbox Notes</a></h5>
+			<small>24 Feb 2018</small>
+		</div>
+		<div class="mb-1">Bootstrap 4 is released and it uses Flexbox. Time to get up to speed on this useful css module.</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/aspnetcore-i18n-notes">ASP .NET Core i18n notes</a></h5>
+			<small>07 Oct 2017</small>
+		</div>
+		<div class="mb-1">Notes on internationalization in ASP .NET Core applications</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/make">Make</a></h5>
+			<small>20 Sep 2017</small>
+		</div>
+		<div class="mb-1">GNU Make is an automation tool for compiling and building applications and is part of the GNU Toolchain.</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/flow">Flow</a></h5>
+			<small>02 Sep 2017</small>
+		</div>
+		<div class="mb-1">Flow is a static type checker for your JavaScript code.</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/php7-zero-day-exploits-found">PHP7 Zero Day Exploits Found</a></h5>
+			<small>01 Jan 2017</small>
+		</div>
+		<div class="mb-1"><p><a href="http://thehackernews.com/">The Hacker News</a> reported <a href="http://thehackernews.com/2016/12/php-7-update.html">Zero Day exploits found in PHP7</a>.</p>
+
+<blockquote>
+  <p>The critical vulnerabilities reside in the unserialized mechanism in PHP 7 – the same mechanism that was found to be vulnerable in PHP 5 as well, allowing hackers to compromise Drupal, Joomla, Magento, vBulletin and PornHub websites and other web servers in the past years by sending maliciously crafted data in client cookies.[1]</p>
+</blockquote>
+
+<blockquote>
+  <p>unserialize is a dangerous function. It has been proven over and over in the last years, yet it is still used in the wild. [2]</p>
+</blockquote>
+
+<p>Resources:</p>
+
+<ol>
+  <li><a href="http://thehackernews.com/2016/12/php-7-update.html" target="_blank">3 Critical Zero-Day Flaws Found in PHP 7 — One Remains Unpatched!</a></li>
+  <li><a href="http://blog.checkpoint.com/wp-content/uploads/2016/08/Exploiting-PHP-7-unserialize-Report-160829.pdf" target="_blank">Exploiting PHP-7
+unserialize (pdf)</a></li>
+  <li><a href="http://php.net/manual/en/function.unserialize.php" target="_blank">unserialize</a></li>
+  <li><a href="http://blog.checkpoint.com/wp-content/uploads/2016/12/PHP_Technical_Report.pdf" target="_blank">CHECK POINT DISCLOSES 3 PHP 0-DAYS (pdf)</a></li>
+  <li><a href="https://lab.dsst.io/slides/33c3/7858.html" target="_blank">Exploiting PHP7 unserialize (slides)</a></li>
+</ol>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/phpexcel-notes">PHPExcel Notes</a></h5>
+			<small>23 Sep 2016</small>
+		</div>
+		<div class="mb-1"><p>Notes from initial research on <a href="https://github.com/PHPOffice/PHPExcel">PHPExcel</a>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$excel</span> <span class="o">=</span> <span class="n">PHPExcel_IOFactory</span><span class="o">::</span><span class="nf">load</span><span class="p">(</span><span class="nv">$full_path</span><span class="p">);</span>
+
+<span class="nv">$worksheet</span> <span class="o">=</span> <span class="nv">$excel</span><span class="o">-&gt;</span><span class="nf">getActiveSheet</span><span class="p">();</span>
+
+<span class="nv">$sheetCount</span> <span class="o">=</span> <span class="nv">$excel</span><span class="o">-&gt;</span><span class="nf">getSheetCount</span><span class="p">();</span>
+
+<span class="nv">$sheetNames</span> <span class="o">=</span> <span class="nv">$excel</span><span class="o">-&gt;</span><span class="nf">getSheetNames</span><span class="p">();</span>
+
+<span class="nv">$datasheet</span> <span class="o">=</span> <span class="nv">$excel</span><span class="o">-&gt;</span><span class="nf">getSheetByName</span><span class="p">(</span><span class="s1">'data'</span><span class="p">);</span> <span class="c1">// returns null if name does not exist</span>
+</code></pre></div></div>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/aws-vpc-notes">AWS VPC Notes</a></h5>
+			<small>12 Sep 2016</small>
+		</div>
+		<div class="mb-1"><p>Notes from initial research on VPC</p>
+
+<h1 id="amazon-virtual-private-cloud">Amazon Virtual Private Cloud</h1>
+
+<h2 id="ec2">EC2</h2>
+
+<p>In 2006 Amazon EC2 was launched.</p>
+
+<ul>
+  <li>1 Public IP adddress(/Elastic IP)</li>
+  <li>DNS hostname</li>
+  <li>Security Group Ingress Filtering</li>
+</ul>
+
+<p>Later they also provided</p>
+
+<ul>
+  <li>Private IP addresses</li>
+  <li>Internal DNS hostname to each instance</li>
+</ul>
+
+<p>In 2009 Amazon VPC was launched.</p>
+
+<p>In 2011 marked enhancements to EC2.</p>
+
+<ul>
+  <li>Security Group now provided ingress and egress filtering</li>
+  <li>Direct Internet connectivity</li>
+  <li>Routing Tables</li>
+  <li>Network ACLS to controll traffic between subnets</li>
+</ul>
+
+<p>The same year also saw updates to VPC.</p>
+
+<ul>
+  <li>Multiple IP addresses</li>
+  <li>Multiple network interfaces</li>
+  <li>Dedicated instances</li>
+  <li>Statically Routed VPN connections</li>
+</ul>
+
+<p>March 2013 saw the launch of default VPC to EC2.</p>
+
+<ul>
+  <li>Automatically provisioned VPC were called default VPC</li>
+  <li>DNS Hostnames</li>
+  <li>DNS name resolution</li>
+  <li>ElasticCache</li>
+  <li>RDS IP Addresses</li>
+</ul>
+
+<h2 id="vpc">VPC</h2>
+
+<h3 id="notes-from-the-aws-reinvent-video">Notes from the AWS ReInvent video</h3>
+
+<h3 id="subnet">Subnet</h3>
+
+<ul>
+  <li>Create a subnet in all availability zones(AZ) in a region</li>
+  <li>For example: <img src="uploads/aws-vpc-fig-1.png" alt="Subnet in AZ" title="AWS VPC: Assign Subnets to Each AZ" /></li>
+  <li>Multiple subnets in each AZ</li>
+  <li>Enable auto assignment of public ip address to any EC2 instance launched in the VPC</li>
+</ul>
+
+<h3 id="route">Route</h3>
+
+<ul>
+  <li>Each VPC comes with a default <a href="https://en.wikipedia.org/wiki/Routing_table">Routing Table (RIB)</a></li>
+  <li>Assign different Routing Tables to each subnet</li>
+  <li>Default Route Table has one rule <code class="language-plaintext highlighter-rouge">172.31.0.0/16 local active</code> which means that connections from EC2 instances in the VPC are routed locally.</li>
+</ul>
+
+<h3 id="internet-gateway">Internet Gateway</h3>
+
+<ul>
+  <li>An Internet Gateway is a resource you can create an attached to your VPC</li>
+  <li>“A thing you send packets to if you want them to go to the internet”</li>
+  <li>In your Route Table create a rule as shown: <code class="language-plaintext highlighter-rouge">0.0.0.0/0 igw-3376c756</code></li>
+  <li>In a Route Table the more specific rule that can be applied dominates</li>
+  <li>“Q: What is an Internet Gateway? Is it a router, a thing within the Amazon Data Center? Is it a single point of failure? A: It is a thing. It’s a highly available lots of things that gets traffic from the internet to your VPC. It’s an abstraction that just works.”</li>
+</ul>
+
+<h3 id="authorizing-traffic-network-acls-security-groups">Authorizing Traffic: Network ACLs Security Groups</h3>
+
+<h4 id="network-acls">Network ACLs</h4>
+
+<ul>
+  <li>In a traditional network, Network ACLs are analogous to stateless firewall rules.</li>
+  <li>The rules in a network acl gets applied in the order specified, ex. 100 (Rule #) All Traffic(Type) All (Protocol) All(Port) 0.0.0.0/0 (Port Range) Allow (Allow\Deny)</li>
+  <li>You can transfer rules from your network firewall to network acls</li>
+</ul>
+
+<h4 id="security-groups">Security Groups</h4>
+
+<ul>
+  <li>Architect your security groups the way you architect your applications</li>
+  <li>For example you have instances that act as web servers and instances that function as your backend applications/database servers.</li>
+  <li>You would want internet traffic to be available to your web servers but not to your backend instances.</li>
+  <li>Your backend instances should only allow connections from your web server instances.</li>
+</ul>
+
+<p>Example Rule:</p>
+
+<p>For the web server instances</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type      Protocol    Port    Source 
+HTTP<span class="o">(</span>80<span class="o">)</span>  TCP         80      0.0.0.0/0
+</code></pre></div></div>
+
+<p>For the backend services</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type            Protocol    Port    Source 
+Custom Rule     TCP         2365    sg-123456
+</code></pre></div></div>
+
+<p>Note:</p>
+
+<ul>
+  <li>You can reference another security group as source of this rule. In the above example sg-12345 is the security group applied to the webservers. In an elastic setup where you are adding and removing web server instances this rules applies to any instances that are assigned to the specified security group.</li>
+  <li>Ingress (inbound), egress (outbound) rules can be defined</li>
+  <li>Best Practice is to reference other security groups as show in the backend rule above.</li>
+  <li>In practice there is a 1:1 relationship between an IAM role and a security group.</li>
+</ul>
+
+<h3 id="connectivity-options-for-vpc-aside-from-just-internet-connections">Connectivity Options for VPC (aside from just internet connections)</h3>
+
+<p>Three examples</p>
+
+<ul>
+  <li>Subnet routing</li>
+  <li>Connecting to other VPCs</li>
+  <li>Connecting to your corporate network</li>
+</ul>
+
+<h4 id="subnet-routing">Subnet Routing</h4>
+
+<ul>
+  <li>Private Subnet(Internal) - Subnet without connection to the internet</li>
+  <li>Public Subnet(Internet connected) - Subnet with a connection to the internet</li>
+</ul>
+
+<p>In the example given above you can put your web server instances and backend servers into different subnets. In one subnet you can have a route to the internet and the other subnet has no route to the internet. This allows you to be sure that your backend end instances will have no way of being accessible from the internet. It may happen that you may want to allow internet traffic to your backend servers. What you can then do is setup an EC2 instance on the internet connected subnet and have it function as a <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network address translation)</a>. Then your backend subnet can have a route of 0.0.0.0/0 to your NAT EC2 instance which is on your public subnet. Instead of manually setting up your NAT EC2 instance, there is already a NAT AMI for that (amzn-ami-vpc-nat).</p>
+
+<h4 id="connecting-to-other-vpcs-vpc-peering">Connecting to other VPCs: VPC Peering</h4>
+
+<p>There are some scenarios which you may want to run multiple VPCs.</p>
+
+<p>In a large corporate network you may want to give individual teams their own VPC. But you also have commone/core services (such as scanning, logging, monitoring, authentication) in which all teams would have access to.</p>
+
+<ul>
+  <li>Initiate a peering request</li>
+  <li>Accept a peering request</li>
+  <li>Create routes from one to the other</li>
+</ul>
+
+<h4 id="connecting-to-your-network-aws-hardware-vpn-aws-direct-connect">Connecting to your network: AWS Hardware VPN, AWS Direct Connect</h4>
+
+<p>Extend your network to your VPC</p>
+
+<ul>
+  <li>VPN</li>
+  <li>Direct Connect</li>
+</ul>
+
+<h5 id="vpn">VPN</h5>
+
+<p>A VPN consists of a Customer Gateway which is a network device on one end of the VPN connection and a Virtual Gateway on the VPC side of the VPN connection.</p>
+
+<p>Once you have these setup you get a pair of IPSEC tunnels.</p>
+
+<p>On your VPC create a route to your Corporate Data Center.</p>
+
+<h5 id="direct-connect">Direct Connect</h5>
+
+<p>A dedicated line with lower per GB data transfer rates
+For highest availability use both</p>
+
+<h3 id="dns-in-a-vpc">DNS in a VPC</h3>
+
+<p>In your VPC settings:</p>
+
+<ul>
+  <li>DNS resolution: yes</li>
+  <li>DNS hostnames: yes</li>
+</ul>
+
+<p>Note: When set to yes, your VPC uses Amazon DNS servers</p>
+
+<p>EC2 instances in a VPC using Amazon DNS gets two hostnames:</p>
+
+<ul>
+  <li>Internet DNS hostname <code class="language-plaintext highlighter-rouge">ip-12345</code> which resolves to your instances private ip address</li>
+  <li>External DNS name when access from the internet resolves to the public ip and when accessed from within the VPC resolves to the private ip.</li>
+</ul>
+
+<p>Amazon Route 53 can allow you to create private hosted zones
+Private hosted zone - your own world of dns in your VPC
+Basically you can create a private hosted zone assign it to your VPC and map a domain name to an ip address within your vpc.</p>
+
+<p>VPC Flow Logs</p>
+
+<p>Full meta data dump of all packets to your EC2 instances, not only the packets that succeed but also the packets your security groups are rejecting.</p>
+
+<p>Amazon VPC Endpoints for S3</p>
+
+<p>A wormhole from your VPC to your S3</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://youtu.be/5_bQ6Dgk6k8">AWS re:Invent 2015 - VPC Fundamentals and Connectivity Options</a></li>
+  <li><a href="https://youtu.be/B8vnhRJDujw">Deep Dive: Amazon Virtual Private Cloud</a></li>
+  <li><a href="https://dzone.com/articles/aws-vpc-networking-beginners">AWS - VPC Networking for Beginners</a></li>
+  <li><a href="http://cloudacademy.com/blog/how-and-why-to-use-vpc-for-your-amazon-aws-infrastructure/">Amazon VPC: 5 reasons to use and learn it… with Cloud Academy!</a></li>
+  <li><a href="https://aws.amazon.com/documentation/vpc/">Amazon Virtual Private Cloud Documentation</a></li>
+</ul>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/awesome-gulp-tutorials">Awesome Gulp Tutorials</a></h5>
+			<small>09 May 2016</small>
+		</div>
+		<div class="mb-1"><p><a href="https://css-tricks.com/gulp-for-beginners/">Gulp for Beginners</a></p>
+
+<p><a href="http://www.sitepoint.com/simple-gulpy-workflow-sass/">A Simple Gulp’y Workflow For Sass</a></p>
+
+<p><a href="https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js">Automate Your Tasks Easily with Gulp.js</a></p>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/jekyll-permalinks-and-redirects">Jekyll Permalinks and Redirects</a></h5>
+			<small>24 Mar 2016</small>
+		</div>
+		<div class="mb-1"><p>I recently changed the permalinks for my blog posts in my Github Jekyll Blog. I also added redirects from the previous urls to the new one.</p>
+
+<p>By default blog post urls are prepended with the filename date.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2014/12/14/working-with-jekyll/
+</code></pre></div></div>
+
+<p>To create a new permalink just add the permalink in the front matter of the post.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+permalink: working-with-jekyll
+---
+</code></pre></div></div>
+
+<p>However I also wanted to have the older links redirect to the new permalink of the post.</p>
+
+<p>To do that I used the jekyll-redirect-from plugin. Just follow the <a href="https://github.com/jekyll/jekyll-redirect-from#installation">installation steps</a>.</p>
+
+<p>And in your post frontmatter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: Working With Jekyll
+permalink: working-with-jekyll
+redirect_from: 2014/12/14/working-with-jekyll/
+---
+</code></pre></div></div>
+
+<p>References</p>
+
+<ol>
+  <li><a href="http://stackoverflow.com/questions/27099427/jekyll-filename-without-date">Jekyll Filename Without Date</a></li>
+  <li><a href="http://stackoverflow.com/questions/10178304/github-jekyll-old-pages-redirection-best-approach/19717455#19717455">Github - Jekyll - Old pages redirection - best approach</a></li>
+  <li><a href="https://github.com/jekyll/jekyll-redirect-from">JekyllRedirectFrom</a></li>
+  <li><a href="https://help.github.com/articles/redirects-on-github-pages/">Redirects on GitHub Pages</a></li>
+</ol>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/running-jekyll-github-pages-on-cloud9">Running Jekyll Github Pages on Cloud9</a></h5>
+			<small>24 Dec 2015</small>
+		</div>
+		<div class="mb-1"><p>Develop and run your <a href="https://help.github.com/articles/using-jekyll-with-pages/">Jekyll Github Pages</a> on <a href="https://c9.io/?redirect=0">Cloud9</a></p>
+
+<h2 id="create-a-new-workspace">Create a new workspace</h2>
+
+<p>Create a new workspace using either a custom template or the ruby template.</p>
+
+<p>If you choose the Ruby template you need to delete the default rails project in the workspace directory or delete the directory.</p>
+
+<p>A workspace folder will be recreated with a hidden .c9 folder.</p>
+
+<p>Git is configured to ignore this folder.</p>
+
+<h2 id="install-jekyll-and-github-pages">Install Jekyll and Github Pages</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gem <span class="nb">install </span>jekyll github-pages
+</code></pre></div></div>
+
+<h2 id="initial-git-repository-on-workspace-folder">Initial Git Repository on Workspace Folder</h2>
+
+<p>Initial a git repository in the workspace folder.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init
+</code></pre></div></div>
+
+<p>Add your github pages repository as remote.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add origin &lt;your repository&gt;
+</code></pre></div></div>
+
+<p>Pull from the remote.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull origin master
+</code></pre></div></div>
+
+<h2 id="run-the-jekyll-server">Run the Jekyll Server</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jekyll serve <span class="nt">--host</span> <span class="nv">$IP</span> <span class="nt">--port</span> <span class="nv">$PORT</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">$IP</code> and <code class="language-plaintext highlighter-rouge">$PORT</code> provide the environment’s host ip and port.</p>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/disable-php-deprecated-warnings-in-wordpress">Disable PHP Deprecated Warnings in Wordpress</a></h5>
+			<small>22 Nov 2015</small>
+		</div>
+		<div class="mb-1"><p>When moving a WordPress site to a new server running the latest version of PHP5 (i.e. &gt; 5.3), PHP Warnings may appear.</p>
+
+<p>The following code will turn off these warnings even when WP_DEBUG is set to true</p>
+
+<p>In your <code class="language-plaintext highlighter-rouge">wp-includes/load.php</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="n">wp_debug_mode</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="no">WP_DEBUG</span> <span class="p">)</span> <span class="p">{</span>
+		<span class="nb">error_reporting</span><span class="p">(</span> <span class="kc">E_ALL</span> <span class="o">^</span> <span class="kc">E_NOTICE</span> <span class="o">^</span> <span class="kc">E_USER_NOTICE</span> <span class="p">);</span> <span class="c1">// changed from error_reporting( E_ALL );</span>
+	
+		<span class="k">if</span> <span class="p">(</span> <span class="no">WP_DEBUG_DISPLAY</span> <span class="p">)</span>
+			<span class="nb">ini_set</span><span class="p">(</span> <span class="s1">'display_errors'</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+		<span class="k">elseif</span> <span class="p">(</span> <span class="kc">null</span> <span class="o">!==</span> <span class="no">WP_DEBUG_DISPLAY</span> <span class="p">)</span>
+			<span class="nb">ini_set</span><span class="p">(</span> <span class="s1">'display_errors'</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+	
+		<span class="k">if</span> <span class="p">(</span> <span class="no">WP_DEBUG_LOG</span> <span class="p">)</span> <span class="p">{</span>
+			<span class="nb">ini_set</span><span class="p">(</span> <span class="s1">'log_errors'</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+			<span class="nb">ini_set</span><span class="p">(</span> <span class="s1">'error_log'</span><span class="p">,</span> <span class="no">WP_CONTENT_DIR</span> <span class="mf">.</span> <span class="s1">'/debug.log'</span> <span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nb">error_reporting</span><span class="p">(</span> <span class="kc">E_CORE_ERROR</span> <span class="o">|</span> <span class="kc">E_CORE_WARNING</span> <span class="o">|</span> <span class="kc">E_COMPILE_ERROR</span> <span class="o">|</span> <span class="kc">E_ERROR</span> <span class="o">|</span> <span class="kc">E_WARNING</span> <span class="o">|</span> <span class="kc">E_PARSE</span> <span class="o">|</span> <span class="kc">E_USER_ERROR</span> <span class="o">|</span> <span class="kc">E_USER_WARNING</span> <span class="o">|</span> <span class="kc">E_RECOVERABLE_ERROR</span> <span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="nb">defined</span><span class="p">(</span> <span class="s1">'XMLRPC_REQUEST'</span> <span class="p">)</span> <span class="p">)</span>
+		<span class="nb">ini_set</span><span class="p">(</span> <span class="s1">'display_errors'</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Reference:
+<a href="https://wordpress.org/support/topic/php-deprecated-warnings-on-every-screen">‘PHP Deprecated’ warnings on every screen</a></p>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/scroll-event-css3-animations">Scroll Event and CSS3 Animations</a></h5>
+			<small>18 Nov 2015</small>
+		</div>
+		<div class="mb-1">Listening for scroll events</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/spa-angularjs-mvc-google-maps">Sample SPA using AngularJs MVC5/Web API and Google Maps</a></h5>
+			<small>06 Jul 2015</small>
+		</div>
+		<div class="mb-1"><p>Created a sample .NET MVC5 Single Page application that displays a list of events and displays a Google map of the location for each event.</p>
+
+<p>A Next button allows the user to navigate each event such that the Google Map is updated with the address for the currently selected event.</p>
+
+<p>The application used AngularJs to retrieve data from the Web Api.</p>
+
+<p>It took me around 3 days to build and deploy the app. The first day I had to learn the basics of Angular. The second day was spent on the Google Maps api. And the third was spent in putting it all together in an .NET MVC/Web Api application and deployed to Azure Websites.</p>
+
+<p>Source Code: <a href="https://github.com/stormwild/StickyEvents">https://github.com/stormwild/StickyEvents</a></p>
+
+<p>Demo: <a href="http://stickyevents.azurewebsites.net/">http://stickyevents.azurewebsites.net/</a></p>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/p4-visual-merge-tool-with-git">Setup P4 Visual Merge Tool with Git</a></h5>
+			<small>24 Feb 2015</small>
+		</div>
+		<div class="mb-1"><ul>
+  <li>
+    <p><a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools">Download P4 Visual Merge Tool</a></p>
+  </li>
+  <li>
+    <p><a href="http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool">Install P4 Visual Merge Tool</a></p>
+  </li>
+</ul>
+
+<p>You can display list of supported tools by running:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git mergetool <span class="nt">--tool-help</span>
+</code></pre></div></div>
+
+<p>You should see p4merge in either available or valid list. If not, please update your git.</p>
+
+<p>If p4merge was listed as available, it is in your PATH and you only have to set merge.tool:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> merge.tool p4merge
+</code></pre></div></div>
+
+<p>If it was listed as valid, you have to define mergetool.p4merge.path in addition to merge.tool:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> mergetool.p4merge.path c:/Users/my-login/AppData/Local/Perforce/p4merge.exe
+</code></pre></div></div>
+
+<p>The above is an example path when p4merge was installed for the current user, not system-wide (does not need admin rights or UAC elevation)</p>
+
+<p>Although ~ should expand to current user’s home directory (so in theory the path should be <code class="language-plaintext highlighter-rouge">~/AppData/Local/Perforce/p4merge.exe)</code>, this did not work for me
+Even better would have been to take advantage of an environment variable (e.g. <code class="language-plaintext highlighter-rouge">$LOCALAPPDATA/Perforce/p4merge.exe</code>), git does not seem to be expanding environment variables for paths (if you know how to get this working, please let me know or update this answer)</p>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/git-tips">Git Tips (Rough Draft)</a></h5>
+			<small>24 Feb 2015</small>
+		</div>
+		<div class="mb-1"><p>Git Tips (Rough Draft)</p>
+
+<h4 id="creating-keys">Creating keys</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+
+$ ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+
+Generating public/private rsa key pair.
+# Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
+
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+# Enter same passphrase again: [Type passphrase again]
+
+Your identification has been saved in /c/Users/you/.ssh/id_rsa.
+# Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+
+# start the ssh-agent in the background
+$ ssh-agent -s
+# Agent pid 59566
+$ ssh-add ~/.ssh/id_rsa
+</code></pre></div></div>
+
+<p>On Windows to run ssh-agent</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ eval $(ssh-agent) &gt; /dev/null
+$ ssh-add ~/ssh/id_rsa
+Enter passphrase for /c/Users/Torrijos/.ssh/id_rsa:
+Identity added: /c/Users/Torrijos/.ssh/id_rsa (/c/Users/Torrijos/.ssh/id_rsa)
+</code></pre></div></div>
+
+<p>This will allow you to perform remote operations with Bitbucket, or any other remote service, without having to enter your private key passphrase everytime.</p>
+
+<h4 id="configuration">Configuration</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+user.name=Scott Chacon
+user.email=schacon@gmail.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
+# Shows a list of config settings
+</code></pre></div></div>
+
+<h5 id="set-name-and-email">Set name and email</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+</code></pre></div></div>
+
+<h5 id="configure-line-ending">Configure Line Ending</h5>
+
+<p>Todo</p>
+
+<h3 id="workflow">Workflow</h3>
+
+<h4 id="remotes">Remotes</h4>
+
+<p>View remotes</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote
+origin
+upstream
+</code></pre></div></div>
+
+<p>View remote urls</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --get remote.origin.url
+git@bitbucket.org:localrepo/development-wiki.git/wiki
+
+$ git config --get remote.upstream.url
+git@bitbucket.org:remoterepo/development-wiki.git/wiki
+</code></pre></div></div>
+
+<p>Add remote url</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add origin git@bitbucket.org:remoterepo/development-wiki.git/wiki
+# Set a new remote
+
+$ git remote -v
+# Verify new remote
+origin  git@bitbucket.org:localrepo/development-wiki.git/wiki (fetch)
+origin  git@bitbucket.org:localrepo/development-wiki.git/wiki (push)
+upstream        git@bitbucket.org:remoterepo/development-wiki.git/wiki (fetch)
+upstream        git@bitbucket.org:remoterepo/development-wiki.git/wiki (push)
+</code></pre></div></div>
+
+<p>Change remote url</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote rename origin destination
+# Change remote name from 'origin' to 'destination' 
+
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY2.git
+# Change the url for an existing remote
+</code></pre></div></div>
+
+<p>…
+other topics here</p>
+
+<h4 id="updating-local-branch">Updating Local branch</h4>
+
+<p>From local branch</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull --rebase upstream develop
+# Rewrites current branch to match remote and replay your local changes on top
+$ git pull --rebase -s recursive -X theirs upstream develop
+# Does the same except any conflicts favors your local branch's changes
+# Thus you may lose changes from the remote using this.
+</code></pre></div></div>
+
+<p>Sometimes you may need to abort a rebase:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase --abort
+</code></pre></div></div>
+
+<p>or a merge</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge --abort
+</code></pre></div></div>
+
+<p>When merging another branch onto your current branch, it may be good to merge all changes into one commit</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge --squash otherbranch
+</code></pre></div></div>
+
+<p>then</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m 'Consolidated commits from other branch'
+</code></pre></div></div>
+
+<p>In case of merge conflicts you can also use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge -s recursive -X ours otherbranch or 
+
+$ git merge --squash -s recursive -X ours otherbranch
+# This favors your current branch's changes rather than the other branch.
+</code></pre></div></div>
+
+<p>For actually resolving merge and rebase conflicts, open the repository with a git GUI application, i.e. Git Extensions, Atlassian SourceTree, etc.</p>
+
+<p>Launch the merge tool, KDiff or Perforce P4 Merge to resolve conflicts.</p>
+
+<h4 id="update-remote-branch-list-on-local">Update Remote Branch List On Local</h4>
+
+<p>To get a copy of branch list on remote</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git fetch</code> or <code class="language-plaintext highlighter-rouge">$ git fetch upstream</code></p>
+
+<p>If you are sure that remote server repo contains more branches and they are not shown when you type</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git branch -a</code></p>
+
+<p>or</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git branch -r</code></p>
+
+<p>Then you have to update your remote list, by:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git remote update upstream --prune</code></p>
+
+<p>Assuming your remote is named as upstream (This is true most of times).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for brname in `git branch -r | grep upstream | grep -v master | grep -v HEAD | sed -e 's/upstream\///'`; do echo $brname upstream/$brname; git branch --track $brname upstream/$brname; done
+</code></pre></div></div>
+
+<p>Once you have created a local branch corresponding to each upstream branch. Update your fork (origin)</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git push --all origin</code></p>
+
+<p>(origin being your fork): that supposes that:
+you have all the local branches tracking all the upstream branches (see previous step).
+Otherwise, you would push only one local branch by default, since a clone would create only one local branch (the default one)
+you haven’t pushed commits of your own on those branches.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git push --prune origin</code></p>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/2003505/how-to-delete-a-git-branch-both-locally-and-remotely">How To Delete a Git Branch Locally and Remotely</a></li>
+  <li><a href="http://www.grymoire.com/Unix/Sed.html#uh-13">Sed</a></li>
+  <li><a href="http://junaidpven.wordpress.com/2011/12/29/how-to-update-remote-branch-list-on-local-machine/">How To Update Remote branch List on Local Machine</a></li>
+  <li><a href="http://stackoverflow.com/questions/15779740/how-to-update-my-fork-to-have-the-same-branches-and-tags-as-the-original-reposit">How To Update My Fork To Have The Same Branches and Tags as the Original Repository</a></li>
+</ul>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/sample-dotnet-mvc-application">BCSHotels - A Sample C# .NET MVC5 Application</a></h5>
+			<small>10 Feb 2015</small>
+		</div>
+		<div class="mb-1"><p>Created a sample .NET MVC web application with sorting and pagination. The application was a test for my application to a .NET developer position with a local company.</p>
+
+<p>The requirements included being able to display with sorting and pagination a list of hotels. Each hotel may have one or more images.</p>
+
+<p>This application was done in around 4 hours which was the time limit for the task.</p>
+
+<p>Source Code <a href="https://github.com/stormwild/BCSHotels">https://github.com/stormwild/BCSHotels</a></p>
+
+<p>Demo <a href="http://bcshotels.azurewebsites.net/">http://bcshotels.azurewebsites.net/</a></p>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application">Sorting, Filtering, and Paging with the Entity Framework in an ASP.NET MVC Application</a></li>
+  <li><a href="https://www.nuget.org/packages/PagedList.Mvc">PagedList.Mvc 4.5.0</a></li>
+</ul>
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/using-sqlite-ef6">Using SQLite and EF6</a></h5>
+			<small>09 Feb 2015</small>
+		</div>
+		<div class="mb-1"><p>Created a sample console <a href="https://github.com/stormwild/SQLiteSample">app</a> using SQLite and EF6. The application uses the Chinook SQLite database and just displays the list of artists and albums that begin with A.</p>
+
+<p>Below is the README:</p>
+
+<h1 id="sqlitesample">SQLiteSample</h1>
+
+<p>Demonstrates usage of SQLite and EF6 in a console app</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<ul>
+  <li>System.Data.SQLite 1.0.94.1</li>
+  <li>Chinook SQLite Database</li>
+  <li>EF6</li>
+</ul>
+
+<h1 id="setup">Setup</h1>
+
+<ul>
+  <li>Create Blank Visual Studio Solution</li>
+  <li>Create Class Library Project</li>
+  <li>Create Console project</li>
+  <li>Install packages:</li>
+  <li><code class="language-plaintext highlighter-rouge">PM&gt; Install-Package ChinookDatabase.Sqlite</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PM&gt; Install-Package System.Data.SQLite</code></li>
+  <li>Installing SQLite also installs EF6</li>
+  <li><code class="language-plaintext highlighter-rouge">Update-Package or Update-Package –reinstall &lt;package name&gt;</code></li>
+  <li>Leave <code class="language-plaintext highlighter-rouge">&lt;package name&gt;</code> blank to reinstall all</li>
+</ul>
+
+<h1 id="errors">Errors</h1>
+
+<h2 id="config-related-errors">Config related errors</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Column 'InvariantName' is constrained to be unique.  
+Value 'System.Data.SQLite' is already present.
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;entityFramework&gt;</span>
+        <span class="nt">&lt;defaultConnectionFactory</span> <span class="na">type=</span><span class="s">"System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;parameters&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">value=</span><span class="s">"mssqllocaldb"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/parameters&gt;</span>
+        <span class="nt">&lt;/defaultConnectionFactory&gt;</span>
+        <span class="nt">&lt;providers&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SqlClient"</span> <span class="na">type=</span><span class="s">"System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SQLite"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/providers&gt;</span>
+    <span class="nt">&lt;/entityFramework&gt;</span>
+    <span class="nt">&lt;system.data&gt;</span>
+        <span class="c">&lt;!--
+            NOTE: The extra "remove" element below is to prevent the design-time
+                  support components within EF6 from selecting the legacy ADO.NET
+                  provider for SQLite (i.e. the one without any EF6 support).  It
+                  appears to only consider the first ADO.NET provider in the list
+                  within the resulting "app.config" or "web.config" file.
+        --&gt;</span>
+        <span class="nt">&lt;DbProviderFactories&gt;</span>
+            <span class="nt">&lt;remove</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;remove</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"SQLite Data Provider"</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite"</span> <span class="na">description=</span><span class="s">".NET Framework Data Provider for SQLite"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.SQLiteFactory, System.Data.SQLite"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"SQLite Data Provider (Entity Framework 6)"</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="na">description=</span><span class="s">".NET Framework Data Provider for SQLite (Entity Framework 6)"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderFactory, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/DbProviderFactories&gt;</span>
+      <span class="nt">&lt;/system.data&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div></div>
+
+<p>Not sure why, but make sure to have the config for entityFramework and DbProviderFactories this way.</p>
+
+<h2 id="reference-to-complex-property-in-entity-class-requires-specifying-the-property-that-references-the-complex-property">Reference to complex property in entity class requires specifying the property that references the complex property</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL logic error or missing database
+no such column: Extent1.Artist_ArtistId
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">SQLiteSample.Entities</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Album</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">long</span> <span class="n">AlbumId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">// Required for sqlite to properly reference Artist</span>
+        <span class="k">public</span> <span class="kt">long</span> <span class="n">ArtistId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> 
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">Artist</span> <span class="n">Artist</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="caveats">Caveats</h2>
+
+<p>EF6 with SQLite still does not support Code First migrations.</p>
+
+<p>Your migration code may need to use the SQLite api directly.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="">http://stackoverflow.com/questions/22174212/entity-framework-6-with-sqlite-3-code-first-wont-create-tables/23128288#23128288</a></li>
+  <li><a href="">http://hintdesk.com/sqlite-with-entity-framework-code-first-and-migration/</a></li>
+  <li><a href="">https://damienbod.wordpress.com/2013/11/18/using-sqlite-with-entity-framework-6-and-the-repository-pattern/</a></li>
+  <li><a href="">http://brice-lambson.blogspot.no/2012/10/entity-framework-on-sqlite.html</a></li>
+</ul>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/zf3-roadmap-announced">ZF3 Roadmap Announced</a></h5>
+			<small>25 Jan 2015</small>
+		</div>
+		<div class="mb-1"><p>The Zend Framework team recently announced the <a href="http://framework.zend.com/blog/announcing-the-zend-framework-3-roadmap.html">ZF3 roadmap</a>.</p>
+
+<p>The plans for ZF3 include:</p>
+
+<ul>
+  <li>
+    <p>Separating components into individual, versioned projects. This enables broader re-use and higher velocity of innovation.
+Strong emphasis on HTTP messages, with Matthew leading the PSR-7 specification.</p>
+  </li>
+  <li>
+    <p>Updating our existing full-stack MVC framework to depend on the newly independent components for better reuse and simplicity. ZF2 MVC applications will have a documented upgrade path to ZF3 requiring minimal changes.</p>
+  </li>
+  <li>
+    <p>Embracing middleware runtime patterns as a lighter weight alternative to the enterprise MVC framework stack.
+Enabling Apigility to work as a middleware stack, for better performance and simplicity, with the same streamlined, powerful user experience.</p>
+  </li>
+  <li>
+    <p>Optimizing for PHP 7, but supporting PHP 5.5 onwards.</p>
+  </li>
+</ul>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/creating-a-php-class-library">Creating a PHP class library</a></h5>
+			<small>07 Jan 2015</small>
+		</div>
+		<div class="mb-1"><p>Today I created a PHP class library and shared it on Packagist. In this post I hope to share my experience.</p>
+
+<p>The class library I created for this project is available on Github and Packagist:</p>
+
+<ul>
+  <li><a href="https://github.com/stormwild/ImageResizer">https://github.com/stormwild/ImageResizer</a></li>
+  <li><a href="https://packagist.org/packages/stormwild/image-resizer">https://packagist.org/packages/stormwild/image-resizer</a></li>
+</ul>
+
+<p>The following need to be installed on your development environment.</p>
+
+<ul>
+  <li>PHP</li>
+  <li>Git</li>
+  <li>Composer</li>
+</ul>
+
+<p>I currently use PHPStorm (version 8 as of this writing) as my PHP IDE and I also have PHP_CodeSniffer installed and configured to check my PHP source code for compliance with <a href="http://www.php-fig.org/">PSR coding standards</a>. A good intro can be found <a href="http://code.tutsplus.com/tutorials/psr-huh--net-29314">here</a></p>
+
+<h2 id="create-a-php-project-in-phpstorm">Create a PHP Project in PHPStorm</h2>
+
+<p>I created a new PHP Project with the following files and folder structure:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ImageResizer/
+ImageResizer/src/Stormwild/ImageResizer.php
+ImageResizer/composer.json
+</code></pre></div></div>
+
+<h2 id="initialize-git">Initialize Git</h2>
+
+<p>From the git bash run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init    
+</code></pre></div></div>
+
+<h2 id="create-github-repository">Create Github Repository</h2>
+
+<p>Create a Github repository with the name of your class library project, ImageResizer in my case. Github will ask you to initialize your git repository with a README.md and a license.</p>
+
+<h2 id="create-initial-commit">Create Initial Commit</h2>
+
+<p>On your local machine add and commit your initial files. Run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">--all</span>
+git commit <span class="nt">-am</span> <span class="s1">'Initial commit'</span>
+</code></pre></div></div>
+
+<p>The command <code class="language-plaintext highlighter-rouge">git add --all</code> adds or stages all unstaged files in your working directory to git.</p>
+
+<p>The command <code class="language-plaintext highlighter-rouge">git commit -am 'Initial commit'</code> commits your changes. The parameter -a adds or stages modified files. The parameter -m followed by ‘Your commit message’ allows you to specify the commit message.</p>
+
+<h2 id="add-git-remote">Add Git Remote</h2>
+
+<p>Add your Github repository as a remote for your local git repo. Run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:stormwild/ImageResizer.git
+</code></pre></div></div>
+
+<p>Replace git@github.com:stormwild/ImageResizer.git with the url of your own repository.</p>
+
+<p>Verify that the remote was added by running:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--get</span> remote.origin.url
+</code></pre></div></div>
+
+<p>This should output your the url to your Github repo.</p>
+
+<p>Tag your stable commit to set a version which Packagist will read and assign to your package.</p>
+
+<h2 id="create-an-annotated-tag">Create an Annotated Tag</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag // Lists existing tags    
+git tag <span class="nt">-a</span> v1.0.0 <span class="nt">-m</span> <span class="s1">'First version'</span> // Creates an annotated tag
+</code></pre></div></div>
+
+<h2 id="push-tags-to-remote">Push Tags to Remote</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin v1.0.0 // pushes specific tag
+git push origin <span class="nt">--tags</span> // pushes all tags 
+</code></pre></div></div>
+
+<h2 id="create-composer-json">Create Composer Json</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stormwild/image-resizer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHP class to resize images using GD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"php"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resize"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"scale"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"library"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/stormwild/ImageResizer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alexander R. Torrijos"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://stormwild.github.io/"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=5.3.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"classmap"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="create-an-account-on-packagist">Create An Account on Packagist</h2>
+
+<p><a href="https://packagist.org/">Packagist</a></p>
+
+<h2 id="submit-package">Submit Package</h2>
+
+<p>Submit the package to packagist by providing the github/bitbucket url.</p>
+
+<h2 id="setup-service-hooks-on-github">Setup Service Hooks on Github</h2>
+
+<p>You will need a token provided by Packagist</p>
+
+<p>For more information:</p>
+
+<p><a href="https://developer.github.com/webhooks/#service-hooks">Service Hooks</a></p>
+
+</div>
+	</div>
+	
+	<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h5 class="mb-1"><a href="/studying-owin">Studying Owin</a></h5>
+			<small>16 Dec 2014</small>
+		</div>
+		<div class="mb-1"><p><a href="http://owin.org/">Owin</a> is a specification for an abstraction between an application and it’s host. It can be implemented using a delegate to allow a host to invoke an application passing in a properties collection.</p>
+
+<blockquote>
+  <p>The host invokes the server startup code with the given application delegate and the Properties dictionary.  The server finishes configuring itself, starts accepting requests, and invokes the application delegate to process those requests.</p>
+
+  <p>Source <a href="http://owin.org/spec/spec/owin-1.0.0.html">Owin Spec</a></p>
+</blockquote>
+
+<p>References:</p>
+
+<ol>
+  <li><a href="http://www.asp.net/aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana">Getting Started with OWIN and Katana</a></li>
+  <li><a href="http://owin.org/">Owin</a></li>
+  <li><a href="https://github.com/stormwild/Owin">My Sample Owin code on Github: stormwild/Owin</a></li>
+</ol>
+</div>
+	</div>
+	
+</div></article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>  <li class="page-item active"><a class="page-link" href="#">1</a></li>  <li class="page-item"><a class="page-link" href="/blog/page2/">2</a></li>  <li class="page-item"><a class="page-link" href="/blog/page2/">Next</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

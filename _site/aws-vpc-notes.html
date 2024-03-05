@@ -1,0 +1,217 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>AWS VPC Notes - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">AWS VPC Notes</h1><p class="text-muted"><small>12 Sep 2016</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Notes from initial research on VPC</p>
+
+<h1 id="amazon-virtual-private-cloud">Amazon Virtual Private Cloud</h1>
+
+<h2 id="ec2">EC2</h2>
+
+<p>In 2006 Amazon EC2 was launched.</p>
+
+<ul>
+  <li>1 Public IP adddress(/Elastic IP)</li>
+  <li>DNS hostname</li>
+  <li>Security Group Ingress Filtering</li>
+</ul>
+
+<p>Later they also provided</p>
+
+<ul>
+  <li>Private IP addresses</li>
+  <li>Internal DNS hostname to each instance</li>
+</ul>
+
+<p>In 2009 Amazon VPC was launched.</p>
+
+<p>In 2011 marked enhancements to EC2.</p>
+
+<ul>
+  <li>Security Group now provided ingress and egress filtering</li>
+  <li>Direct Internet connectivity</li>
+  <li>Routing Tables</li>
+  <li>Network ACLS to controll traffic between subnets</li>
+</ul>
+
+<p>The same year also saw updates to VPC.</p>
+
+<ul>
+  <li>Multiple IP addresses</li>
+  <li>Multiple network interfaces</li>
+  <li>Dedicated instances</li>
+  <li>Statically Routed VPN connections</li>
+</ul>
+
+<p>March 2013 saw the launch of default VPC to EC2.</p>
+
+<ul>
+  <li>Automatically provisioned VPC were called default VPC</li>
+  <li>DNS Hostnames</li>
+  <li>DNS name resolution</li>
+  <li>ElasticCache</li>
+  <li>RDS IP Addresses</li>
+</ul>
+
+<h2 id="vpc">VPC</h2>
+
+<h3 id="notes-from-the-aws-reinvent-video">Notes from the AWS ReInvent video</h3>
+
+<h3 id="subnet">Subnet</h3>
+
+<ul>
+  <li>Create a subnet in all availability zones(AZ) in a region</li>
+  <li>For example: <img src="uploads/aws-vpc-fig-1.png" alt="Subnet in AZ" title="AWS VPC: Assign Subnets to Each AZ" /></li>
+  <li>Multiple subnets in each AZ</li>
+  <li>Enable auto assignment of public ip address to any EC2 instance launched in the VPC</li>
+</ul>
+
+<h3 id="route">Route</h3>
+
+<ul>
+  <li>Each VPC comes with a default <a href="https://en.wikipedia.org/wiki/Routing_table">Routing Table (RIB)</a></li>
+  <li>Assign different Routing Tables to each subnet</li>
+  <li>Default Route Table has one rule <code class="language-plaintext highlighter-rouge">172.31.0.0/16 local active</code> which means that connections from EC2 instances in the VPC are routed locally.</li>
+</ul>
+
+<h3 id="internet-gateway">Internet Gateway</h3>
+
+<ul>
+  <li>An Internet Gateway is a resource you can create an attached to your VPC</li>
+  <li>“A thing you send packets to if you want them to go to the internet”</li>
+  <li>In your Route Table create a rule as shown: <code class="language-plaintext highlighter-rouge">0.0.0.0/0 igw-3376c756</code></li>
+  <li>In a Route Table the more specific rule that can be applied dominates</li>
+  <li>“Q: What is an Internet Gateway? Is it a router, a thing within the Amazon Data Center? Is it a single point of failure? A: It is a thing. It’s a highly available lots of things that gets traffic from the internet to your VPC. It’s an abstraction that just works.”</li>
+</ul>
+
+<h3 id="authorizing-traffic-network-acls-security-groups">Authorizing Traffic: Network ACLs Security Groups</h3>
+
+<h4 id="network-acls">Network ACLs</h4>
+
+<ul>
+  <li>In a traditional network, Network ACLs are analogous to stateless firewall rules.</li>
+  <li>The rules in a network acl gets applied in the order specified, ex. 100 (Rule #) All Traffic(Type) All (Protocol) All(Port) 0.0.0.0/0 (Port Range) Allow (Allow\Deny)</li>
+  <li>You can transfer rules from your network firewall to network acls</li>
+</ul>
+
+<h4 id="security-groups">Security Groups</h4>
+
+<ul>
+  <li>Architect your security groups the way you architect your applications</li>
+  <li>For example you have instances that act as web servers and instances that function as your backend applications/database servers.</li>
+  <li>You would want internet traffic to be available to your web servers but not to your backend instances.</li>
+  <li>Your backend instances should only allow connections from your web server instances.</li>
+</ul>
+
+<p>Example Rule:</p>
+
+<p>For the web server instances</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type      Protocol    Port    Source 
+HTTP<span class="o">(</span>80<span class="o">)</span>  TCP         80      0.0.0.0/0
+</code></pre></div></div>
+
+<p>For the backend services</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type            Protocol    Port    Source 
+Custom Rule     TCP         2365    sg-123456
+</code></pre></div></div>
+
+<p>Note:</p>
+
+<ul>
+  <li>You can reference another security group as source of this rule. In the above example sg-12345 is the security group applied to the webservers. In an elastic setup where you are adding and removing web server instances this rules applies to any instances that are assigned to the specified security group.</li>
+  <li>Ingress (inbound), egress (outbound) rules can be defined</li>
+  <li>Best Practice is to reference other security groups as show in the backend rule above.</li>
+  <li>In practice there is a 1:1 relationship between an IAM role and a security group.</li>
+</ul>
+
+<h3 id="connectivity-options-for-vpc-aside-from-just-internet-connections">Connectivity Options for VPC (aside from just internet connections)</h3>
+
+<p>Three examples</p>
+
+<ul>
+  <li>Subnet routing</li>
+  <li>Connecting to other VPCs</li>
+  <li>Connecting to your corporate network</li>
+</ul>
+
+<h4 id="subnet-routing">Subnet Routing</h4>
+
+<ul>
+  <li>Private Subnet(Internal) - Subnet without connection to the internet</li>
+  <li>Public Subnet(Internet connected) - Subnet with a connection to the internet</li>
+</ul>
+
+<p>In the example given above you can put your web server instances and backend servers into different subnets. In one subnet you can have a route to the internet and the other subnet has no route to the internet. This allows you to be sure that your backend end instances will have no way of being accessible from the internet. It may happen that you may want to allow internet traffic to your backend servers. What you can then do is setup an EC2 instance on the internet connected subnet and have it function as a <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network address translation)</a>. Then your backend subnet can have a route of 0.0.0.0/0 to your NAT EC2 instance which is on your public subnet. Instead of manually setting up your NAT EC2 instance, there is already a NAT AMI for that (amzn-ami-vpc-nat).</p>
+
+<h4 id="connecting-to-other-vpcs-vpc-peering">Connecting to other VPCs: VPC Peering</h4>
+
+<p>There are some scenarios which you may want to run multiple VPCs.</p>
+
+<p>In a large corporate network you may want to give individual teams their own VPC. But you also have commone/core services (such as scanning, logging, monitoring, authentication) in which all teams would have access to.</p>
+
+<ul>
+  <li>Initiate a peering request</li>
+  <li>Accept a peering request</li>
+  <li>Create routes from one to the other</li>
+</ul>
+
+<h4 id="connecting-to-your-network-aws-hardware-vpn-aws-direct-connect">Connecting to your network: AWS Hardware VPN, AWS Direct Connect</h4>
+
+<p>Extend your network to your VPC</p>
+
+<ul>
+  <li>VPN</li>
+  <li>Direct Connect</li>
+</ul>
+
+<h5 id="vpn">VPN</h5>
+
+<p>A VPN consists of a Customer Gateway which is a network device on one end of the VPN connection and a Virtual Gateway on the VPC side of the VPN connection.</p>
+
+<p>Once you have these setup you get a pair of IPSEC tunnels.</p>
+
+<p>On your VPC create a route to your Corporate Data Center.</p>
+
+<h5 id="direct-connect">Direct Connect</h5>
+
+<p>A dedicated line with lower per GB data transfer rates
+For highest availability use both</p>
+
+<h3 id="dns-in-a-vpc">DNS in a VPC</h3>
+
+<p>In your VPC settings:</p>
+
+<ul>
+  <li>DNS resolution: yes</li>
+  <li>DNS hostnames: yes</li>
+</ul>
+
+<p>Note: When set to yes, your VPC uses Amazon DNS servers</p>
+
+<p>EC2 instances in a VPC using Amazon DNS gets two hostnames:</p>
+
+<ul>
+  <li>Internet DNS hostname <code class="language-plaintext highlighter-rouge">ip-12345</code> which resolves to your instances private ip address</li>
+  <li>External DNS name when access from the internet resolves to the public ip and when accessed from within the VPC resolves to the private ip.</li>
+</ul>
+
+<p>Amazon Route 53 can allow you to create private hosted zones
+Private hosted zone - your own world of dns in your VPC
+Basically you can create a private hosted zone assign it to your VPC and map a domain name to an ip address within your vpc.</p>
+
+<p>VPC Flow Logs</p>
+
+<p>Full meta data dump of all packets to your EC2 instances, not only the packets that succeed but also the packets your security groups are rejecting.</p>
+
+<p>Amazon VPC Endpoints for S3</p>
+
+<p>A wormhole from your VPC to your S3</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://youtu.be/5_bQ6Dgk6k8">AWS re:Invent 2015 - VPC Fundamentals and Connectivity Options</a></li>
+  <li><a href="https://youtu.be/B8vnhRJDujw">Deep Dive: Amazon Virtual Private Cloud</a></li>
+  <li><a href="https://dzone.com/articles/aws-vpc-networking-beginners">AWS - VPC Networking for Beginners</a></li>
+  <li><a href="http://cloudacademy.com/blog/how-and-why-to-use-vpc-for-your-amazon-aws-infrastructure/">Amazon VPC: 5 reasons to use and learn it… with Cloud Academy!</a></li>
+  <li><a href="https://aws.amazon.com/documentation/vpc/">Amazon Virtual Private Cloud Documentation</a></li>
+</ul>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/awesome-gulp-tutorials">&laquo; Awesome Gulp Tutorials</a></li> <li class="page-item"><a class="page-link" href="/phpexcel-notes">PHPExcel Notes &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

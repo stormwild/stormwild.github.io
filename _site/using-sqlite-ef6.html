@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Using SQLite and EF6 - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Using SQLite and EF6</h1><p class="text-muted"><small>09 Feb 2015</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Created a sample console <a href="https://github.com/stormwild/SQLiteSample">app</a> using SQLite and EF6. The application uses the Chinook SQLite database and just displays the list of artists and albums that begin with A.</p>
+
+<p>Below is the README:</p>
+
+<h1 id="sqlitesample">SQLiteSample</h1>
+
+<p>Demonstrates usage of SQLite and EF6 in a console app</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<ul>
+  <li>System.Data.SQLite 1.0.94.1</li>
+  <li>Chinook SQLite Database</li>
+  <li>EF6</li>
+</ul>
+
+<h1 id="setup">Setup</h1>
+
+<ul>
+  <li>Create Blank Visual Studio Solution</li>
+  <li>Create Class Library Project</li>
+  <li>Create Console project</li>
+  <li>Install packages:</li>
+  <li><code class="language-plaintext highlighter-rouge">PM&gt; Install-Package ChinookDatabase.Sqlite</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PM&gt; Install-Package System.Data.SQLite</code></li>
+  <li>Installing SQLite also installs EF6</li>
+  <li><code class="language-plaintext highlighter-rouge">Update-Package or Update-Package –reinstall &lt;package name&gt;</code></li>
+  <li>Leave <code class="language-plaintext highlighter-rouge">&lt;package name&gt;</code> blank to reinstall all</li>
+</ul>
+
+<h1 id="errors">Errors</h1>
+
+<h2 id="config-related-errors">Config related errors</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Column 'InvariantName' is constrained to be unique.  
+Value 'System.Data.SQLite' is already present.
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;entityFramework&gt;</span>
+        <span class="nt">&lt;defaultConnectionFactory</span> <span class="na">type=</span><span class="s">"System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;parameters&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">value=</span><span class="s">"mssqllocaldb"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/parameters&gt;</span>
+        <span class="nt">&lt;/defaultConnectionFactory&gt;</span>
+        <span class="nt">&lt;providers&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SqlClient"</span> <span class="na">type=</span><span class="s">"System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;provider</span> <span class="na">invariantName=</span><span class="s">"System.Data.SQLite"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/providers&gt;</span>
+    <span class="nt">&lt;/entityFramework&gt;</span>
+    <span class="nt">&lt;system.data&gt;</span>
+        <span class="c">&lt;!--
+            NOTE: The extra "remove" element below is to prevent the design-time
+                  support components within EF6 from selecting the legacy ADO.NET
+                  provider for SQLite (i.e. the one without any EF6 support).  It
+                  appears to only consider the first ADO.NET provider in the list
+                  within the resulting "app.config" or "web.config" file.
+        --&gt;</span>
+        <span class="nt">&lt;DbProviderFactories&gt;</span>
+            <span class="nt">&lt;remove</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;remove</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"SQLite Data Provider"</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite"</span> <span class="na">description=</span><span class="s">".NET Framework Data Provider for SQLite"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.SQLiteFactory, System.Data.SQLite"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"SQLite Data Provider (Entity Framework 6)"</span> <span class="na">invariant=</span><span class="s">"System.Data.SQLite.EF6"</span> <span class="na">description=</span><span class="s">".NET Framework Data Provider for SQLite (Entity Framework 6)"</span> <span class="na">type=</span><span class="s">"System.Data.SQLite.EF6.SQLiteProviderFactory, System.Data.SQLite.EF6"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/DbProviderFactories&gt;</span>
+      <span class="nt">&lt;/system.data&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div></div>
+
+<p>Not sure why, but make sure to have the config for entityFramework and DbProviderFactories this way.</p>
+
+<h2 id="reference-to-complex-property-in-entity-class-requires-specifying-the-property-that-references-the-complex-property">Reference to complex property in entity class requires specifying the property that references the complex property</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL logic error or missing database
+no such column: Extent1.Artist_ArtistId
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">SQLiteSample.Entities</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Album</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">long</span> <span class="n">AlbumId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">// Required for sqlite to properly reference Artist</span>
+        <span class="k">public</span> <span class="kt">long</span> <span class="n">ArtistId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> 
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">Artist</span> <span class="n">Artist</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="caveats">Caveats</h2>
+
+<p>EF6 with SQLite still does not support Code First migrations.</p>
+
+<p>Your migration code may need to use the SQLite api directly.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="">http://stackoverflow.com/questions/22174212/entity-framework-6-with-sqlite-3-code-first-wont-create-tables/23128288#23128288</a></li>
+  <li><a href="">http://hintdesk.com/sqlite-with-entity-framework-code-first-and-migration/</a></li>
+  <li><a href="">https://damienbod.wordpress.com/2013/11/18/using-sqlite-with-entity-framework-6-and-the-repository-pattern/</a></li>
+  <li><a href="">http://brice-lambson.blogspot.no/2012/10/entity-framework-on-sqlite.html</a></li>
+</ul>
+
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/zf3-roadmap-announced">&laquo; ZF3 Roadmap Announced</a></li> <li class="page-item"><a class="page-link" href="/sample-dotnet-mvc-application">BCSHotels - A Sample C# .NET MVC5 Application &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

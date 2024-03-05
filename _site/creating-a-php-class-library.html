@@ -1,0 +1,128 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Creating a PHP class library - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Creating a PHP class library</h1><p class="text-muted"><small>07 Jan 2015</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Today I created a PHP class library and shared it on Packagist. In this post I hope to share my experience.</p>
+
+<p>The class library I created for this project is available on Github and Packagist:</p>
+
+<ul>
+  <li><a href="https://github.com/stormwild/ImageResizer">https://github.com/stormwild/ImageResizer</a></li>
+  <li><a href="https://packagist.org/packages/stormwild/image-resizer">https://packagist.org/packages/stormwild/image-resizer</a></li>
+</ul>
+
+<p>The following need to be installed on your development environment.</p>
+
+<ul>
+  <li>PHP</li>
+  <li>Git</li>
+  <li>Composer</li>
+</ul>
+
+<p>I currently use PHPStorm (version 8 as of this writing) as my PHP IDE and I also have PHP_CodeSniffer installed and configured to check my PHP source code for compliance with <a href="http://www.php-fig.org/">PSR coding standards</a>. A good intro can be found <a href="http://code.tutsplus.com/tutorials/psr-huh--net-29314">here</a></p>
+
+<h2 id="create-a-php-project-in-phpstorm">Create a PHP Project in PHPStorm</h2>
+
+<p>I created a new PHP Project with the following files and folder structure:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ImageResizer/
+ImageResizer/src/Stormwild/ImageResizer.php
+ImageResizer/composer.json
+</code></pre></div></div>
+
+<h2 id="initialize-git">Initialize Git</h2>
+
+<p>From the git bash run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init    
+</code></pre></div></div>
+
+<h2 id="create-github-repository">Create Github Repository</h2>
+
+<p>Create a Github repository with the name of your class library project, ImageResizer in my case. Github will ask you to initialize your git repository with a README.md and a license.</p>
+
+<h2 id="create-initial-commit">Create Initial Commit</h2>
+
+<p>On your local machine add and commit your initial files. Run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">--all</span>
+git commit <span class="nt">-am</span> <span class="s1">'Initial commit'</span>
+</code></pre></div></div>
+
+<p>The command <code class="language-plaintext highlighter-rouge">git add --all</code> adds or stages all unstaged files in your working directory to git.</p>
+
+<p>The command <code class="language-plaintext highlighter-rouge">git commit -am 'Initial commit'</code> commits your changes. The parameter -a adds or stages modified files. The parameter -m followed by ‘Your commit message’ allows you to specify the commit message.</p>
+
+<h2 id="add-git-remote">Add Git Remote</h2>
+
+<p>Add your Github repository as a remote for your local git repo. Run:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:stormwild/ImageResizer.git
+</code></pre></div></div>
+
+<p>Replace git@github.com:stormwild/ImageResizer.git with the url of your own repository.</p>
+
+<p>Verify that the remote was added by running:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--get</span> remote.origin.url
+</code></pre></div></div>
+
+<p>This should output your the url to your Github repo.</p>
+
+<p>Tag your stable commit to set a version which Packagist will read and assign to your package.</p>
+
+<h2 id="create-an-annotated-tag">Create an Annotated Tag</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git tag // Lists existing tags    
+git tag <span class="nt">-a</span> v1.0.0 <span class="nt">-m</span> <span class="s1">'First version'</span> // Creates an annotated tag
+</code></pre></div></div>
+
+<h2 id="push-tags-to-remote">Push Tags to Remote</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin v1.0.0 // pushes specific tag
+git push origin <span class="nt">--tags</span> // pushes all tags 
+</code></pre></div></div>
+
+<h2 id="create-composer-json">Create Composer Json</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stormwild/image-resizer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHP class to resize images using GD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"php"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resize"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"scale"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"library"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/stormwild/ImageResizer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alexander R. Torrijos"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://stormwild.github.io/"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=5.3.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"classmap"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="create-an-account-on-packagist">Create An Account on Packagist</h2>
+
+<p><a href="https://packagist.org/">Packagist</a></p>
+
+<h2 id="submit-package">Submit Package</h2>
+
+<p>Submit the package to packagist by providing the github/bitbucket url.</p>
+
+<h2 id="setup-service-hooks-on-github">Setup Service Hooks on Github</h2>
+
+<p>You will need a token provided by Packagist</p>
+
+<p>For more information:</p>
+
+<p><a href="https://developer.github.com/webhooks/#service-hooks">Service Hooks</a></p>
+
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/studying-owin">&laquo; Studying Owin</a></li> <li class="page-item"><a class="page-link" href="/zf3-roadmap-announced">ZF3 Roadmap Announced &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

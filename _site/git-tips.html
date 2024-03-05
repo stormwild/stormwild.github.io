@@ -1,0 +1,192 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Git Tips (Rough Draft) - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Git Tips (Rough Draft)</h1><p class="text-muted"><small>24 Feb 2015</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Git Tips (Rough Draft)</p>
+
+<h4 id="creating-keys">Creating keys</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+
+$ ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+
+Generating public/private rsa key pair.
+# Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
+
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+# Enter same passphrase again: [Type passphrase again]
+
+Your identification has been saved in /c/Users/you/.ssh/id_rsa.
+# Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+
+# start the ssh-agent in the background
+$ ssh-agent -s
+# Agent pid 59566
+$ ssh-add ~/.ssh/id_rsa
+</code></pre></div></div>
+
+<p>On Windows to run ssh-agent</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ eval $(ssh-agent) &gt; /dev/null
+$ ssh-add ~/ssh/id_rsa
+Enter passphrase for /c/Users/Torrijos/.ssh/id_rsa:
+Identity added: /c/Users/Torrijos/.ssh/id_rsa (/c/Users/Torrijos/.ssh/id_rsa)
+</code></pre></div></div>
+
+<p>This will allow you to perform remote operations with Bitbucket, or any other remote service, without having to enter your private key passphrase everytime.</p>
+
+<h4 id="configuration">Configuration</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+user.name=Scott Chacon
+user.email=schacon@gmail.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
+# Shows a list of config settings
+</code></pre></div></div>
+
+<h5 id="set-name-and-email">Set name and email</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+</code></pre></div></div>
+
+<h5 id="configure-line-ending">Configure Line Ending</h5>
+
+<p>Todo</p>
+
+<h3 id="workflow">Workflow</h3>
+
+<h4 id="remotes">Remotes</h4>
+
+<p>View remotes</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote
+origin
+upstream
+</code></pre></div></div>
+
+<p>View remote urls</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --get remote.origin.url
+git@bitbucket.org:localrepo/development-wiki.git/wiki
+
+$ git config --get remote.upstream.url
+git@bitbucket.org:remoterepo/development-wiki.git/wiki
+</code></pre></div></div>
+
+<p>Add remote url</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add origin git@bitbucket.org:remoterepo/development-wiki.git/wiki
+# Set a new remote
+
+$ git remote -v
+# Verify new remote
+origin  git@bitbucket.org:localrepo/development-wiki.git/wiki (fetch)
+origin  git@bitbucket.org:localrepo/development-wiki.git/wiki (push)
+upstream        git@bitbucket.org:remoterepo/development-wiki.git/wiki (fetch)
+upstream        git@bitbucket.org:remoterepo/development-wiki.git/wiki (push)
+</code></pre></div></div>
+
+<p>Change remote url</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote rename origin destination
+# Change remote name from 'origin' to 'destination' 
+
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY2.git
+# Change the url for an existing remote
+</code></pre></div></div>
+
+<p>…
+other topics here</p>
+
+<h4 id="updating-local-branch">Updating Local branch</h4>
+
+<p>From local branch</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull --rebase upstream develop
+# Rewrites current branch to match remote and replay your local changes on top
+$ git pull --rebase -s recursive -X theirs upstream develop
+# Does the same except any conflicts favors your local branch's changes
+# Thus you may lose changes from the remote using this.
+</code></pre></div></div>
+
+<p>Sometimes you may need to abort a rebase:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rebase --abort
+</code></pre></div></div>
+
+<p>or a merge</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge --abort
+</code></pre></div></div>
+
+<p>When merging another branch onto your current branch, it may be good to merge all changes into one commit</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge --squash otherbranch
+</code></pre></div></div>
+
+<p>then</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m 'Consolidated commits from other branch'
+</code></pre></div></div>
+
+<p>In case of merge conflicts you can also use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge -s recursive -X ours otherbranch or 
+
+$ git merge --squash -s recursive -X ours otherbranch
+# This favors your current branch's changes rather than the other branch.
+</code></pre></div></div>
+
+<p>For actually resolving merge and rebase conflicts, open the repository with a git GUI application, i.e. Git Extensions, Atlassian SourceTree, etc.</p>
+
+<p>Launch the merge tool, KDiff or Perforce P4 Merge to resolve conflicts.</p>
+
+<h4 id="update-remote-branch-list-on-local">Update Remote Branch List On Local</h4>
+
+<p>To get a copy of branch list on remote</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git fetch</code> or <code class="language-plaintext highlighter-rouge">$ git fetch upstream</code></p>
+
+<p>If you are sure that remote server repo contains more branches and they are not shown when you type</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git branch -a</code></p>
+
+<p>or</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git branch -r</code></p>
+
+<p>Then you have to update your remote list, by:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git remote update upstream --prune</code></p>
+
+<p>Assuming your remote is named as upstream (This is true most of times).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for brname in `git branch -r | grep upstream | grep -v master | grep -v HEAD | sed -e 's/upstream\///'`; do echo $brname upstream/$brname; git branch --track $brname upstream/$brname; done
+</code></pre></div></div>
+
+<p>Once you have created a local branch corresponding to each upstream branch. Update your fork (origin)</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git push --all origin</code></p>
+
+<p>(origin being your fork): that supposes that:
+you have all the local branches tracking all the upstream branches (see previous step).
+Otherwise, you would push only one local branch by default, since a clone would create only one local branch (the default one)
+you haven’t pushed commits of your own on those branches.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ git push --prune origin</code></p>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/2003505/how-to-delete-a-git-branch-both-locally-and-remotely">How To Delete a Git Branch Locally and Remotely</a></li>
+  <li><a href="http://www.grymoire.com/Unix/Sed.html#uh-13">Sed</a></li>
+  <li><a href="http://junaidpven.wordpress.com/2011/12/29/how-to-update-remote-branch-list-on-local-machine/">How To Update Remote branch List on Local Machine</a></li>
+  <li><a href="http://stackoverflow.com/questions/15779740/how-to-update-my-fork-to-have-the-same-branches-and-tags-as-the-original-reposit">How To Update My Fork To Have The Same Branches and Tags as the Original Repository</a></li>
+</ul>
+
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/sample-dotnet-mvc-application">&laquo; BCSHotels - A Sample C# .NET MVC5 Application</a></li> <li class="page-item"><a class="page-link" href="/p4-visual-merge-tool-with-git">Setup P4 Visual Merge Tool with Git &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

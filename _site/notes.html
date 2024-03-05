@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Notes - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Notes</h1></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>https://medium.com/@srinisoundar/setting-up-environment-for-react-sass-es2015-babel-with-webpack-2f77445129#.g72ssc1j6</p>
+
+<p>https://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html</p>
+
+<p>Learn to compute from binary to decimal to hexadecimal and octal</p>
+
+<p>WordPress Unit Tests</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    // Batch insert into mysql by RedBean
+    // http://stackoverflow.com/questions/18416321/batch-insert-into-mysql-by-redbean
+    // Creator of RedBeanPHP here.
+    // This is not supported by RedBeanPHP. You will have to use plain old SQL for this.
+    // Gabor de Mooij
+
+    // http://stackoverflow.com/questions/12786605/how-to-bulk-insert-with-redbeanphp
+    // R::storeAll($beans);
+
+    /*R::freeze(true);
+    R::begin();
+    try {
+        R::exec($sql);
+        R::commit();
+    } catch (Exception $e) {
+        R::rollback();
+        echo $e-&gt;getMessage();
+        echo $e-&gt;getTraceAsString();
+    }*/
+    
+    https://php-built.com/2016/01/20/installing-xdebug-for-php7/
+    
+
+// temp delete before commit
+protected function testDb($args)
+{
+    echo 'Import starting...' . PHP_EOL;
+
+    $args-&gt;setAliases([
+        'f' =&gt; 'from',
+        't' =&gt; 'to',
+        'd' =&gt; 'days'
+    ]);
+
+    if ((isset($args-&gt;from)) &amp;&amp; (isset($args-&gt;to))) {
+        $from = new \DateTime($args-&gt;from);
+        $to = new \DateTime($args-&gt;to);
+        $from = $from-&gt;format('Y-m-d 00:00:00');
+        $to = $to-&gt;format('Y-m-d 23:59:59');
+    } else
+        if (isset($args-&gt;days)) {
+            $today = new \DateTime();
+            $daysAgo = new \DateTime();
+            $daysAgo-&gt;sub(new \DateInterval('P' . $args-&gt;days . 'D'));
+            $from = $daysAgo-&gt;format('Y-m-d 00:00:00');
+            $to = $today-&gt;format('Y-m-d 23:59:59');
+        } else {
+            echo "Required params:\n  --from=YY-MM-DD --to=YY-MM-DD, or\n  --days=3\n";
+            return;
+        }
+
+    echo "\"App UID\",\"Browser\",\"Browser Version\",\"OS\",\"Installed\",\"Uninstalled\",\"Last URL Seen\",\"Last Seen At\",\"User ID\",\"Extension Version\",\"Last Event Type\",\"Last Event Date\",\"Event Count\",\"Savings\"\n";
+
+    $result = R::getAll("SELECT * FROM cofundapp_uninstall WHERE timestamp &gt;= :from AND timestamp &lt;= :to", [
+        'from' =&gt; $from,
+        'to' =&gt; $to
+    ]);
+
+}
+
+
+// temporary call to test if connection to db is working
+    $this-&gt;testDb($args);        
+</code></pre></div></div>
+
+<p>sudo find /var/www/html -type d -exec chmod g+s {} \;</p>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"> </ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

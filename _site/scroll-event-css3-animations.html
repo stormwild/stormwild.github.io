@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Scroll Event and CSS3 Animations - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-c6c8ed.js"></script><link href="/dist/css/styles-c6c8ed.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Scroll Event and CSS3 Animations</h1><p class="text-muted"><small>18 Nov 2015</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><h3 id="listening-for-scroll-event">Listening for scroll event</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span><span class="p">,</span> <span class="nx">scrollHandler</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">onscroll</span><span class="dl">'</span><span class="p">,</span> <span class="nx">scrollHandler</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="getting-percentage-scroll-position">Getting Percentage Scroll Position</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ratio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">/</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="add-remove-classes-on-element">Add Remove Classes on Element</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">classname</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">'</span><span class="s1">classname</span><span class="dl">'</span><span class="p">);</span> 
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="dl">'</span><span class="s1">classname</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">'</span><span class="s1">classname</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// returns bool</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Supported on modern browsers; support from IE10 up</span>
+</code></pre></div></div>
+
+<p><a href="https://github.com/eligrey/classList.js/blob/master/classList.js">classList Shim</a></p>
+
+<h3 id="define-animation-keyframes">Define Animation Keyframes</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@keyframes</span> <span class="nb">show</span> <span class="p">{</span>
+  <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>0% or from 100% or to</p>
+
+<h3 id="define-animation-property">Define Animation Property</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.element</span> <span class="nc">.in</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="nb">show</span> <span class="m">.5s</span> <span class="n">linear</span> <span class="m">0s</span> <span class="m">1</span> <span class="nb">normal</span> <span class="n">forwards</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>animation: name duration timing-function delay iteration-count direction fill-mode play-state;</p>
+
+<h3 id="detecting-transition-and-animation-end">Detecting Transition and Animation End</h3>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="http://osvaldas.info/detecting-css-animation-transition-end-with-javascript">Detecting CSS Animation and Transition End with JavaScript</a></li>
+  <li><a href="http://www.sitepoint.com/css3-animation-javascript-event-handlers/">How to Capture CSS3 Animation Events in JavaScript</a></li>
+  <li><a href="https://css-tricks.com/controlling-css-animations-transitions-javascript/">Controlling CSS Animations and Transitions with JavaScript</a></li>
+  <li><a href="https://davidwalsh.name/css-animation-callback">Detecting CSS Animation Completion with JavaScript</a></li>
+  <li><a href="https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/">Detect the End of CSS Animations and Transitions with JavaScript</a></li>
+  <li><a href="http://www.smashingmagazine.com/2011/05/an-introduction-to-css3-keyframe-animations/">An Introduction To CSS3 Keyframe Animations</a></li>
+</ul>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/spa-angularjs-mvc-google-maps">&laquo; Sample SPA using AngularJs MVC5/Web API and Google Maps</a></li> <li class="page-item"><a class="page-link" href="/disable-php-deprecated-warnings-in-wordpress">Disable PHP Deprecated Warnings in Wordpress &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>
