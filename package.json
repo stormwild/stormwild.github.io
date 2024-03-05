@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/stormwild/stormwild.github.io#readme",
   "dependencies": {
-    "@popperjs/core": "2.11.8",
+    "popper.js": "1.14.1",
     "bootstrap": "4.1.0",
     "jquery": "3.7.1",
     "tether": "2.0.0",
