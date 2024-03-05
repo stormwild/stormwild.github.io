@@ -3,9 +3,30 @@
   "version": "1.0.0",
   "description": "Personal website",
   "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.babel.js -w --mode production",
+    "build": "webpack --config webpack.config.babel.js --mode production",
+    "serve": "bundle exec jekyll serve",
+    "jekyll:start": "bundle exec jekyll serve --host $IP --port $PORT --watch --drafts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormwild/stormwild.github.io.git"
+  },
+  "keywords": [
+    "github",
+    "stormwild"
+  ],
+  "author": "Alexander R. Torrijos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stormwild/stormwild.github.io/issues"
+  },
+  "homepage": "https://github.com/stormwild/stormwild.github.io#readme",
   "dependencies": {
     "@popperjs/core": "2.11.8",
-    "bootstrap": "5.3.3",
+    "bootstrap": "4.1.0",
     "jquery": "3.7.1",
     "tether": "2.0.0",
     "universal-ga": "1.2.0"
@@ -33,25 +54,5 @@
     "url-loader": "4.1.1",
     "webpack": "5.90.3",
     "webpack-cli": "5.1.4"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config webpack.config.babel.js -w -p",
-    "build": "webpack --config webpack.config.babel.js -p",
-    "serve": "bundle exec jekyll serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stormwild/stormwild.github.io.git"
-  },
-  "keywords": [
-    "github",
-    "stormwild"
-  ],
-  "author": "Alexander R. Torrijos",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stormwild/stormwild.github.io/issues"
-  },
-  "homepage": "https://github.com/stormwild/stormwild.github.io#readme"
+  }
 }
