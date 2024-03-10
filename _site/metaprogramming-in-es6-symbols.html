@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Metaprogramming in ES6 Symbols - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-b761ec.js"></script><link href="/dist/css/styles-b761ec.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Metaprogramming in ES6 Symbols</h1><p class="text-muted"><small>03 Sep 2017</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/Metaprogramming">Metaprogramming</a> is a programming technique in which computer programs have the ability to treat programs as their data. It means that a program can be designed to read, generate, analyse or transform other programs, and even modify itself while running.[1][2] In some cases, this allows programmers to minimize the number of lines of code to express a solution, and thus reducing the development time.[3] It also allows programs greater flexibility to efficiently handle new situations without recompilation.</p>
+</blockquote>
+
+<p>One aspect of metaprogramming is code generation, in JavaScript <code class="language-plaintext highlighter-rouge">eval</code> is used to evaluate or execute expressions or statements from string arguments.</p>
+
+<blockquote>
+  <p>If the argument of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval"><code class="language-plaintext highlighter-rouge">eval()</code></a> is not a string, <code class="language-plaintext highlighter-rouge">eval()</code> returns the argument unchanged.</p>
+</blockquote>
+
+<blockquote>
+  <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span><span class="p">(</span><span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="dl">'</span><span class="s1">2 + 2</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// returns a String object containing "2 + 2"</span>
+<span class="nb">eval</span><span class="p">(</span><span class="dl">'</span><span class="s1">2 + 2</span><span class="dl">'</span><span class="p">);</span>             <span class="c1">// returns 4</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p>You can work around this limitation in a generic fashion by using toString().</p>
+</blockquote>
+
+<blockquote>
+  <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">expression</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="dl">'</span><span class="s1">2 + 2</span><span class="dl">'</span><span class="p">);</span>
+<span class="nb">eval</span><span class="p">(</span><span class="nx">expression</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p>Don’t use eval needlessly</p>
+</blockquote>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">eval()</code> is a dangerous function, which executes the code it’s passed with the privileges of the caller. If you run <code class="language-plaintext highlighter-rouge">eval()</code> with a string that could be affected by a malicious party, you may end up running malicious code on the user’s machine with the permissions of your webpage / extension.</p>
+</blockquote>
+
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/hashmap">&laquo; HashMap</a></li> <li class="page-item"><a class="page-link" href="/make">Make &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>AWS EFS Backup - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-b761ec.js"></script><link href="/dist/css/styles-b761ec.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">AWS EFS Backup</h1><p class="text-muted"><small>26 Feb 2017</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Notes on AWS EFS Backup</p>
+
+<p>Create a backup file from one efs mount to another</p>
+
+<p>Where src is the mounted efs directory to copy from and efs is the destination</p>
+
+<p>@TODO backup to s3 instead</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/sh
+
+date=`date "+%Y-%m-%dT%H:%M:%S"`
+HOME=/home/ubuntu
+
+rsync -aP --delete --delete-excluded --exclude-from=$HOME/.rsync/exclude --link-dest=$HOME/efs/current/latest $HOME/src $HOME/efs/backups/backup-$date
+rm -f $HOME/efs/current/latest
+ln -s $HOME/efs/backups/backup-$date $HOME/efs/current/latest
+</code></pre></div></div>
+
+<p>Create cron to run backup daily</p>
+
+<p>Delete oldest backup after 3 backups</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env bash
+
+dir="$1"
+min_dirs=3
+
+[[ $(find "$dir" -maxdepth 1 -type d | wc -l) -ge $min_dirs ]] &amp;&amp;
+IFS= read -r -d $'\0' line &lt; &lt;(find "$dir" -maxdepth 1 -printf '%T@ %p\0' 2&gt;/dev/null | sort -z -n)
+file="${line#* }"
+ls -lLd "$file"
+</code></pre></div></div>
+
+<p>@TODO delete file</p>
+
+<p>@TODO create cron to delete old backups</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="http://docs.aws.amazon.com/efs/latest/ug/efs-backup.html">Back Up an EFS File System</a></li>
+  <li><a href="http://unix.stackexchange.com/questions/28939/how-to-delete-the-oldest-directory-in-a-given-directory">How to delete the oldest directory in a given directory?</a></li>
+  <li><a href="http://www.mikerubel.org/computers/rsync_snapshots">Easy Automated Snapshot-Style Backups with Linux and Rsync</a></li>
+  <li><a href="https://blog.interlinked.org/tutorials/rsync_time_machine.html">Time Machine for every Unix out there</a></li>
+  <li><a href="https://rsync.samba.org/">RSYNC</a></li>
+  <li><a href="http://stackoverflow.com/questions/19396718/compare-files-in-two-directory-on-remote-server-using-unix">compare files in two directory on remote server using unix</a></li>
+</ul>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/vagrant-notes">&laquo; Vagrant Notes</a></li> <li class="page-item"><a class="page-link" href="/git-oneflow-workflow">Git Workflow &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>

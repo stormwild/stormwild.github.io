@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Create Docker Image - Stormwild (Alexander R. Torrijos)</title><meta name="description" content="Stormwild (Alexander R. Torrijos)"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stormwild (Alexander R. Torrijos)" /><script defer="defer" src="/dist/js/bundle-b761ec.js"></script><link href="/dist/css/styles-b761ec.css" rel="stylesheet"></head><body><header class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-sm"><a href="/" class="navbar-brand"><img src="/dist/img/stormwild-logo.svg" alt="" width="30" height="30" class="d-inline-block align-top"> Stormwild </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home</a></li><li class="nav-item"><a href="/cv" class="nav-link">CV</a></li><li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">    <a class="dropdown-item" href="/binary">Binary</a>    <a class="dropdown-item" href="/dba">DBA</a>    <a class="dropdown-item" href="/docker-notes">Docker Notes</a>              <a class="dropdown-item" href="/list-of-jekyll-plugins-supported-on-github-pages">List of Jekyll Plugins Supported On Github Pages</a>    <a class="dropdown-item" href="/notes">Notes</a>    <a class="dropdown-item" href="/permutations">Permutations</a>    <a class="dropdown-item" href="/selection-sort">Selection Sort</a>    <a class="dropdown-item" href="/ssl-tls-certificates">SSL TLS Certificates</a>                                        </div></li></ul></div></header><main class="main" role="main"><header class="main-header"><div class="container"><h1 class="page-header">Create Docker Image</h1><p class="text-muted"><small>12 Jan 2017</small></p></div></header><div class="container"><div class="row"><div class="col-md-8"><article class="main-article"><p>Notes on creating docker image.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+
+sudo apt-get update
+
+apt-cache policy docker-engine
+
+docker-engine:
+  Installed: (none)
+  Candidate: 17.03.0~ce-0~ubuntu-xenial
+  Version table:
+     17.03.0~ce-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.1-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.13.0-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.6-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.5-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.4-0~ubuntu-xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.3-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.12.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.2-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.1-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+     1.11.0-0~xenial 500
+        500 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
+        
+sudo apt-get install -y docker-engine
+
+
+sudo apt-get install -y docker-engine
+
+sudo systemctl status docker
+
+
+
+</code></pre></div></div>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04">Docker on Ubuntu</a></p>
+
+<p><a href="https://github.com/kdelfour/cloud9-docker">Cloud 9 Docker</a></p>
+</article><br><nav aria-label="Page navigation"><ul class="pagination"><li class="page-item"><a class="page-link" href="/php7-zero-day-exploits-found">&laquo; PHP7 Zero Day Exploits Found</a></li> <li class="page-item"><a class="page-link" href="/setup-lamp-ubuntu-16">Setup Lamp on Ubuntu 16 &raquo;</a></li></ul></nav></div><div class="col-md-4"><aside class="sidebar"><div class="card"><img class="card-img-top" src="/dist/img/stormwild-logo.svg" alt="Card image cap"><div class="card-body"><h4 class="card-title">Alexander R. Torrijos</h4><p class="card-text">Experienced Web Developer (.NET C# Mvc, EF, Sql Server, PHP5, Html, Css, Js)</p><a href="/cv" class="btn btn-primary">Learn more &raquo;</a></div></div></aside></div></div></div></main><footer class="footer"><div class="container"><span class="text-muted">&copy; Copyright 2024 Alexander R. Torrijos.</span></div></footer></body></html>
