@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20' # Upgrade Node.js version to 20
-          cache: 'pnpm'
 
       # Install pnpm and dependencies
       - name: Install pnpm
