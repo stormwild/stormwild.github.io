@@ -1,0 +1,16 @@
+---
+import { clsx } from '@lib/nav/clsx'
+import type { NavItem } from '@lib/nav/nav-item'
+import NavLink from '@components/astro/bootstrap/nav/nav-link.astro'
+import { isDropdown } from '@lib/nav/helpers'
+
+interface Props {
+  link: NavItem
+}
+
+const { link } = Astro.props
+---
+
+<li class={clsx(['nav-item', isDropdown(link) ? 'dropdown' : ''])}>
+  <NavLink link={link} />
+</li>

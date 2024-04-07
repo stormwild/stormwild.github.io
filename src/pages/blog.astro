@@ -1,0 +1,49 @@
+---
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
+---
+
+<BootstrapLayout title='Blog - Stormwild'>
+  <div class='container container-xl pt-5'>
+    <div class='row'>
+      <div class='col'>
+        <div class='alert alert-warning' role='alert'>
+          Blog still under construction. Please excuse the mess.
+        </div>
+      </div>
+    </div>
+
+    <div class='row row-cols-1 row-cols-md-3 g-4'>
+      {
+        posts.map((post) => (
+          <div class='col'>
+            <div class='card h-100'>
+              <Image
+                src={post.data.image.url}
+                alt={post.data.image.alt}
+                class='card-img-top img-fluid'
+                width={post.data.image.width}
+                height={post.data.image.width}
+              />
+              <div class='card-body'>
+                <h5 class='card-title'>{post.data.title}</h5>
+                <p class='card-text'>{post.data.description}</p>
+                <a href={`/posts/${post.slug}/`} class='btn btn-primary btn-sm'>
+                  Read More
+                </a>
+              </div>
+              <div class='card-footer'>
+                <small class='text-body-secondary'>
+                  Published: {post.data.pubDate.toDateString()}
+                </small>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BootstrapLayout>

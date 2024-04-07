@@ -1,0 +1,144 @@
+---
+import ProjectLink from '@components/astro/bootstrap/project-link.astro'
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+---
+
+<BootstrapLayout title='Profile - Stormwild'>
+  <div class='container text-center pt-5'>
+    <div class='row mb-5'>
+      <div class='col'>
+        <div class='list-group list-group-horizontal'>
+          <div
+            class='list-group-item list-group-item-action list-group-item-dark'
+          >
+            CV Download
+          </div>
+          <a
+            href='/cv/Alexander-Torrijos-Cv.docx'
+            target='_blank'
+            class='list-group-item list-group-item-action'>Word Doc</a
+          >
+          <a
+            href='/cv/Resume-Alexander-Torrijos.pdf'
+            target='_blank'
+            class='list-group-item list-group-item-action'>PDF</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-12 col-md'>
+        <div class='list-group mb-5'>
+          <div class='list-group-item list-group-item-dark'>Dev Profiles</div>
+          <a
+            href='https://github.com/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action'>Github</a
+          >
+          <a
+            href='https://stackoverflow.com/users/92189/stormwild'
+            target='_blank'
+            class='list-group-item list-group-item-action'>Stackoverflow</a
+          >
+          <a
+            href='https://codepen.io/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action'>CodePen</a
+          >
+          <a
+            href='https://www.linkedin.com/in/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action'>LinkedIn</a
+          >
+          <a
+            href='https://www.hackerrank.com/stormwild'
+            target='_blank'
+            class='list-group-item list-group-item-action'>HackerRank</a
+          >
+        </div>
+      </div>
+      <div class='col-12 col-md'>
+        <div class='list-group mb-5'>
+          <div class='list-group-item list-group-item-dark'>
+            Design Profiles
+          </div>
+          <a
+            href='https://www.behance.net/gallery/47208/Web-Design-Studies'
+            target='_blank'
+            class='list-group-item list-group-item-action'>Behance</a
+          >
+          <a
+            href='http://www.coroflot.com/stormwild'
+            target='_blank'
+            class='list-group-item list-group-item-action'>Coroflot</a
+          >
+          <a
+            href='http://stormwild.deviantart.com/gallery/'
+            target='_blank'
+            class='list-group-item list-group-item-action'>DeviantArt</a
+          >
+          <a
+            href='https://stormwild.carbonmade.com/'
+            target='_blank'
+            aria-disabled='true'
+            style='pointer-events: none;'
+            class='list-group-item list-group-item-action disabled'
+            >Carbonmade (offline/disabled)</a
+          >
+        </div>
+      </div>
+      <div class='col-12 col-md-6'>
+        <div
+          class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
+        >
+          <div
+            class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
+          >
+            <svg class='bi pe-none me-2' width='30' height='24'
+              ><use xlink:href='#bootstrap'></use></svg
+            >
+            <span class='fs-5 fw-semibold'>Sample Work</span>
+          </div>
+          <div class='list-group list-group-flush border-bottom scrollarea'>
+            <ProjectLink
+              href='https://modest-kirch-7e8ca1.netlify.app/'
+              title='React Quiz'
+              description='Demo of a quiz app built with React.'
+              isActive='true'
+            />
+            <ProjectLink
+              href='http://bcshotels.azurewebsites.net/'
+              title='.NET 4 Web Api '
+              description='Sample Hotel Listing with Sorting and Pagination'
+              isActive='true'
+            />
+            <ProjectLink
+              href='http://stickyevents.azurewebsites.net/'
+              title='Angularjs Google Maps Integration'
+              description='Sample Angularjs Google Maps Integration'
+              isActive='true'
+            />
+            <ProjectLink
+              href='https://stormwild.github.io/speech/'
+              title='Angular 7 SPA'
+              description='Speech - Sample Angular 7 SPA for job application test'
+              isActive='true'
+            />
+            <ProjectLink
+              href='https://stormwild.github.io/angular-github-user-search/'
+              title='Angular Github User Search API'
+              description='Github User Search API frontend built with Angular.'
+              isActive='false'
+            />
+            <ProjectLink
+              href='https://stormwild.github.io/spacex/build/'
+              title='React Redux SpaceX Flight API'
+              description='SpaceX Flight API frontend built with React and Redux.'
+              isActive='false'
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>

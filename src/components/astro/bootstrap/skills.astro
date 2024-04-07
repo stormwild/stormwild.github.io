@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+const skills = await getCollection('skills')
+
+skills.sort((a, b) => a.data.order - b.data.order)
+---
+
+<div class='container text-center mb-5'>
+  <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4'>
+    {
+      skills.map((skill) => (
+        <div class='col'>
+          <div class='card'>
+            <Image
+              src={skill.data.logo}
+              alt={skill.data.skill}
+              class='card-img-top img-fluid'
+              loading='eager'
+            />
+
+            <div class='card-body'>
+              <h4 class='card-title'>{skill.data.skill}</h4>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>
+                Proficiency:{' '}
+                <span class='ml-2 badge badge-pill badge-info'>
+                  {skill.data.proficiency}/10
+                </span>
+              </li>
+              <li class='list-group-item'>{skill.data.label}</li>
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets'
+import stormwildlogo from '@assets/svg/stormwild-logo.svg'
+import NavItem from '@components/astro/bootstrap/nav/nav-item.astro'
+
+const pageLinks = [
+  {
+    href: '/',
+    text: 'Home',
+    subpages: [],
+  },
+  {
+    href: '/profile',
+    text: 'Profile',
+    subpages: [
+      // {
+      //   href: '/profile/profile',
+      //   text: 'Profile',
+      //   subpages: [],
+      // },
+      // {
+      //   href: '/profile/portfolio',
+      //   text: 'Portfolio',
+      //   subpages: [],
+      // },
+      // {
+      //   href: '/profile/cv',
+      //   text: 'CV',
+      //   subpages: [],
+      // },
+    ],
+  },
+  {
+    href: '/blog',
+    text: 'Blog',
+    subpages: [],
+  },
+]
+---
+
+<nav class='navbar navbar-expand-lg bg-dark-subtle' data-bs-theme='dark'>
+  <div class='container container-xl'>
+    <a class='navbar-brand' href='/'>
+      <Image
+        src={stormwildlogo}
+        alt='Stormwild'
+        width='30'
+        height='30'
+        class='d-inline-block align-text-top'
+        loading='eager'
+      />
+      <span style='text-transform: uppercase;'>Stormwild</span>
+    </a>
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#navbarSupportedContent'
+      aria-controls='navbarSupportedContent'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+      <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+        {pageLinks.map((link) => <NavItem link={link} />)}
+      </ul>
+    </div>
+  </div>
+</nav>

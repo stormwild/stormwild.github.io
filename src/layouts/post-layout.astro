@@ -1,0 +1,68 @@
+---
+import BootstrapLayout from './bootstrap-layout.astro'
+import { fade } from 'astro:transitions'
+
+const { frontmatter } = Astro.props
+
+const { title, author, pubDate, tags } = frontmatter
+---
+
+<BootstrapLayout title={title}>
+  <div class='container container-xl pt-5'>
+    <div class='row'>
+      <div class='col'>
+        <div class='alert alert-warning' role='alert'>
+          Blog still under construction. Please excuse the mess.
+        </div>
+      </div>
+    </div>
+    <div class='row row-cols-1 row-cols-md-2'>
+      <div class='col col-md-8'>
+        <h1 class='display-1'>{title}</h1>
+        <hr />
+        <p><small>Written by <span title='/about'>{author}</span></small></p>
+        <p><small>Published on: {pubDate}</small></p>
+        <hr />
+        <p transition:animate={fade({ duration: '2s' })}>
+          <em>{frontmatter.description}</em>
+        </p>
+
+        <slot />
+      </div>
+      <div class='col col-md-4 pt-5'>
+        <div
+          class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
+        >
+          <div
+            class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
+          >
+            <svg class='bi pe-none me-2' width='30' height='24'
+              ><use xlink:href='#bootstrap'></use></svg
+            >
+            <span class='fs-5 fw-semibold'>Tags</span>
+          </div>
+          <ul class='tags list-group list-group-flush border-bottom scrollarea'>
+            {
+              tags.map((tag: string) => (
+                <li class='list-group-item'>
+                  <span title={`/tags/${tag}`}>{tag}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <!-- <div class='list-group list-group-flush border-bottom scrollarea'>
+            <div class='list-group-item'>
+              <div
+                class='d-flex w-100 align-items-center justify-content-between'
+              >
+                <strong class='mb-1'>Title</strong>
+              </div>
+              <div class='col-10 mb-1 small'>Description</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>

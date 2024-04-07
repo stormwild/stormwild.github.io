@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets'
+import alex from '@assets/img/alex-torrijos.jpg'
+---
+
+<section class='bg-body-tertiary mb-5'>
+  <div class='container container-xl col-xl-12 px-4 py-5'>
+    <div class='row flex-lg-row-reverse align-items-center g-5 py-5'>
+      <div class='col-lg-6 text-center'>
+        <figure class='figure'>
+          <Image
+            src={alex}
+            alt='Alexander Torrijos'
+            class='d-block mx-lg-auto figure-img img-thumbnail img-fluid rounded-circle border border-3 border-light'
+            width='400'
+            height='400'
+            loading='eager'
+          />
+          <figcaption class='figure-caption text-center'>
+            Alexander R. Torrijos
+          </figcaption>
+        </figure>
+      </div>
+      <div class='col-lg-6'>
+        <h1 class='display-5 fw-bold text-body-emphasis lh-1 mb-3'>
+          Full Stack Developer
+        </h1>
+        <p class='lead'>
+          Alex is a Full Stack Developer specializing in:
+          <ul class='list-group list-group-horizontal-md mb-3'>
+            <li class='list-group-item'>C#</li>
+            <li class='list-group-item'>.NET</li>
+            <li class='list-group-item'>EF Core</li>
+            <li class='list-group-item'>SQL Server</li>
+            <li class='list-group-item'>ReactJs</li>
+            <li class='list-group-item'>Angular</li>
+          </ul>
+        </p>
+        <p class='text-body-secondary'>
+          Excels as an individual contributor, with strong problem-solving and
+          communication skills. Experience building applications from scratch,
+          enhancing existing ones, and working as part of a team or
+          independently.
+        </p>
+        <p class='text-body-secondary'>
+          Committed to delivering high-quality software solutions, adhering to
+          the best practices of SOLID design principles, and writing clean,
+          efficient, and well-tested code.
+        </p>
+        <p class='text-body-secondary'>
+          Worked on a variety of projects, from small software consultancies,
+          design agencies to large corporations. Proficient in all stages of the
+          web development cycle, including database design, coding, testing, and
+          deployment.
+        </p>
+
+        <div class='list-group list-group-horizontal'>
+          <a
+            href='https://www.linkedin.com/in/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action list-group-item-dark text-center'
+            >LinkedIn</a
+          >
+          <a
+            href='https://github.com/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action list-group-item-dark text-center'
+            >Github</a
+          >
+          <a
+            href='https://stackoverflow.com/users/92189/stormwild'
+            target='_blank'
+            class='list-group-item list-group-item-action list-group-item-dark text-center'
+            >Stackoverflow</a
+          >
+
+          <a
+            href='https://codepen.io/stormwild/'
+            target='_blank'
+            class='list-group-item list-group-item-action list-group-item-dark text-center'
+            >CodePen</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
