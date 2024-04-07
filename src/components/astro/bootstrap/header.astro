@@ -1,48 +1,14 @@
 ---
 import { Image } from 'astro:assets'
-import stormwildlogo from '@assets/svg/stormwild-logo.svg'
-import NavItem from '@components/astro/bootstrap/nav/nav-item.astro'
-
-const pageLinks = [
-  {
-    href: '/',
-    text: 'Home',
-    subpages: [],
-  },
-  {
-    href: '/profile',
-    text: 'Profile',
-    subpages: [
-      // {
-      //   href: '/profile/profile',
-      //   text: 'Profile',
-      //   subpages: [],
-      // },
-      // {
-      //   href: '/profile/portfolio',
-      //   text: 'Portfolio',
-      //   subpages: [],
-      // },
-      // {
-      //   href: '/profile/cv',
-      //   text: 'CV',
-      //   subpages: [],
-      // },
-    ],
-  },
-  {
-    href: '/blog',
-    text: 'Blog',
-    subpages: [],
-  },
-]
+import logo from '@assets/svg/stormwild-logo.svg'
+import { pages } from '@lib/nav/pages'
 ---
 
 <nav class='navbar navbar-expand-lg bg-dark-subtle' data-bs-theme='dark'>
   <div class='container container-xl'>
     <a class='navbar-brand' href='/'>
       <Image
-        src={stormwildlogo}
+        src={logo}
         alt='Stormwild'
         width='30'
         height='30'
@@ -64,8 +30,30 @@ const pageLinks = [
     </button>
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
       <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
-        {pageLinks.map((link) => <NavItem link={link} />)}
+        {
+          pages.map((page) => (
+            <li class='nav-item'>
+              <a class='nav-link' href={page.href} role='button'>
+                <span>{page.text}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 </nav>
+
+<script>
+  const pathname = window.location.pathname
+  const links = document.querySelectorAll('.nav-link')
+
+  const activeLink = Array.from(links).find(
+    (link) => link.getAttribute('href') === pathname
+  )
+
+  if (activeLink) {
+    activeLink.classList.add('active')
+    activeLink.setAttribute('aria-current', 'page')
+  }
+</script>
