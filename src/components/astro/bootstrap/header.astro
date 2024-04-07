@@ -49,7 +49,9 @@ import { pages } from '@lib/nav/pages'
   const links = document.querySelectorAll('.nav-link')
 
   const activeLink = Array.from(links).find(
-    (link) => link.getAttribute('href') === pathname
+    (link) =>
+      link.getAttribute('href') === pathname ||
+      link.getAttribute('href') === pathname.slice(0, -1)
   )
 
   if (activeLink) {
