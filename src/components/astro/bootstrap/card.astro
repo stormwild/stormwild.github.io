@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+const { post } = Astro.props
+---
+
+<div class='card h-100'>
+  <Image
+    src={post.data.image.url}
+    alt={post.data.image.alt}
+    class='card-img-top img-fluid'
+    width={post.data.image.width}
+    height={post.data.image.width}
+  />
+  <div class='card-body'>
+    <h5 class='card-title'>{post.data.title}</h5>
+    <p class='card-text'>{post.data.description}</p>
+    <a href={`/posts/${post.slug}/`} class='btn btn-primary btn-sm'>
+      Read More
+    </a>
+  </div>
+  <div class='card-footer'>
+    <small class='text-body-secondary'>
+      Published: {post.data.pubDate.toDateString()}
+    </small>
+  </div>
+</div>

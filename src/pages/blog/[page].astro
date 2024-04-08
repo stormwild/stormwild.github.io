@@ -1,13 +1,21 @@
 ---
 import Alert from '@components/astro/bootstrap/alert.astro'
 import Card from '@components/astro/bootstrap/card.astro'
+import Paginate from '@components/astro/bootstrap/paginate.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 
-const posts = await getCollection('posts')
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection('posts')
+
+  return paginate(posts, { pageSize: 1 })
+}) satisfies GetStaticPaths
+
+const { page } = Astro.props
 ---
 
-<BootstrapLayout title='Blog - Stormwild'>
+<BootstrapLayout title='Blog Posts - Stormwild'>
   <div class='container container-xl pt-5'>
     <div class='row'>
       <div class='col'>
@@ -17,14 +25,16 @@ const posts = await getCollection('posts')
       </div>
     </div>
 
-    <div class='row row-cols-1 row-cols-md-3 g-4'>
+    <div class='row row-cols-1 row-cols-md-3 g-4 mb-5'>
       {
-        posts.map((post) => (
+        page.data.map((post) => (
           <div class='col'>
             <Card post={post} />
           </div>
         ))
       }
     </div>
+
+    <Paginate page={page} />
   </div>
 </BootstrapLayout>

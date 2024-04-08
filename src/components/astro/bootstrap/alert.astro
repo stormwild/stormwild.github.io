@@ -1,0 +1,9 @@
+---
+import { join } from '@lib/util/join'
+
+const { variant } = Astro.props
+---
+
+<div class={join(['alert', join(['alert', variant], '-')], ' ')} role='alert'>
+  <slot> Set Alert Message </slot>
+</div>
