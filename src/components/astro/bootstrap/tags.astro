@@ -9,14 +9,14 @@ const { prefix = BLOG_TAGS_ROOT, tags } = Astro.props
   class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
 >
   <div
-    class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
+    class='d-flex align-items-center flex-shrink-0 px-3 py-1 link-body-emphasis text-decoration-none border-bottom'
   >
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width='20'
       height='20'
       fill='currentColor'
-      class='bi bi-tags-fill me-3'
+      class='bi bi-tags-fill'
       viewBox='0 0 16 16'
     >
       <path
@@ -26,7 +26,13 @@ const { prefix = BLOG_TAGS_ROOT, tags } = Astro.props
         d='M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z'
       ></path>
     </svg>
-    <span class='fs-5 fw-semibold'>Tags</span>
+    <a
+      href={join([BLOG_TAGS_ROOT])}
+      title='All Tags'
+      class='btn btn-dark btn-link text-decoration-none ms-2'
+    >
+      <span class='fs-5 fw-semibold'> Tags </span>
+    </a>
   </div>
   <ul class='tags list-group list-group-flush border-bottom scrollarea'>
     {

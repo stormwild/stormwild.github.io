@@ -5,10 +5,11 @@ import { fade } from 'astro:transitions'
 import { BLOG_TAGS_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import Tags from '@components/astro/bootstrap/tags.astro'
+import { Image } from 'astro:assets'
 
 const { frontmatter } = Astro.props
 
-const { title, author, pubDate, tags } = frontmatter
+const { title, author, pubDate, tags, image } = frontmatter
 ---
 
 <BootstrapLayout title={title}>
@@ -20,18 +21,39 @@ const { title, author, pubDate, tags } = frontmatter
     </div>
     <div class='row row-cols-1 row-cols-md-2'>
       <div class='col col-md-8'>
-        <h1 class='display-1'>{title}</h1>
-        <hr />
-        <p><small>Written by <span title='/about'>{author}</span></small></p>
-        <p><small>Published on: {pubDate}</small></p>
-        <hr />
-        <p transition:animate={fade({ duration: '2s' })}>
-          <em>{frontmatter.description}</em>
-        </p>
+        <h1 class='display-3 mb-4'>{title}</h1>
+        <div
+          class='mb-5 border border-secondary-subtle border-bottom-0 border-start-0 border-end-0 border-opacity-10 text-end text-body-secondary pt-2'
+        >
+          <small>
+            {
+              new Date(pubDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })
+            }
+          </small>
+        </div>
 
         <slot />
       </div>
-      <div class='col col-md-4 pt-5'>
+      <div class='col col-md-4'>
+        <div class='bd-example m-0 border-0 mb-3'>
+          <Image
+            src={image.url}
+            alt={image.alt}
+            class='card-img-top img-fluid bd-placeholder-img bd-placeholder-img-lg img-fluid mb-3'
+            width={image.width}
+            height={image.height}
+          />
+          <p class='text-muted'>
+            <small>
+              <em>{frontmatter.description}</em>
+            </small>
+          </p>
+        </div>
+
         <Tags tags={tags} />
       </div>
     </div>

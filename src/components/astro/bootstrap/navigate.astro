@@ -12,8 +12,10 @@ const prev = currentIndex > 0 ? posts[currentIndex - 1] : null
 const next = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
 ---
 
-<div class='container container-xl g-0'>
-  <div class='row g-0'>
+<div
+  class='container container-xl g-0 border border-bottom-0 border-start-0 border-end-0 border-opacity-10 border-secondary-subtle mt-5'
+>
+  <div class='row g-0 pt-2'>
     <div class='col text-start'>
       {
         prev ? (

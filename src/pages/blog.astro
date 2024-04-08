@@ -4,6 +4,8 @@ import Card from '@components/astro/bootstrap/card.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { getCollection } from 'astro:content'
 import { BLOG_POST_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import Carousel from '@components/astro/bootstrap/carousel.astro'
+import BlogFeature from '@components/astro/bootstrap/blog-feature.astro'
 
 const posts = await getCollection('posts')
 ---
@@ -16,6 +18,13 @@ const posts = await getCollection('posts')
       </div>
     </div>
 
+    <!-- Carousel -->
+    <!-- <Carousel /> -->
+
+    <!-- Blog Feature -->
+    <BlogFeature />
+
+    <!-- Latest Blog Posts -->
     <div class='row row-cols-1 row-cols-md-3 g-4'>
       {
         posts.map((post) => (

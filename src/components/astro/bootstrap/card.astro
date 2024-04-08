@@ -16,8 +16,27 @@ const { prefix = BLOG_POST_ROOT, post } = Astro.props
   <div class='card-body'>
     <h5 class='card-title'>{post.data.title}</h5>
     <p class='card-text'>{post.data.description}</p>
-    <a href={join([prefix, post.slug])} class='btn btn-primary btn-sm'>
+    <!-- <a href={join([prefix, post.slug])} class='btn btn-primary btn-sm'>
       Read More
+    </a> -->
+    <a
+      href={join([prefix, post.slug])}
+      class='icon-link gap-1 icon-link-hover stretched-link'
+    >
+      Continue reading
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        fill='currentColor'
+        class='bi bi-chevron-right'
+        viewBox='0 0 16 16'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'
+        ></path>
+      </svg>
     </a>
   </div>
   <div class='card-footer'>
