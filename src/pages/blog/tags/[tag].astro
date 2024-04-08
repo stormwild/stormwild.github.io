@@ -1,0 +1,65 @@
+---
+import Alert from '@components/astro/bootstrap/alert.astro'
+import Card from '@components/astro/bootstrap/card.astro'
+import Tags from '@components/astro/bootstrap/tags.astro'
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import {
+  BLOG_POST_ROOT,
+  BLOG_TAGS_ROOT,
+  BLOG_UNDER_CONSTRUCTION,
+} from '@lib/common/constants'
+import { join } from '@lib/util/join'
+import type { GetStaticPathsResult } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+  const posts = await getCollection('posts')
+  const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())]
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag))
+    return {
+      params: { tag },
+      props: { posts: filteredPosts, tags: uniqueTags },
+    }
+  })
+}
+
+interface TagProps {
+  posts: CollectionEntry<'posts'>[]
+  tags: string[]
+}
+
+const { tag } = Astro.params
+const { posts, tags } = Astro.props as unknown as TagProps
+---
+
+<BootstrapLayout title={tag as string}>
+  <div class='container container-xl pt-5'>
+    <div class='row'>
+      <div class='col'>
+        <Alert variant='warning'> {BLOG_UNDER_CONSTRUCTION}</Alert>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col col-sm-8'>
+        <h1 class='display-4 mb-5'>
+          Posts tagged with <code><kbd>{tag}</kbd></code>
+        </h1>
+        <div class='row row-cols-1 row-cols-md-3 g-4'>
+          {
+            posts.map((post) => (
+              <div class='col'>
+                <Card prefix={BLOG_POST_ROOT} post={post} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class='col col-sm-4'>
+        <Tags tags={tags} prefix={BLOG_TAGS_ROOT} />
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>

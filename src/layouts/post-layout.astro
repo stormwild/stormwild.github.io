@@ -2,7 +2,9 @@
 import Alert from '@components/astro/bootstrap/alert.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { fade } from 'astro:transitions'
-import { BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import { BLOG_TAGS_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+import Tags from '@components/astro/bootstrap/tags.astro'
 
 const { frontmatter } = Astro.props
 
@@ -30,39 +32,7 @@ const { title, author, pubDate, tags } = frontmatter
         <slot />
       </div>
       <div class='col col-md-4 pt-5'>
-        <div
-          class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
-        >
-          <div
-            class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
-              fill='currentColor'
-              class='bi bi-tags-fill me-3'
-              viewBox='0 0 16 16'
-            >
-              <path
-                d='M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3'
-              ></path>
-              <path
-                d='M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z'
-              ></path>
-            </svg>
-            <span class='fs-5 fw-semibold'>Tags</span>
-          </div>
-          <ul class='tags list-group list-group-flush border-bottom scrollarea'>
-            {
-              tags.map((tag: string) => (
-                <li class='list-group-item'>
-                  <span title={`/tags/${tag}`}>{tag}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        <Tags tags={tags} />
       </div>
     </div>
   </div>
