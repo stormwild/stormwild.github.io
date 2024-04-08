@@ -2,7 +2,7 @@
 import { BLOG_POST_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import { Image } from 'astro:assets'
-const { post } = Astro.props
+const { prefix = BLOG_POST_ROOT, post } = Astro.props
 ---
 
 <div class='card h-100'>
@@ -16,7 +16,7 @@ const { post } = Astro.props
   <div class='card-body'>
     <h5 class='card-title'>{post.data.title}</h5>
     <p class='card-text'>{post.data.description}</p>
-    <a href={join([BLOG_POST_ROOT, post.slug])} class='btn btn-primary btn-sm'>
+    <a href={join([prefix, post.slug])} class='btn btn-primary btn-sm'>
       Read More
     </a>
   </div>
