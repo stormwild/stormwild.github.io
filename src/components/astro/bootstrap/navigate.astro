@@ -1,0 +1,36 @@
+---
+import { BLOG_POST_ROOT } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+
+const { prefix = BLOG_POST_ROOT, post, posts } = Astro.props
+
+const currentIndex = posts.findIndex(
+  (p: { slug: string }) => p.slug === post.slug
+)
+
+const prev = currentIndex > 0 ? posts[currentIndex - 1] : null
+const next = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+---
+
+<div class='container container-xl g-0'>
+  <div class='row g-0'>
+    <div class='col text-start'>
+      {
+        prev ? (
+          <a href={join([prefix, prev.slug])} class='btn btn-dark'>
+            ← {prev.data.title}
+          </a>
+        ) : null
+      }
+    </div>
+    <div class='col text-end'>
+      {
+        next ? (
+          <a href={join([prefix, next.slug])} class='btn btn-dark'>
+            {next.data.title} →
+          </a>
+        ) : null
+      }
+    </div>
+  </div>
+</div>

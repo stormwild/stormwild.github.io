@@ -1,6 +1,8 @@
 ---
+import Alert from '@components/astro/bootstrap/alert.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { fade } from 'astro:transitions'
+import { BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
 
 const { frontmatter } = Astro.props
 
@@ -11,9 +13,7 @@ const { title, author, pubDate, tags } = frontmatter
   <div class='container container-xl pt-5'>
     <div class='row'>
       <div class='col'>
-        <div class='alert alert-warning' role='alert'>
-          Blog still under construction. Please excuse the mess.
-        </div>
+        <Alert variant='warning'> {BLOG_UNDER_CONSTRUCTION} </Alert>
       </div>
     </div>
     <div class='row row-cols-1 row-cols-md-2'>
@@ -62,17 +62,6 @@ const { title, author, pubDate, tags } = frontmatter
               ))
             }
           </ul>
-
-          <!-- <div class='list-group list-group-flush border-bottom scrollarea'>
-            <div class='list-group-item'>
-              <div
-                class='d-flex w-100 align-items-center justify-content-between'
-              >
-                <strong class='mb-1'>Title</strong>
-              </div>
-              <div class='col-10 mb-1 small'>Description</div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>

@@ -1,20 +1,15 @@
 ---
+import { BLOG_PAGE_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 
-const { page } = Astro.props
-
-const paths = Astro.url.pathname.split('/')
-// console.log(paths)
-
-const prefix = paths.slice(0, 2).join('/')
-// console.log(prefix)
+const { prefix = BLOG_PAGE_ROOT, page } = Astro.props
 ---
 
 <div class='row'>
   <div class='col'>
     {
       page.currentPage == 1 ? null : (
-        <a href={join([prefix, '/', '1'], '')} class='btn btn-dark me-2'>
+        <a href={join([prefix, '1'])} class='btn btn-dark me-2'>
           &laquo; First
         </a>
       )
@@ -28,22 +23,20 @@ const prefix = paths.slice(0, 2).join('/')
     }
     {
       Array.from({ length: Math.ceil(page.total / page.size) }, (_, i) => (
-        <>
-          <a
-            href={join([prefix, '/', i + 1 + ''])}
-            class={join(
-              [
-                'btn',
-                'btn-dark',
-                page.currentPage == i + 1 ? 'active' : '',
-                'me-1',
-              ],
-              ' '
-            )}
-          >
-            {i + 1}
-          </a>
-        </>
+        <a
+          href={join([prefix, i + 1 + ''])}
+          class={join(
+            [
+              'btn',
+              'btn-dark',
+              page.currentPage == i + 1 ? 'active' : '',
+              'me-1',
+            ],
+            ' '
+          )}
+        >
+          {i + 1}
+        </a>
       ))
     }
     {
@@ -55,7 +48,7 @@ const prefix = paths.slice(0, 2).join('/')
     }
     {
       page.currentPage == page.lastPage ? null : (
-        <a href={join([prefix, '/', page.lastPage])} class='btn btn-dark'>
+        <a href={join([prefix, page.lastPage])} class='btn btn-dark'>
           Last &raquo;
         </a>
       )

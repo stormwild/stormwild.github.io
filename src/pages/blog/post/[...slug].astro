@@ -1,0 +1,27 @@
+---
+import Navigate from '@components/astro/bootstrap/navigate.astro'
+import PostLayout from '@layouts/post-layout.astro'
+import { BLOG_POST_ROOT } from '@lib/common/constants'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+
+const pathname = Astro.url.pathname
+console.log('pathname', pathname)
+---
+
+<PostLayout frontmatter={entry.data}>
+  <Content />
+  <Navigate prefix={BLOG_POST_ROOT} post={entry} posts={posts} />
+</PostLayout>
