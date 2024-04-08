@@ -3,11 +3,12 @@
 title: My Second Blog Post
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop!"
-image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Thumbnail of Astro arcs."
-    width: 1281
-    height: 721
+image: '@assets/posts/arc.webp'
+# image:
+#     url: "https://docs.astro.build/assets/arc.webp"
+#     alt: "Thumbnail of Astro arcs."
+#     width: 1281
+#     height: 721
 pubDate: 2022-07-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---

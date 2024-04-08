@@ -41,11 +41,9 @@ const { title, author, pubDate, tags, image } = frontmatter
       <div class='col col-md-4'>
         <div class='bd-example m-0 border-0 mb-3'>
           <Image
-            src={image.url}
-            alt={image.alt}
+            src={image}
+            alt={title}
             class='card-img-top img-fluid bd-placeholder-img bd-placeholder-img-lg img-fluid mb-3'
-            width={image.width}
-            height={image.height}
           />
           <p class='text-muted'>
             <small>

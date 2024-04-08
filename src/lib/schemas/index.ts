@@ -1,20 +1,20 @@
 import { z, type ImageFunction } from 'astro:content'
 
-export const postSchema = z.object({
-  title: z.string(),
-  pubDate: z.date(),
-  description: z.string(),
-  author: z.string(),
-  image: z.object({
-    url: z.string(),
-    alt: z.string(),
-    width: z.number(),
-    height: z.number(),
-  }),
-  tags: z.array(z.string()),
-})
+export interface SchemaProps {
+  image: ImageFunction
+}
 
-export const skillsSchema = ({ image }: { image: ImageFunction }) =>
+export const postSchema = ({ image }: SchemaProps) =>
+  z.object({
+    title: z.string(),
+    pubDate: z.date(),
+    description: z.string(),
+    author: z.string(),
+    image: image(),
+    tags: z.array(z.string()),
+  })
+
+export const skillsSchema = ({ image }: SchemaProps) =>
   z.object({
     skill: z.string(),
     proficiency: z.string(),
