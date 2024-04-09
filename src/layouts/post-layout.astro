@@ -2,7 +2,7 @@
 import Alert from '@components/astro/bootstrap/alert.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { fade } from 'astro:transitions'
-import { BLOG_TAGS_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import { BLOG_PAGE_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import Tags from '@components/astro/bootstrap/tags.astro'
 import { Image } from 'astro:assets'
@@ -10,6 +10,8 @@ import { Image } from 'astro:assets'
 const { frontmatter } = Astro.props
 
 const { title, author, pubDate, tags, image } = frontmatter
+
+const prefix = BLOG_PAGE_ROOT
 ---
 
 <BootstrapLayout title={title}>
@@ -21,6 +23,19 @@ const { title, author, pubDate, tags, image } = frontmatter
     </div>
     <div class='row row-cols-1 row-cols-md-2'>
       <div class='col col-md-8'>
+        <div class='bd-example m-0 border-0 mb-3'>
+          <Image
+            src={image}
+            alt={title}
+            class='card-img-top img-fluid bd-placeholder-img bd-placeholder-img-lg img-fluid mb-3'
+          />
+          <p class='text-muted'>
+            <small>
+              <em>{frontmatter.description}</em>
+            </small>
+          </p>
+        </div>
+
         <h1 class='display-3 mb-4'>{title}</h1>
         <div
           class='mb-5 border border-secondary-subtle border-bottom-0 border-start-0 border-end-0 border-opacity-10 text-end text-body-secondary pt-2'
@@ -39,20 +54,16 @@ const { title, author, pubDate, tags, image } = frontmatter
         <slot />
       </div>
       <div class='col col-md-4'>
-        <div class='bd-example m-0 border-0 mb-3'>
-          <Image
-            src={image}
-            alt={title}
-            class='card-img-top img-fluid bd-placeholder-img bd-placeholder-img-lg img-fluid mb-3'
-          />
-          <p class='text-muted'>
-            <small>
-              <em>{frontmatter.description}</em>
-            </small>
-          </p>
-        </div>
-
         <Tags tags={tags} />
+        <div class='row'>
+          <div class='col'>
+            <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
+              <a href={join([prefix, '1'])} class='btn btn-outline-primary'
+                >View All Posts &raquo;</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
