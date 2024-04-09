@@ -10,6 +10,6 @@ image: '@assets/posts/arc.webp'
 #     width: 1281
 #     height: 721
 pubDate: 2022-07-08
-tags: ["astro", "blogging", "learning in public", "successes"]
+tags: ["astro", "blogging", "learning in public", "successes", "featured"]
 ---
 After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
