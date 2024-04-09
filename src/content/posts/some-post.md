@@ -10,7 +10,7 @@ image: '@assets/posts/rays.webp'
 #     alt: "Thumbnail of Astro arcs."
 #     width: 1281
 #     height: 721
-tags: ["astro", "blogging", "learning in public", "first"]
+tags: ["astro", "blogging", "learning in public", "first", "featured"]
 ---
 
 Some post

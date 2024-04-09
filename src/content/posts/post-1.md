@@ -10,7 +10,7 @@ image: '@assets/posts/arc.webp'
 #     alt: "Thumbnail of Astro arcs."
 #     width: 1281
 #     height: 721
-tags: ["astro", "blogging", "learning in public", "first"]
+tags: ["astro", "blogging", "learning in public", "first", "featured" ]
 ---
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.

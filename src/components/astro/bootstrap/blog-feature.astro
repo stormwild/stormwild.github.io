@@ -1,80 +1,81 @@
 ---
+import { BLOG_POST_ROOT } from '@lib/common/constants'
+import { getCollection } from 'astro:content'
+import Card from '@components/astro/bootstrap/card.astro'
+import { Image } from 'astro:assets'
+import { trunc } from '@lib/util/trunc'
+import { join } from '@lib/util/join'
 
+const posts = await getCollection('posts')
+
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+)
+
+const featured = sortedPosts.filter((post) =>
+  post.data.tags.includes('featured')
+)
+
+const main = featured[0]
+const sub = featured.slice(1, 3)
+
+const prefix = BLOG_POST_ROOT
 ---
 
 <div class='p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary'>
   <div class='col-lg-6 px-0'>
-    <h1 class='display-4'>Title of a longer featured blog post</h1>
+    <h1 class='display-4'>
+      {main.data.title}
+      <!-- Title of a longer featured blog post -->
+    </h1>
     <p class='lead my-3'>
-      Multiple lines of text that form the lede, informing new readers quickly
-      and efficiently about what’s most interesting in this post’s contents.
+      {main.data.description}
+      <!-- 
+Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents. -->
     </p>
     <p class='lead mb-0'>
-      <a href='#' class='text-muted'><small>Continue reading...</small></a>
+      <a href={join([prefix, main.slug])} class='text-muted'
+        ><small>Continue reading...</small></a
+      >
     </p>
   </div>
 </div>
 
 <div class='row mb-2'>
-  <div class='col-md-6'>
-    <div
-      class='row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'
-    >
-      <div class='col p-4 d-flex flex-column position-static'>
-        <strong class='d-inline-block mb-2 text-primary-emphasis'>World</strong>
-        <h3 class='mb-0'>Featured post</h3>
-        <div class='mb-1 text-body-secondary'>Nov 12</div>
-        <p class='card-text mb-auto'>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content.
-        </p>
-        <a href='#' class='icon-link gap-1 icon-link-hover stretched-link'>
-          Continue reading
-          <svg class='bi'><use xlink:href='#chevron-right'></use></svg>
-        </a>
+  {
+    sub.map((post) => (
+      <div class='col-md-6'>
+        <div class='row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>
+          <div class='col-md-8 p-4 d-flex flex-column position-static'>
+            <strong class='d-inline-block mb-2 text-success-emphasis text-capitalize'>
+              {post.data.tags[0]}
+            </strong>
+            <h3 class='mb-0'>{trunc(post.data.title, 50)}</h3>
+            <div class='mb-1 text-body-secondary text-muted'>
+              {post.data.pubDate.toDateString()}
+            </div>
+            <p class='card-text mb-auto'>{trunc(post.data.description, 100)}</p>
+            <a
+              href={join([prefix, post.slug])}
+              class='icon-link gap-1 icon-link-hover stretched-link'
+            >
+              Continue reading
+              <svg class='bi'>
+                <use xlink:href='#chevron-right' />
+              </svg>
+            </a>
+          </div>
+          <div class='col-md-4 d-none d-lg-block bg-success'>
+            <Image
+              src={post.data.image}
+              alt={post.data.title}
+              class='card-img-top object-fit-cover'
+              height='250'
+            />
+          </div>
+        </div>
       </div>
-      <div class='col-auto d-none d-lg-block'>
-        <svg
-          class='bd-placeholder-img'
-          width='200'
-          height='250'
-          role='img'
-          aria-label='Placeholder: Thumbnail'
-          preserveAspectRatio='xMidYMid slice'
-          focusable='false'><use xlink:href='#bg-placeholder'></use></svg
-        >
-      </div>
-    </div>
-  </div>
-  <div class='col-md-6'>
-    <div
-      class='row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'
-    >
-      <div class='col p-4 d-flex flex-column position-static'>
-        <strong class='d-inline-block mb-2 text-success-emphasis'>Design</strong
-        >
-        <h3 class='mb-0'>Post title</h3>
-        <div class='mb-1 text-body-secondary'>Nov 11</div>
-        <p class='mb-auto'>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content.
-        </p>
-        <a href='#' class='icon-link gap-1 icon-link-hover stretched-link'>
-          Continue reading
-          <svg class='bi'><use xlink:href='#chevron-right'></use></svg>
-        </a>
-      </div>
-      <div class='col-auto d-none d-lg-block'>
-        <svg
-          class='bd-placeholder-img'
-          width='200'
-          height='250'
-          role='img'
-          aria-label='Placeholder: Thumbnail'
-          preserveAspectRatio='xMidYMid slice'
-          focusable='false'><use xlink:href='#bg-placeholder'></use></svg
-        >
-      </div>
-    </div>
-  </div>
+    ))
+  }
 </div>
