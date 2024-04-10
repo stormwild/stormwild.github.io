@@ -8,14 +8,14 @@ import {
   BLOG_POST_ROOT,
   BLOG_UNDER_CONSTRUCTION,
 } from '@lib/common/constants'
-import BlogFeature from '@components/astro/bootstrap/blog-feature.astro'
 import { join } from '@lib/util/join'
+import Featured from '@components/astro/bootstrap/featured.astro'
 
 const posts = await getCollection('posts')
 
 const sortedPosts = posts.sort(
   (a, b) =>
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
 )
 
 const notFeatured = sortedPosts.filter(
@@ -35,7 +35,7 @@ const prefix = BLOG_PAGE_ROOT
       </div>
     </div>
 
-    <BlogFeature />
+    <Featured />
 
     <!-- Latest Blog Posts -->
     <div class='row row-cols-1 row-cols-md-3 g-4 mb-4'>

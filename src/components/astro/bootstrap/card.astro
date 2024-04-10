@@ -36,7 +36,13 @@ const { prefix = BLOG_POST_ROOT, post } = Astro.props
   </div>
   <div class='card-footer'>
     <small class='text-body-secondary'>
-      Published: {post.data.pubDate.toDateString()}
+      {
+        new Date(post.data.published).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        })
+      }
     </small>
   </div>
 </div>

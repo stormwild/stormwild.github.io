@@ -9,7 +9,7 @@ image: '@assets/posts/rays.webp'
 #     alt: "Thumbnail of Astro rays."
 #     width: 1281
 #     height: 721
-pubDate: 2022-07-15
+published: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
 

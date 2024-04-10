@@ -7,9 +7,8 @@ export interface SchemaProps {
 export const postSchema = ({ image }: SchemaProps) =>
   z.object({
     title: z.string(),
-    pubDate: z.date(),
+    published: z.date(),
     description: z.string(),
-    author: z.string(),
     image: image(),
     tags: z.array(z.string()),
   })

@@ -9,7 +9,7 @@ import { Image } from 'astro:assets'
 
 const { frontmatter } = Astro.props
 
-const { title, author, pubDate, tags, image } = frontmatter
+const { title, author, published, tags, image } = frontmatter
 
 const prefix = BLOG_PAGE_ROOT
 ---
@@ -42,7 +42,7 @@ const prefix = BLOG_PAGE_ROOT
         >
           <small>
             {
-              new Date(pubDate).toLocaleDateString('en-US', {
+              new Date(published).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
