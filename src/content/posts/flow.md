@@ -3,7 +3,7 @@
 title: 'Flow'
 published: 2017-09-02
 description: 'Flow is a static type checker for your JavaScript code.'
-image: '@assets/posts/placeholder-globules.png'
+image: '@assets/posts/placeholder-red-circle.png'
 tags: ["Flow", "JavaScript", "Type Checking", "Static Typing"]
 ---
 
