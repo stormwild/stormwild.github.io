@@ -4,7 +4,7 @@ title: 'BCSHotels - A Sample C# .NET MVC5 Application'
 published: 2015-02-10
 description: 'BCSHotels - A Sample C# .NET MVC5 Application'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["featured", ".NET", ".NET MVC", "C#", "ASP .NET MVC", "ASP .NET MVC5", "PagedList.Mvc", "Sorting", "Pagination", "Hotels", "Images", "Sample Application", "Demo", "Source Code", "GitHub", "Azure"]
+tags: ["featured", ".NET", ".NET MVC", "CSharp", "ASP .NET MVC", "ASP .NET MVC5", "PagedList.Mvc", "Sorting", "Pagination", "Hotels", "Images", "Sample Application", "Demo", "Source Code", "GitHub", "Azure"]
 ---
 
 Created a sample .NET MVC web application with sorting and pagination. The application was a test for my application to a .NET developer position with a local company.
