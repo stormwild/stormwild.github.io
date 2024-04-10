@@ -14,7 +14,14 @@ import {
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection('posts')
 
-  return paginate(posts, { pageSize: 3 })
+  // earliest to latest Date ascending
+  const sortedPosts = posts.sort(
+    (a, b) =>
+      new Date(a.data.published).getTime() -
+      new Date(b.data.published).getTime()
+  )
+
+  return paginate(sortedPosts, { pageSize: 6 })
 }) satisfies GetStaticPaths
 
 const { page } = Astro.props

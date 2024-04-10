@@ -13,6 +13,7 @@ import Featured from '@components/astro/bootstrap/featured.astro'
 
 const posts = await getCollection('posts')
 
+// latest to earliest Date descending
 const sortedPosts = posts.sort(
   (a, b) =>
     new Date(b.data.published).getTime() - new Date(a.data.published).getTime()

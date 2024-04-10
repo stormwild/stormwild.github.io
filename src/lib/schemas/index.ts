@@ -8,6 +8,7 @@ export const postSchema = ({ image }: SchemaProps) =>
   z.object({
     title: z.string(),
     published: z.date(),
+    updated: z.date().optional(),
     description: z.string(),
     image: image(),
     tags: z.array(z.string()),
