@@ -36,17 +36,17 @@
     // clear the old results
     results.innerHTML = ''
 
+    let html = ''
     // add the new results
     for (const result of search.results) {
       const data = await result.data()
-
-      console.log('result', data)
-
-      results.innerHTML += `
+      html += `
           <a href="${data.url}" class="list-group-item list-group-item-action">
             <h3 class='h5'>${data.meta.title}</h3>
             <p><small>${data.excerpt}</small></p>
           </a>`
     }
+
+    results.innerHTML = html
   })
 </script>
