@@ -61,7 +61,7 @@ const prefix = BLOG_POST_ROOT
                 day: 'numeric',
               })}
             </div>
-            <p class='card-text mb-auto'>{trunc(post.data.description, 100)}</p>
+            <p class='card-text mb-auto'>{trunc(post.data.description, 41)}</p>
             <a
               href={join([prefix, post.slug])}
               class='icon-link gap-1 icon-link-hover stretched-link'
