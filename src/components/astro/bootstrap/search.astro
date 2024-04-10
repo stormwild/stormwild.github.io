@@ -1,0 +1,61 @@
+---
+
+---
+
+<div class='container container-xl py-3'>
+  <div class='row'>
+    <div class='col'>
+      <form class='d-flex mb-3' role='search'>
+        <input
+          id='search'
+          class='form-control me-2'
+          type='search'
+          placeholder='Search'
+          aria-label='Search'
+        />
+        <button class='btn btn-outline-secondary' type='submit'>Search</button>
+      </form>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col'>
+      <div id='results' class='list-group'>
+        <a href='${data.url}' class='list-group-item list-group-item-action'>
+          <h3 class='h5'>Title</h3>
+          <p><small>Excerpt</small></p>
+        </a>
+        <a href='${data.url}' class='list-group-item list-group-item-action'>
+          <h3 class='h5'>Title</h3>
+          <p><small>Excerpt</small></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type='module'>
+  const search = document.querySelector('#search')
+  const results = document.querySelector('#results')
+  window.pagefind = await import('/pagefind/pagefind.js')
+
+  search?.addEventListener('input', async (e) => {
+    // search the index using the input value
+    const search = await window.pagefind.search(e.target.value)
+
+    // clear the old results
+    results.innerHTML = ''
+
+    // add the new results
+    for (const result of search.results) {
+      const data = await result.data()
+
+      console.log('result', data)
+
+      results.innerHTML += `
+          <a href="${data.url}" class="list-group-item list-group-item-action">
+            <h3 class='h5'>${data.meta.title}</h3>
+            <p><small>${data.excerpt}</small></p>
+          </a>`
+    }
+  })
+</script>

@@ -7,6 +7,7 @@ import Footer from '@components/astro/bootstrap/footer.astro'
 import { SITE_NAME } from '@lib/common/constants'
 import Top from '@components/astro/bootstrap/scroll-top.astro'
 import ScrollTop from '@components/astro/bootstrap/scroll-top.astro'
+import Search from '@components/astro/bootstrap/search.astro'
 
 interface Props {
   title: string
@@ -42,6 +43,7 @@ const { title } = Astro.props
       >
     </svg>
     <Header />
+    <Search />
     <slot />
     <Footer />
     <ScrollTop />

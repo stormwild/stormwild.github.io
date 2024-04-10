@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest"
+    "test": "vitest",
+    "postbuild": "pagefind --site dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
+    "pagefind": "^1.1.0",
     "vitest": "^1.4.0"
   }
 }
