@@ -5,7 +5,8 @@ import Header from '@components/astro/bootstrap/header.astro'
 import stormwildlogo from '@assets/svg/stormwild-logo.svg'
 import Footer from '@components/astro/bootstrap/footer.astro'
 import { SITE_NAME } from '@lib/common/constants'
-import Top from '@components/astro/bootstrap/top.astro'
+import Top from '@components/astro/bootstrap/scroll-top.astro'
+import ScrollTop from '@components/astro/bootstrap/scroll-top.astro'
 
 interface Props {
   title: string
@@ -43,7 +44,7 @@ const { title } = Astro.props
     <Header />
     <slot />
     <Footer />
-    <Top />
+    <ScrollTop />
   </body>
 </html>
 
