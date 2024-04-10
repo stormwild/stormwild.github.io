@@ -4,7 +4,7 @@ title: 'Sample SPA using AngularJs MVC5/Web API and Google Maps'
 published: 2015-07-06
 description: 'Sample SPA using AngularJs MVC5/Web API and Google Maps'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["featured", "AngularJs", "Google Maps", "SPA", "Single Page Application", "MVC5", "Web Api", "Azure", "Demo", "Source Code", "GitHub"]
 ---
 
 Created a sample .NET MVC5 Single Page application that displays a list of events and displays a Google map of the location for each event.
