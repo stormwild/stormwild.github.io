@@ -4,7 +4,7 @@ title: 'Test Post Using Prose.io'
 published: 2019-09-04
 description: 'Prose.io is an online editor for Github Repositories'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["Prose.io"]
 ---
 
 ## Sample Post Using Prose.io

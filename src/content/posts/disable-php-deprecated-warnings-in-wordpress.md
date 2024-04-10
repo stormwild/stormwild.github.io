@@ -4,7 +4,7 @@ title: Disable PHP Deprecated Warnings in Wordpress
 published: 2015-11-22
 description: 'Disable PHP Deprecated Warnings in Wordpress'
 image: '@assets/posts/placeholder-globules.png'
-tags: ["default"]
+tags: ["WordPress", "PHP", "PHP Warnings", "WP_DEBUG"]
 ---
 
 When moving a WordPress site to a new server running the latest version of PHP5 (i.e. > 5.3), PHP Warnings may appear.

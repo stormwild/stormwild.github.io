@@ -4,7 +4,7 @@ title: 'Make'
 published: 2017-09-20
 description: 'GNU Make is an automation tool for compiling and building applications and is part of the GNU Toolchain.'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["Make", "GNU", "Build Tools"]
 ---
 
 GNU Make is an automation tool for compiling and building applications and is part of the GNU Toolchain.

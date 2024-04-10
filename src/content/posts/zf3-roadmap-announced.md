@@ -4,7 +4,7 @@ title: 'ZF3 Roadmap Announced'
 published: 2015-01-25
 description: 'ZF3 Roadmap Announced'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["PHP", "Zend Framework", "ZF3"]
 ---
 
 The Zend Framework team recently announced the [ZF3 roadmap](http://framework.zend.com/blog/announcing-the-zend-framework-3-roadmap.html).

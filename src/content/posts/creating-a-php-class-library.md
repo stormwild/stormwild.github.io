@@ -2,9 +2,9 @@
 # layout: '@layouts/markdown-post-layout.astro'
 title: Creating a PHP class library
 published: 2015-01-07
-description: 'Notes on internationalization in ASP .NET Core applications'
+description: 'Creating a PHP class library'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["PHP", "Class Libraries", "Composer", "PSR", "PHP Storm"]
 ---
 
 Today I created a PHP class library and shared it on Packagist. In this post I hope to share my experience.

@@ -4,7 +4,7 @@ title: 'PHPExcel Notes'
 published: 2016-09-23
 description: 'PHPExcel Notes'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["default"]
+tags: ["PHP", "PHPExcel", "Excel", "Spreadsheets", "PHP Libraries"]
 ---
 
 Notes from initial research on [PHPExcel](https://github.com/PHPOffice/PHPExcel).

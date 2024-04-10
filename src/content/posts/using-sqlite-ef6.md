@@ -2,9 +2,9 @@
 # layout: '@layouts/markdown-post-layout.astro'
 title: 'Using SQLite and EF6 '
 published: 2015-02-09
-description: 'Using SQLite and EF6 '
+description: 'Using SQLite and EF6'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["default"]
+tags: ["SQLite", "EF6", "Entity Framework", "Database"]
 ---
 
 Created a sample console [app](https://github.com/stormwild/SQLiteSample) using SQLite and EF6. The application uses the Chinook SQLite database and just displays the list of artists and albums that begin with A.

@@ -4,7 +4,7 @@ title: 'Running Jekyll Github Pages on Cloud9'
 published: 2015-12-24
 description: 'Running Jekyll Github Pages on Cloud9'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["default"]
+tags: ["Jekyll", "GitHub Pages", "Cloud9", "Ruby", "Git"]
 ---
 
 Develop and run your [Jekyll Github Pages](https://help.github.com/articles/using-jekyll-with-pages/) on [Cloud9](https://c9.io/?redirect=0)

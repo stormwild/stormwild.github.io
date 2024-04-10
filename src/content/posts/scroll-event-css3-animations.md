@@ -4,7 +4,7 @@ title: 'Scroll Event and CSS3 Animations'
 published: 2015-11-18
 description: 'Scroll Event and CSS3 Animations'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["default"]
+tags: ["Scrolling", "CSS3", "Animations"]
 ---
 
 ### Listening for scroll event

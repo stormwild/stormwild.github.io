@@ -4,7 +4,7 @@ title: 'AWS VPC Notes'
 published: 2016-09-12
 description: 'AWS VPC Notes'
 image: '@assets/posts/placeholder-globules.png'
-tags: ["default"]
+tags: ["AWS", "AWS VPC", "VPC"]
 ---
 
 Notes from initial research on VPC

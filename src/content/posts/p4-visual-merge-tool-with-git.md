@@ -4,7 +4,7 @@ title: Setup P4 Visual Merge Tool with Git
 published: 2015-02-24
 description: 'Setup P4 Visual Merge Tool with Git'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["default"]
+tags: ["Perfoce", "Git", "P4Merge", "Visual Merge Tool"]
 ---
 
 

@@ -4,7 +4,7 @@ title: 'Jekyll Permalinks and Redirects'
 published: 2016-03-24
 description: 'Jekyll Permalinks and Redirects'
 image: '@assets/posts/placeholder-globules.png'
-tags: ["default"]
+tags: ["Jekyll", "GitHub Pages", "Permalinks", "Redirects"]
 ---
 
 I recently changed the permalinks for my blog posts in my Github Jekyll Blog. I also added redirects from the previous urls to the new one.

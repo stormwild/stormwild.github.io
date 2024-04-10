@@ -4,7 +4,7 @@ title: 'Awesome Gulp Tutorials'
 published: 2016-05-09
 description: 'Awesome Gulp Tutorials'
 image: '@assets/posts/placeholder-alien-city.png'
-tags: ["default"]
+tags: ["Gulp", "Node.js", "JavaScript", "Automation", "Build System", "Frontend", "Web Development"]
 ---
 
 [Gulp for Beginners](https://css-tricks.com/gulp-for-beginners/)
