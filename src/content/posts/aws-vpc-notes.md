@@ -55,7 +55,8 @@ March 2013 saw the launch of default VPC to EC2.
 ### Subnet
 
 - Create a subnet in all availability zones(AZ) in a region
-- For example: ![Subnet in AZ](uploads/aws-vpc-fig-1.png "AWS VPC: Assign Subnets to Each AZ")
+- For example:
+    ![Subnet in AZ](@assets/posts/aws-vpc-fig-1.png "AWS VPC: Assign Subnets to Each AZ")
 - Multiple subnets in each AZ
 - Enable auto assignment of public ip address to any EC2 instance launched in the VPC
 
