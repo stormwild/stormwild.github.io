@@ -9,7 +9,7 @@ tags: ["Selection Sort", "Sorting", "Algorithms", "PHP"]
 
 ## Display the sorted array of the given array
 
-```
+```php
 // you can write to stdout for debugging purposes, e.g.
 // print "this is a debug message\n";
 function getHighest(& $list, $lo, $hi) {
@@ -51,7 +51,7 @@ function solution($N) {
 
 ## Get the difference between the sorted and original array
 
-```
+```php
 // you can write to stdout for debugging purposes, e.g.
 // print "this is a debug message\n";
 
