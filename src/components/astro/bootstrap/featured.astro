@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 import { Image } from 'astro:assets'
 import { trunc } from '@lib/util/trunc'
 import { join } from '@lib/util/join'
+import ContinueReadingBtn from './continue-reading-btn.astro'
 
 const posts = await getCollection('posts')
 
@@ -62,15 +63,7 @@ const prefix = BLOG_POST_ROOT
               })}
             </div>
             <p class='card-text mb-auto'>{trunc(post.data.description, 41)}</p>
-            <a
-              href={join([prefix, post.slug])}
-              class='icon-link gap-1 icon-link-hover stretched-link'
-            >
-              Continue reading
-              <svg class='bi'>
-                <use xlink:href='#chevron-right' />
-              </svg>
-            </a>
+            <ContinueReadingBtn paths={[prefix, post.slug]} />
           </div>
           <div class='col-md-4 d-none d-lg-block'>
             <Image

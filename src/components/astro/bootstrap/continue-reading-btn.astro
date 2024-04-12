@@ -1,0 +1,12 @@
+---
+import { join } from '@lib/util/join'
+
+const { paths, message = 'Continue reading' } = Astro.props
+---
+
+<a href={join(paths)} class='icon-link gap-1 icon-link-hover stretched-link'>
+  {message}
+  <svg class='bi bi-chevron-right'>
+    <use xlink:href='#chevron-right'></use>
+  </svg>
+</a>

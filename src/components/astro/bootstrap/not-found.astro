@@ -1,0 +1,23 @@
+---
+import { join } from '@lib/util/join'
+---
+
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <div class='alert alert-dark p-5 text-center' role='alert'>
+        <p class='display-3 text-muted'>
+          Oops! Looks like you're lost in space.
+        </p>
+        <p class='display-4 text-muted'>
+          <a href={join(['/'])} class='icon-link gap-1 icon-link-hover'>
+            <svg class='bi bi-chevron-left'>
+              <use xlink:href='#chevron-left'></use>
+            </svg>
+            Return home
+          </a>. Or explore the cosmos.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
