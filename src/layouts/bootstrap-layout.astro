@@ -6,7 +6,6 @@ import stormwildlogo from '@assets/svg/stormwild-logo.svg'
 import Footer from '@components/astro/bootstrap/footer.astro'
 import { SITE_NAME } from '@lib/common/constants'
 import ScrollTop from '@components/astro/bootstrap/scroll-top.astro'
-import Search from '@components/astro/bootstrap/search.astro'
 import Svg from '@components/astro/bootstrap/svg.astro'
 
 interface Props {
@@ -27,7 +26,6 @@ const { title } = Astro.props
   </head>
   <body>
     <Header />
-    <!-- <Search /> -->
     <slot />
     <Footer />
     <ScrollTop />

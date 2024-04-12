@@ -1,14 +1,8 @@
 ---
-import Alert from '@components/astro/bootstrap/alert.astro'
 import Card from '@components/astro/bootstrap/card.astro'
 import Tags from '@components/astro/bootstrap/tags.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
-import {
-  BLOG_POST_ROOT,
-  BLOG_TAGS_ROOT,
-  BLOG_UNDER_CONSTRUCTION,
-} from '@lib/common/constants'
-import { join } from '@lib/util/join'
+import { BLOG_POST_ROOT, BLOG_TAGS_ROOT } from '@lib/common/constants'
 import type { GetStaticPathsResult } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
@@ -37,11 +31,6 @@ const { posts, tags } = Astro.props as unknown as TagProps
 
 <BootstrapLayout title={tag as string}>
   <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <Alert variant='warning'> {BLOG_UNDER_CONSTRUCTION}</Alert>
-      </div>
-    </div>
     <div class='row'>
       <div class='col col-sm-8'>
         <h1 class='display-4 mb-5'>

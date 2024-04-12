@@ -1,7 +1,6 @@
 ---
-import Alert from '@components/astro/bootstrap/alert.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
-import { BLOG_TAGS_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import { BLOG_TAGS_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import { getCollection } from 'astro:content'
 
@@ -11,11 +10,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 
 <BootstrapLayout title='Tags'>
   <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <Alert variant='warning'> {BLOG_UNDER_CONSTRUCTION}</Alert>
-      </div>
-    </div>
     <div class='row'>
       <div class='col'>
         <h1 class='display-4 mb-5'>Tags used by posts</h1>

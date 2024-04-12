@@ -1,8 +1,6 @@
 ---
-import Alert from '@components/astro/bootstrap/alert.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
-import { fade } from 'astro:transitions'
-import { BLOG_PAGE_ROOT, BLOG_UNDER_CONSTRUCTION } from '@lib/common/constants'
+import { BLOG_PAGE_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import Tags from '@components/astro/bootstrap/tags.astro'
 import { Image } from 'astro:assets'
@@ -16,11 +14,6 @@ const prefix = BLOG_PAGE_ROOT
 
 <BootstrapLayout title={title}>
   <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <Alert variant='warning'> {BLOG_UNDER_CONSTRUCTION} </Alert>
-      </div>
-    </div>
     <div class='row row-cols-1 row-cols-md-2'>
       <div class='col col-md-8'>
         <div class='bd-example m-0 border-0 mb-3'>

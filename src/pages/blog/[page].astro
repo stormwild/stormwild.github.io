@@ -1,15 +1,10 @@
 ---
-import Alert from '@components/astro/bootstrap/alert.astro'
 import Card from '@components/astro/bootstrap/card.astro'
 import Paginate from '@components/astro/bootstrap/paginate.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
-import {
-  BLOG_PAGE_ROOT,
-  BLOG_POST_ROOT,
-  BLOG_UNDER_CONSTRUCTION,
-} from '@lib/common/constants'
+import { BLOG_PAGE_ROOT, BLOG_POST_ROOT } from '@lib/common/constants'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection('posts')
@@ -29,12 +24,6 @@ const { page } = Astro.props
 
 <BootstrapLayout title='Blog Posts'>
   <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <Alert variant='warning'>{BLOG_UNDER_CONSTRUCTION}</Alert>
-      </div>
-    </div>
-
     <div class='row row-cols-1 row-cols-md-3 g-4 mb-5'>
       {
         page.data.map((post) => (
