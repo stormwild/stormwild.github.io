@@ -42,18 +42,18 @@
     // clear the old results
     results.innerHTML = ''
 
-    let html = ''
     // add the new results
     for (const result of search.results) {
       const data = await result.data()
-      html += `<li class='search-item' style="overflow: auto !mportant;">
+      results.insertAdjacentHTML(
+        'beforeend',
+        `<li class='search-item' style="overflow: auto !mportant;">
           <a href="${data.url}" class="dropdown-item py-3">
             <h3 class='h5'>${data.meta.title}</h3>
             <p class="mb-0"><small>${data.excerpt}</small></p>
           </a></li>`
+      )
     }
-
-    results.innerHTML = html
   })
 </script>
 
