@@ -24,6 +24,10 @@ const prefix = BLOG_PAGE_ROOT
     <div class='row row-cols-1 row-cols-md-2'>
       <div class='col col-md-8'>
         <div class='bd-example m-0 border-0 mb-3'>
+          <h1 class='display-3 mb-4'>
+            {title}
+          </h1>
+
           <Image
             src={image}
             alt={title}
@@ -44,12 +48,7 @@ const prefix = BLOG_PAGE_ROOT
             </small>
           </p>
         </div>
-
-        <h1
-          class='display-3 mb-4 border border-secondary-subtle border-top-0 border-start-0 border-end-0 border-opacity-10 pb-5'
-        >
-          {title}
-        </h1>
+        <hr />
         <slot />
       </div>
       <div class='col col-md-4'>
