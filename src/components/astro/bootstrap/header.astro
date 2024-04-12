@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 import logo from '@assets/svg/stormwild-logo.svg'
 import { pages } from '@lib/nav/pages'
+import Search from './search.astro'
 ---
 
 <nav class='navbar navbar-expand-lg bg-dark-subtle' data-bs-theme='dark'>
@@ -41,6 +42,7 @@ import { pages } from '@lib/nav/pages'
         }
       </ul>
     </div>
+    <Search />
   </div>
 </nav>
 

@@ -2,26 +2,32 @@
 
 ---
 
-<div class='container container-xl py-3'>
-  <div class='row'>
-    <div class='col'>
-      <form class='d-flex mb-3' role='search'>
-        <input
-          id='search'
-          class='form-control me-2'
-          type='search'
-          placeholder='Search'
-          aria-label='Search'
-        />
-        <button class='btn btn-outline-secondary' type='submit'>Search</button>
-      </form>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col'>
-      <div id='results' class='list-group'></div>
-    </div>
-  </div>
+<div class='dropdown mt-1 mt-md-0'>
+  <form
+    class='d-flex ms-2'
+    role='search'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >
+    <input
+      id='search'
+      class='form-control me-2'
+      type='search'
+      placeholder='Search'
+      aria-label='Search'
+    />
+    <button class='btn btn-outline-secondary' type='submit'>Search</button>
+  </form>
+  <ul id='results' class='dropdown-menu dropdown-menu-dark mt-2 ms-2'>
+    <li class='search-item'>
+      <a href='#' class='dropdown-item py-3'>
+        <h3 class='h5'>Type your search words.</h3>
+        <p class='mb-0'>
+          <small>Press enter.</small>
+        </p>
+      </a>
+    </li>
+  </ul>
 </div>
 
 <script type='module'>
@@ -40,13 +46,24 @@
     // add the new results
     for (const result of search.results) {
       const data = await result.data()
-      html += `
-          <a href="${data.url}" class="list-group-item list-group-item-action">
+      html += `<li class='search-item' style="overflow: auto !mportant;">
+          <a href="${data.url}" class="dropdown-item py-3">
             <h3 class='h5'>${data.meta.title}</h3>
-            <p><small>${data.excerpt}</small></p>
-          </a>`
+            <p class="mb-0"><small>${data.excerpt}</small></p>
+          </a></li>`
     }
 
     results.innerHTML = html
   })
 </script>
+
+<style>
+  #results {
+    max-width: 100%;
+    .search-item {
+      display: block;
+      max-width: 100%;
+      overflow: auto;
+    }
+  }
+</style>
