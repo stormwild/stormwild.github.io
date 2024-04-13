@@ -32,9 +32,9 @@ The new `slnx` file format is shown alongside the existing `sln` file format. At
 
 Drag the new solution file onto Visual Studio to open it.
 
-[Video Demo of Dragging To Open new slnx file in Visual Studio](@assets/posts/open-slnx-in-visual-studio.mp4)
+[Video Demo of Dragging To Open new slnx file in Visual Studio (Download)](@assets/posts/open-slnx-in-visual-studio.mp4)
 
-<https://youtu.be/v6eh2YXi8is>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v6eh2YXi8is?si=ce1hU_lAaidx8SG5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Compare the contents of the new `slnx` file with the existing `sln` file. The existing format involves GUIDs and is difficult to read ([Reference](https://learn.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file?view=vs-2022)).
 
