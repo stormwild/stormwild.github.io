@@ -34,6 +34,8 @@ Drag the new solution file onto Visual Studio to open it.
 
 [Video Demo of Dragging To Open new slnx file in Visual Studio](@assets/posts/open-slnx-in-visual-studio.mp4)
 
+<https://youtu.be/v6eh2YXi8is>
+
 Compare the contents of the new `slnx` file with the existing `sln` file. The existing format involves GUIDs and is difficult to read ([Reference](https://learn.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file?view=vs-2022)).
 
 ```bash
