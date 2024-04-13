@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '@components/astro/bootstrap/header.astro'
 import stormwildlogo from '@assets/svg/stormwild-logo.svg'
 import Footer from '@components/astro/bootstrap/footer.astro'
-import { SITE_NAME } from '@lib/common/constants'
+import { SITE_NAME, RSS_SITE_NAME } from '@lib/common/constants'
 import ScrollTop from '@components/astro/bootstrap/scroll-top.astro'
 import Svg from '@components/astro/bootstrap/svg.astro'
 
@@ -23,6 +23,12 @@ const { title } = Astro.props
     <link rel='icon' type='image/svg+xml' href={stormwildlogo.src} />
     <meta name='generator' content={Astro.generator} />
     <title>{title} - {SITE_NAME}</title>
+    <link
+      rel='alternate'
+      type='application/rss+xml'
+      title={RSS_SITE_NAME}
+      href={`${Astro.site}rss.xml`}
+    />
   </head>
   <body>
     <Header />

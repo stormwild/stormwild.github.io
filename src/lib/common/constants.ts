@@ -6,3 +6,4 @@ export const BLOG_POST_ROOT = '/blog/post/'
 export const BLOG_TAGS_ROOT = '/blog/tags/'
 
 export const SITE_NAME = 'Stormwild'
+export const RSS_SITE_NAME = 'Stormwild (Alexander Torrijos) Blog'
