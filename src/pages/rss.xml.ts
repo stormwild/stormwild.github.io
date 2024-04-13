@@ -12,6 +12,7 @@ export const GET: APIRoute = async (context) => {
       new Date(a.data.published).getTime()
   )
   return rss({
+    stylesheet: '/rss.xsl',
     // `<title>` field in output xml
     title: RSS_SITE_NAME,
     // `<description>` field in output xml
