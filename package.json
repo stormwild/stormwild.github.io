@@ -1,5 +1,5 @@
 {
-  "name": "zany-zenith",
+  "name": "stormwild.github.io",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/sitemap": "^3.1.2",
     "@popperjs/core": "^2.11.8",
     "astro": "^4.5.16",
     "bootstrap": "5.3.3",
