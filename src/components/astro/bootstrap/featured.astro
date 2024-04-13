@@ -18,16 +18,16 @@ const featured = sortedPosts.filter((post) =>
 )
 
 const main = featured[0]
-const sub = featured.slice(1, 3)
+const sub = featured.slice(1)
 
 const prefix = BLOG_POST_ROOT
 ---
 
 <div
-  class='p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary object-fit-cover'
-  style={`background-image: url(${main.data.image.src});`}
+  class='p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary'
+  style={`background-image: url(${main.data.image.src}); background-repeat: no-repeat; background-size: cover; background-position: center;`}
 >
-  <div class='col-lg-6 px-0'>
+  <div class='col-lg-6 feature-text'>
     <h1 class='display-4'>
       {trunc(main.data.title, 50)}
     </h1>
@@ -78,3 +78,11 @@ const prefix = BLOG_POST_ROOT
     ))
   }
 </div>
+
+<style>
+  .feature-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+  }
+</style>

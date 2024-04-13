@@ -3,7 +3,7 @@ title: 'ASP .NET Core i18n notes'
 published: 2017-10-07
 description: 'Notes on internationalization in ASP .NET Core applications'
 image: '@assets/posts/placeholder-globules.png'
-tags: [".NET", ".NET Core", "i18n", "Internationalization", "ASP .NET Core", "featured"]
+tags: [".NET", ".NET Core", "i18n", "Internationalization", "ASP .NET Core"]
 ---
 
 DotNet Core is basically a console app running on the host os.
