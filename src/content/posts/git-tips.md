@@ -1,7 +1,7 @@
 ---
 title: Git Tips (Rough Draft)
 published: 2015-02-24
-description: 'Notes on internationalization in ASP .NET Core applications'
+description: 'Git Tips (Rough Draft)'
 image: '@assets/posts/placeholder-alien-city.png'
 tags: ["Git", "Version Control", "Tips"]
 ---
