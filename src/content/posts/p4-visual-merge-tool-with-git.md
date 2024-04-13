@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Setup P4 Visual Merge Tool with Git
 published: 2015-02-24
 description: 'Setup P4 Visual Merge Tool with Git'

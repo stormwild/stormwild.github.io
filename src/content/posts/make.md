@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Make'
 published: 2017-09-20
 description: 'GNU Make is an automation tool for compiling and building applications and is part of the GNU Toolchain.'

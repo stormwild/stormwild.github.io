@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: DBA
 published: 2017-05-31
 description: 'DBA'

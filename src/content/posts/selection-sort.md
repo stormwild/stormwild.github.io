@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Selection Sort
 published: 2017-09-18
 description: 'Implementation and application of Selection Sort in PHP'

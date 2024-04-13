@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Jekyll Permalinks and Redirects'
 published: 2016-03-24
 description: 'Jekyll Permalinks and Redirects'

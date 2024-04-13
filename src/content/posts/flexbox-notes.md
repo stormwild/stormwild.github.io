@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Flexbox Notes'
 published: 2018-02-24
 description: 'Bootstrap 4 is released and it uses Flexbox. Time to get up to speed on this useful css module.'

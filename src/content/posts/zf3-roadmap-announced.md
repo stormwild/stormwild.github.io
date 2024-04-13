@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'ZF3 Roadmap Announced'
 published: 2015-01-25
 description: 'ZF3 Roadmap Announced'

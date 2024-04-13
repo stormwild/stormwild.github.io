@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Sample SPA using AngularJs MVC5/Web API and Google Maps'
 published: 2015-07-06
 description: 'Sample SPA using AngularJs MVC5/Web API and Google Maps'

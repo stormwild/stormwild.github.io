@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Various Notes
 published: 2017-05-31
 updated: 2024-04-10

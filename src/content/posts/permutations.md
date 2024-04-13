@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Permutations
 published: 2017-01-01
 description: 'Permutations'

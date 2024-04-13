@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Docker Notes
 published: 2017-07-20
 description: 'Docker Notes'

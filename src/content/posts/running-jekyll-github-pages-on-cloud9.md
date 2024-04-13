@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Running Jekyll Github Pages on Cloud9'
 published: 2015-12-24
 description: 'Running Jekyll Github Pages on Cloud9'

@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'ASP .NET Core i18n notes'
 published: 2017-10-07
 description: 'Notes on internationalization in ASP .NET Core applications'

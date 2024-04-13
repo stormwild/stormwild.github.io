@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Scroll Event and CSS3 Animations'
 published: 2015-11-18
 description: 'Scroll Event and CSS3 Animations'

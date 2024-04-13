@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Flow'
 published: 2017-09-02
 description: 'Flow is a static type checker for your JavaScript code.'

@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Awesome Gulp Tutorials'
 published: 2016-05-09
 description: 'Awesome Gulp Tutorials'

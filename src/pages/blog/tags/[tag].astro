@@ -32,7 +32,7 @@ const { posts, tags } = Astro.props as unknown as TagProps
 <BootstrapLayout title={tag as string}>
   <div class='container container-xl pt-5'>
     <div class='row'>
-      <div class='col col-sm-8'>
+      <div class='col col-md-8 mb-3 mb-md-0'>
         <h1 class='display-4 mb-5'>
           Posts tagged with <code><kbd>{tag}</kbd></code>
         </h1>
@@ -46,7 +46,7 @@ const { posts, tags } = Astro.props as unknown as TagProps
           }
         </div>
       </div>
-      <div class='col col-sm-4'>
+      <div class='col col-md-4'>
         <Tags tags={tags} prefix={BLOG_TAGS_ROOT} />
       </div>
     </div>

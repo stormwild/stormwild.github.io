@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Creating a PHP class library
 published: 2015-01-07
 description: 'Creating a PHP class library'

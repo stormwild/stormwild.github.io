@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Using SQLite and EF6 '
 published: 2015-02-09
 description: 'Using SQLite and EF6'

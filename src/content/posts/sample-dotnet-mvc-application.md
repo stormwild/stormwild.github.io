@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'BCSHotels - A Sample C# .NET MVC5 Application'
 published: 2015-02-10
 description: 'BCSHotels - A Sample C# .NET MVC5 Application'

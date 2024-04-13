@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'AWS VPC Notes'
 published: 2016-09-12
 description: 'AWS VPC Notes'

@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'PHPExcel Notes'
 published: 2016-09-23
 description: 'PHPExcel Notes'

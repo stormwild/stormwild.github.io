@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: 'Test Post Using Prose.io'
 published: 2019-09-04
 description: 'Prose.io is an online editor for Github Repositories'

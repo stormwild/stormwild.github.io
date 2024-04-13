@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Binary
 published: 2017-01-12
 description: 'Binary'

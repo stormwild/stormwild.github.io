@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Disable PHP Deprecated Warnings in Wordpress
 published: 2015-11-22
 description: 'Disable PHP Deprecated Warnings in Wordpress'

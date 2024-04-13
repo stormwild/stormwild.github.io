@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: SSL TLS Certificates
 published: 2017-03-12
 description: 'SSL TLS Certificates'

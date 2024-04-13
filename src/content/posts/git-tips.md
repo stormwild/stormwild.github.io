@@ -1,5 +1,4 @@
 ---
-# layout: '@layouts/markdown-post-layout.astro'
 title: Git Tips (Rough Draft)
 published: 2015-02-24
 description: 'Notes on internationalization in ASP .NET Core applications'
