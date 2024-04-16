@@ -1,17 +1,17 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://stormwild.github.io',
   image: {
-    domains: []
+    domains: [],
   },
   vite: {
     ssr: {
-      noExternal: ['bootstrap']
-    }
+      noExternal: ['bootstrap'],
+    },
   },
-  integrations: [sitemap()]
-});
+  integrations: [sitemap()],
+})

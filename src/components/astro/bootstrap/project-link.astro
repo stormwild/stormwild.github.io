@@ -1,9 +1,9 @@
 ---
-interface ProjectLinkProps {
+interface Props {
   href: string
   title: string
   description: string
-  isActive: true | false
+  isActive: Boolean | string
 }
 
 const { href, title, description, isActive } = Astro.props
