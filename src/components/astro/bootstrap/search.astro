@@ -18,16 +18,18 @@
     />
     <button class='btn btn-outline-secondary' type='submit'>Search</button>
   </form>
-  <ul id='results' class='dropdown-menu dropdown-menu-dark mt-2 ms-2'>
-    <li class='search-item'>
-      <a href='#' class='dropdown-item py-3'>
-        <h3 class='h5'>Type your search words.</h3>
-        <p class='mb-0'>
-          <small>Press enter.</small>
-        </p>
-      </a>
-    </li>
-  </ul>
+  <div class='dropdown-menu dropdown-menu-dark mt-2 ms-2'>
+    <ul id='results'>
+      <li class='search-item'>
+        <a href='#' class='dropdown-item py-3'>
+          <h3 class='h5'>Type your search words.</h3>
+          <p class='mb-0'>
+            <small>Press enter.</small>
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <script is:inline type='module'>
@@ -58,8 +60,17 @@
 </script>
 
 <style>
+  .dropdown-menu.show {
+    max-width: 100%;
+    overflow: auto;
+    height: fit-content;
+    max-height: 80vh;
+  }
+
   #results {
     max-width: 100%;
+    padding-left: 0.5rem;
+
     .search-item {
       display: block;
       max-width: 100%;
