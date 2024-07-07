@@ -52,3 +52,18 @@ Lunges are a compound exercise that targets the quadriceps, hamstrings, glutes, 
 Planks are a great exercise for strengthening the core muscles, including the abs, obliques, and lower back. To perform a plank, start in a pushup position, lower your forearms to the ground, and hold your body in a straight line from head to toe for a specified amount of time.
 
 Remember to always use proper form and start with lighter weights if you're a beginner. Gradually increase the intensity and weight as you progress. Stay consistent with your workouts and combine them with a balanced diet to maximize muscle growth and overall fitness.
+
+## Recommended Rep Ranges
+
+When performing these exercises for muscle growth, it's important to consider the recommended rep ranges. Here are the suggested rep ranges for each exercise:
+
+1. Warmup: Perform 1-2 sets of 10-15 reps with light weights or bodyweight exercises.
+2. Squat: Aim for 3-4 sets of 8-12 reps with a challenging weight.
+3. Deadlift: Perform 3-4 sets of 6-8 reps with a heavy weight.
+4. Bench Press: Aim for 3-4 sets of 8-12 reps with a moderate weight.
+5. Pullup: Perform 3-4 sets of 6-10 reps, adjusting difficulty with assistance or additional weight.
+6. Dumbbell Rows: Aim for 3-4 sets of 8-12 reps with a moderate weight.
+7. Lunges: Perform 3-4 sets of 10-15 reps on each leg with a challenging weight.
+8. Planks: Hold the plank position for 30-60 seconds, aiming for 3-4 sets.
+
+Remember, these rep ranges are general guidelines. Adjust the weight and reps based on your fitness level and goals. Always prioritize proper form and listen to your body to prevent injuries.
