@@ -1,6 +1,6 @@
 ---
 title: Eight Exercises for Muscle Growth
-published: 2024-06-07
+published: 2024-07-07
 description: 'Eight exercises that will help you build muscle'
 image: '@assets/posts/barbell-squat-exercise.webp'
 tags: ["Fitness", "Muscle Growth", "Exercise"]
