@@ -13,19 +13,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
     "@popperjs/core": "^2.11.8",
-    "astro": "^4.6.1",
+    "astro": "^4.13.3",
     "bootstrap": "5.3.3",
-    "sharp": "^0.33.3",
-    "typescript": "^5.4.4"
+    "sharp": "^0.33.4",
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/bootstrap": "^5.2.10",
     "pagefind": "^1.1.0",
-    "vitest": "^1.4.0"
+    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@9.3.0"
 }
