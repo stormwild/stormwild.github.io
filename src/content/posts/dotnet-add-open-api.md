@@ -3,7 +3,7 @@ title: Add Open API to .NET 8
 published: 2024-09-03
 description: 'Add Open API to .NET 8'
 image: '@assets/posts/placeholder-red-circle.png'
-tags: ["Open API", ".NET", "Swagger", "API", "Documentation"]
+tags: ["Open API", ".NET", "Swagger", "API", "Documentation", "featured"]
 ---
 
 ## Pre-requisites
