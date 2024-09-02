@@ -20,6 +20,8 @@ OpenAPI is a specification for building APIs. It provides a way to describe the 
 
 The following shows how to add OpenAPI support to a .NET 8 Minimap API project.
 
+Source code: [OpenApiSwagger.Demo](https://github.com/stormwild/OpenApiSwagger.Demo)
+
 ## Steps
 
 1. Create a new ASP.NET Core API project
