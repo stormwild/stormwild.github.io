@@ -16,9 +16,9 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@popperjs/core": "^2.11.8",
-    "astro": "^4.13.3",
+    "astro": "^4.15.2",
     "bootstrap": "5.3.3",
-    "sharp": "^0.33.4",
+    "sharp": "^0.33.5",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
