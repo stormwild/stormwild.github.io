@@ -20,4 +20,9 @@ export const pages = [
     text: 'Blog',
     subpages: [],
   },
+  {
+    href: '/angular',
+    text: 'Angular',
+    subpages: [],
+  },
 ]

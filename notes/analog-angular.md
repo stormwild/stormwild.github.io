@@ -70,3 +70,9 @@ The system cannot find the path specified.
    success  Configuration up-to-date.
 warning: in the working copy of 'astro.config.mjs', LF will be replaced by CRLF the next time Git touches it
 ```
+
+```json
+{
+  
+}
+``` 

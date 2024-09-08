@@ -1,0 +1,27 @@
+---
+import { HelloComponent } from '@components/angular/hello.component';
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+
+const helpText = "Helping binding";
+---
+
+<BootstrapLayout title='Home'>
+    <div class='container container-xl pt-5'>
+        <div class="row row-cols-1">
+            <h1 class="display-3 p-1">
+                Sample Angular code in Astro
+            </h1>
+        </div>
+        <div class="row row-cols-3 mt-5">
+            <div class="col">
+                <HelloComponent client:load />
+            </div>
+            <div class="col">
+                <HelloComponent client:load helpText="Helping" />
+            </div>
+            <div class="col">
+                <HelloComponent client:load helpText={helpText} />
+            </div>
+        </div>
+    </div>
+</BootstrapLayout>
