@@ -56,3 +56,12 @@ export default defineConfig({
                 ) : null}
               </li>
 ```
+
+## Astro
+
+### Upgrade
+
+```bash
+# Upgrade Astro and official integrations together
+pnpm dlx @astrojs/upgrade
+```
