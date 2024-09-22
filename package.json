@@ -12,11 +12,11 @@
     "postbuild": "pagefind --site dist"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
+    "@astrojs/check": "^0.9.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@popperjs/core": "^2.11.8",
-    "astro": "^4.15.2",
+    "astro": "5.0.0-beta.1",
     "bootstrap": "5.3.3",
     "sharp": "^0.33.5",
     "typescript": "^5.5.4"
