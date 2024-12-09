@@ -1,0 +1,41 @@
+---
+
+---
+
+<button
+  id='scroll-to-top'
+  class='fixed bottom-3 right-3 bg-gray-800 text-white px-4 py-2 rounded-md shadow-md hover:bg-gray-700 transition-colors duration-300 hidden'
+  title='Go to top'
+>
+  &uparrow; Top
+</button>
+
+<style>
+  #scroll-to-top {
+    display: none;
+  }
+</style>
+
+<script>
+  const topBtn = document.getElementById('scroll-to-top')
+  if (topBtn !== null) {
+    topBtn.addEventListener('click', scrollToTop)
+
+    // Show the button when the user scrolls down 20 pixels
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        topBtn.style.display = 'block'
+      } else {
+        topBtn.style.display = 'none'
+      }
+    }
+  }
+
+  function scrollToTop() {
+    document.body.scrollTop = 0 // For older browsers
+    document.documentElement.scrollTop = 0 // For modern browsers
+  }
+</script>
