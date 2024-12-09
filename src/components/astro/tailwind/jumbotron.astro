@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets'
+import alex from '@assets/img/alex-torrijos.jpg'
+---
+
+<section class='bg-gray-800 mb-8'>
+  <div class='container mx-auto px-4 py-12'>
+    <div class='flex flex-col-reverse lg:flex-row items-center gap-8'>
+      <div class='lg:w-1/2 text-center'>
+        <figure>
+          <Image
+            src={alex}
+            alt='Alexander Torrijos'
+            class='mx-auto rounded-full border-4 border-gray-300'
+            width='400'
+            height='400'
+            loading='eager'
+          />
+          <figcaption class='text-gray-400 mt-2'>
+            Alexander R. Torrijos
+          </figcaption>
+        </figure>
+      </div>
+      <div class='lg:w-1/2'>
+        <h1 class='text-4xl font-bold mb-4'>Full Stack Developer</h1>
+        <p class='text-xl mb-4'>
+          Alex is a Full Stack Developer specializing in:
+        </p>
+        <ul class='flex flex-wrap gap-2 mb-4'>
+          <li class='bg-gray-700 px-3 py-1 rounded'>C#</li>
+          <li class='bg-gray-700 px-3 py-1 rounded'>.NET</li>
+          <li class='bg-gray-700 px-3 py-1 rounded'>EF Core</li>
+          <li class='bg-gray-700 px-3 py-1 rounded'>SQL Server</li>
+          <li class='bg-gray-700 px-3 py-1 rounded'>ReactJs</li>
+          <li class='bg-gray-700 px-3 py-1 rounded'>Angular</li>
+        </ul>
+        <!-- Add more content as needed -->
+      </div>
+    </div>
+  </div>
+</section>

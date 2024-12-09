@@ -1,0 +1,42 @@
+---
+import '@styles/tailwind.css'
+
+import Header from '@components/astro/tailwind/header.astro'
+import stormwildlogo from '@assets/svg/stormwild-logo.svg'
+import Footer from '@components/astro/tailwind/footer.astro'
+import { SITE_NAME, RSS_SITE_NAME } from '@lib/common/constants'
+import ScrollTop from '@components/astro/tailwind/scroll-top.astro'
+import Svg from '@components/astro/tailwind/svg.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en' class='dark'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='icon' type='image/svg+xml' href={stormwildlogo.src} />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title} - {SITE_NAME}</title>
+    <link
+      rel='alternate'
+      type='application/rss+xml'
+      title={RSS_SITE_NAME}
+      href={`${Astro.site}rss.xml`}
+    />
+  </head>
+  <body class='bg-gray-900 text-gray-300 min-h-screen flex flex-col'>
+    <Header />
+    <main class='flex-grow'>
+      <slot />
+    </main>
+    <Footer />
+    <ScrollTop />
+    <Svg />
+  </body>
+</html>

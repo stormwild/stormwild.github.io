@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets'
+import logo from '@assets/svg/stormwild-logo.svg'
+import Search from '@components/astro/tailwind/search.astro'
+import { pages } from '@lib/nav/pages'
+import { SITE_NAME } from '@lib/common/constants'
+---
+
+<nav class='bg-gray-800'>
+  <div class='container mx-auto px-4'>
+    <div class='flex items-center justify-between h-16'>
+      <a class='text-white text-xl font-bold' href='/'>
+        <Image
+          src={logo}
+          alt='Stormwild'
+          width='30'
+          height='30'
+          class='d-inline-block align-text-top'
+          loading='eager'
+        />
+
+        <span class='text-uppercase align-bottom'>{SITE_NAME}</span>
+      </a>
+      <div class='hidden md:block'>
+        <div class='ml-10 flex items-baseline space-x-4'>
+          {
+            pages.map((page) => (
+              <a
+                href={page.href}
+                class='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+              >
+                {page.text}
+              </a>
+            ))
+          }
+          <a href='/rss.xml' class='text-gray-300 hover:text-white' title='RSS'>
+            <svg class='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
+              <path
+                d='M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z'
+              ></path>
+              <path
+                d='M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1z'
+              ></path>
+              <path d='M3 15a2 2 0 114 0 2 2 0 01-4 0z'></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class='md:hidden flex items-center'>
+        <button
+          type='button'
+          class='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
+          aria-controls='mobile-menu'
+          aria-expanded='false'
+        >
+          <span class='sr-only'>Open main menu</span>
+          <svg
+            class='block h-6 w-6'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            aria-hidden='true'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M4 6h16M4 12h16M4 18h16'></path>
+          </svg>
+          <svg
+            class='hidden h-6 w-6'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            aria-hidden='true'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M6 18L18 6M6 6l12 12'></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class='md:hidden hidden' id='mobile-menu'>
+    <div class='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+      {
+        pages.map((page) => (
+          <a
+            href={page.href}
+            class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+          >
+            {page.text}
+          </a>
+        ))
+      }
+      <a
+        href='/rss.xml'
+        class='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+      >
+        RSS
+      </a>
+    </div>
+  </div>
+</nav>
+
+<Search />
+
+<script>
+  const pathname = window.location.pathname
+  const links = document.querySelectorAll('nav a')
+
+  const activeLink = Array.from(links).find(
+    (link) =>
+      link.getAttribute('href') === pathname ||
+      link.getAttribute('href') === pathname.slice(0, -1)
+  )
+
+  if (activeLink) {
+    activeLink.classList.add('bg-gray-900', 'text-white')
+    activeLink.setAttribute('aria-current', 'page')
+  }
+
+  // Mobile menu toggle
+  const menuButton = document.querySelector(
+    'button[aria-controls="mobile-menu"]'
+  )
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  menuButton.addEventListener('click', () => {
+    const expanded =
+      menuButton.getAttribute('aria-expanded') === 'true' || false
+    menuButton.setAttribute('aria-expanded', !expanded)
+    mobileMenu.classList.toggle('hidden')
+  })
+</script>
