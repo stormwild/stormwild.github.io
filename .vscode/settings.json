@@ -1,0 +1,21 @@
+{
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["markdown", "plaintext"],
+  "spellright.ignoreWords": [
+    "npm",
+    "pnpm",
+    "astro",
+    "esbuild",
+    "postinstall",
+    "preinstall",
+    "npmrc",
+    "bundler",
+    "lifecycle",
+    "configs"
+  ],
+  "spellright.ignoreRegExps": [
+    "/\\b[A-Z]{2,}\\b/g",
+    "/\\b\\w*[0-9]\\w*\\b/g",
+    "/`[^`]*`/g"
+  ]
+}
