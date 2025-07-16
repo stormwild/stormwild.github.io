@@ -1,0 +1,59 @@
+media:
+  input: public/media
+  output: /media
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/content/posts
+    view:
+      fields: [title, published, tags]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: published
+        label: Published Date
+        type: date
+      - name: updated
+        label: Last Updated
+        type: date
+        required: false
+      - name: description
+        label: Description
+        type: string
+      - name: image
+        label: Featured Image
+        type: image
+      - name: tags
+        label: Tags
+        type: list
+        items:
+          type: string
+      - name: body
+        label: Body Content
+        type: markdown
+
+  - name: skills
+    label: Skill Entries
+    type: collection
+    path: src/content/skills
+    view:
+      fields: [label, proficiency, order]
+    fields:
+      - name: skill
+        label: Skill Name
+        type: string
+      - name: proficiency
+        label: Proficiency
+        type: string
+      - name: label
+        label: Display Label
+        type: string
+      - name: logo
+        label: Logo Image
+        type: image
+      - name: order
+        label: Sort Order
+        type: number
