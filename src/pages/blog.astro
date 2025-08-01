@@ -6,7 +6,10 @@ import { BLOG_PAGE_ROOT, BLOG_POST_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import Featured from '@components/astro/bootstrap/featured.astro'
 
-const posts = await getCollection('posts')
+// Filter out drafts in production, show all in development
+const posts = await getCollection('posts', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true
+})
 
 // latest to earliest Date descending
 const sortedPosts = posts.sort(

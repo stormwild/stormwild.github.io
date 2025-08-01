@@ -4,7 +4,10 @@ import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
 
 export const GET: APIRoute = async (context) => {
-  const posts = await getCollection('posts')
+  // Only include published posts (exclude drafts) in RSS feed
+  const posts = await getCollection('posts', ({ data }) => {
+    return data.draft !== true
+  })
   // latest to earliest Date descending
   const sortedPosts = posts.sort(
     (a, b) =>
