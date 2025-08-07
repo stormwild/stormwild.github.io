@@ -17,7 +17,7 @@
     "@astrojs/sitemap": "^3.4.2",
     "@astrojs/tailwind": "^6.0.2",
     "@popperjs/core": "^2.11.8",
-    "astro": "5.12.5",
+    "astro": "5.12.8",
     "bootstrap": "5.3.3",
     "playwright": "^1.54.2",
     "rehype-mermaid": "^3.0.0",
