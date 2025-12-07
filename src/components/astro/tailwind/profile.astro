@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets'
+import alex from '@assets/img/alex-torrijos.jpg'
+---
+
+<section class='mb-12 bg-gray-800 rounded-lg shadow-lg overflow-hidden'>
+  <div class='container mx-auto px-6 py-12'>
+    <div class='flex flex-col lg:flex-row items-center gap-12'>
+      <!-- Image Column -->
+      <div class='lg:w-1/2 text-center'>
+        <figure class='inline-block'>
+          <Image
+            src={alex}
+            alt='Alexander Torrijos'
+            class='rounded-full border-4 border-gray-200 shadow-xl mx-auto'
+            width='400'
+            height='400'
+            loading='eager'
+          />
+          <figcaption class='mt-4 text-xl font-medium text-gray-300'>
+            Alexander R. Torrijos
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Text Column -->
+      <div class='lg:w-1/2'>
+        <h1 class='text-4xl font-bold text-white mb-4'>Full Stack Developer</h1>
+        <div class='text-lg text-gray-300 mb-6'>
+          <p class='mb-4'>Alex is a Full Stack Developer specializing in:</p>
+          <ul class='flex flex-wrap gap-2 mb-6'>
+            {
+              ['C#', '.NET', 'EF Core', 'SQL Server', 'ReactJs', 'Angular'].map(
+                (item) => (
+                  <li class='bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm font-semibold border border-gray-600'>
+                    {item}
+                  </li>
+                )
+              )
+            }
+          </ul>
+        </div>
+
+        <div class='space-y-4 text-gray-400'>
+          <p>
+            Excels as an individual contributor, with strong problem-solving and
+            communication skills. Experience building applications from scratch,
+            enhancing existing ones, and working as part of a team or
+            independently.
+          </p>
+          <p>
+            Committed to delivering high-quality software solutions, adhering to
+            the best practices of SOLID design principles, and writing clean,
+            efficient, and well-tested code.
+          </p>
+          <p>
+            <a href='#' class='text-blue-400 hover:text-blue-300 mr-4'
+              >LinkedIn</a
+            >
+            <a href='#' class='text-blue-400 hover:text-blue-300 mr-4'>Github</a
+            >
+            <a href='#' class='text-blue-400 hover:text-blue-300 mr-4'
+              >Stackoverflow</a
+            >
+            <a href='#' class='text-blue-400 hover:text-blue-300'>CodePen</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

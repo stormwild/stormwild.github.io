@@ -9,17 +9,17 @@ import { SITE_NAME } from '@lib/common/constants'
 <nav class='bg-gray-800'>
   <div class='container mx-auto px-4'>
     <div class='flex items-center justify-between h-16'>
-      <a class='text-white text-xl font-bold' href='/'>
+      <a class='text-white text-xl font-bold flex items-center gap-2' href='/'>
         <Image
           src={logo}
           alt='Stormwild'
           width='30'
           height='30'
-          class='d-inline-block align-text-top'
+          class='inline-block'
           loading='eager'
         />
 
-        <span class='text-uppercase align-bottom'>{SITE_NAME}</span>
+        <span class='uppercase'>{SITE_NAME}</span>
       </a>
       <div class='hidden md:block'>
         <div class='ml-10 flex items-baseline space-x-4'>
