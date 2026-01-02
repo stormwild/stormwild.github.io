@@ -12,6 +12,7 @@ export const postSchema = ({ image }: SchemaProps) =>
     description: z.string(),
     image: image(),
     tags: z.array(z.string()),
+    categories: z.array(z.string()).optional(),
     draft: z.boolean().optional(),
   })
 

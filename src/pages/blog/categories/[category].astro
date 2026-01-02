@@ -1,0 +1,72 @@
+---
+import Card from '@components/astro/bootstrap/card.astro'
+import Tags from '@components/astro/bootstrap/tags.astro'
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import { BLOG_POST_ROOT, BLOG_CATEGORIES_ROOT } from '@lib/common/constants'
+import type { GetStaticPathsResult } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+  const posts = await getCollection('posts')
+  const uniqueCategories = [
+    ...new Set(
+      posts
+        .map((post) => post.data.categories)
+        .filter((cats) => cats !== undefined)
+        .flat()
+    ),
+  ]
+
+  return uniqueCategories.map((category) => {
+    const filteredPosts = posts.filter(
+      (post) => post.data.categories && post.data.categories.includes(category)
+    )
+    return {
+      params: { category },
+      props: { posts: filteredPosts, categories: uniqueCategories },
+    }
+  })
+}
+
+interface CategoryProps {
+  posts: CollectionEntry<'posts'>[]
+  categories: string[]
+}
+
+const { category } = Astro.params
+const { posts, categories } = Astro.props as unknown as CategoryProps
+---
+
+<BootstrapLayout title={category as string}>
+  <div class='container container-xl pt-5'>
+    <div class='row'>
+      <div class='col col-md-8 mb-3 mb-md-0'>
+        <h1 class='display-4 mb-5'>
+          Posts in <code><kbd>{category}</kbd></code>
+        </h1>
+        <div class='row row-cols-1 row-cols-md-3 g-4'>
+          {
+            posts.map((post) => (
+              <div class='col'>
+                <Card prefix={BLOG_POST_ROOT} post={post} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class='col col-md-4'>
+        <h5 class='mb-3'>All Categories</h5>
+        <div class='d-flex flex-wrap gap-2'>
+          {
+            categories.map((cat) => (
+              <a href={`${BLOG_CATEGORIES_ROOT}${cat}`} class='badge bg-primary text-decoration-none'>
+                {cat}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>

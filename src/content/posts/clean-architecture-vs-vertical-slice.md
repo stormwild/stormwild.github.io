@@ -4,6 +4,7 @@ published: 2025-08-01
 description: 'An in-depth comparison of Clean Architecture and Vertical Slice Architecture patterns in .NET, exploring their pros, cons, and when to use each approach.'
 image: '@assets/posts/placeholder-red-circle.png'
 tags: [".NET", "architecture", "clean-architecture", "vertical-slice", "design-patterns", "software-design", "featured"]
+categories: ["Software Architecture", ".NET"]
 draft: false
 ---
 

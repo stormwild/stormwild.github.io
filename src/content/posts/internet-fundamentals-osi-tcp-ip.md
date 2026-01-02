@@ -4,6 +4,7 @@ published: 2025-07-30
 description: 'A comprehensive guide to understanding how the internet works, exploring the OSI model, TCP/IP protocol suite, and the fundamental concepts of computer networking.'
 image: '@assets/posts/placeholder-alien-city.png'
 tags: ["networking", "internet", "osi", "tcp-ip", "fundamentals", "computer-science", "featured"]
+categories: ["Networking", "Education"]
 ---
 
 Have you ever wondered what happens when you type a URL into your browser and hit enter? Or how your smartphone can instantly connect to servers thousands of miles away? The internet is one of humanity's greatest engineering achievements, and understanding how it works is crucial for anyone in technology.

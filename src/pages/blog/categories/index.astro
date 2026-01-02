@@ -1,0 +1,41 @@
+---
+import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import { BLOG_CATEGORIES_ROOT } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
+const categories = [
+  ...new Set(
+    posts
+      .map((post) => post.data.categories)
+      .filter((cats) => cats !== undefined)
+      .flat()
+  ),
+]
+---
+
+<BootstrapLayout title='Categories'>
+  <div class='container container-xl pt-5'>
+    <div class='row'>
+      <div class='col'>
+        <h1 class='display-4 mb-5'>Blog Categories</h1>
+        <div class='row row-cols-1 row-cols-md-3 g-4'>
+          {
+            (categories as string[]).map((category: string) => (
+              <div class='col'>
+                <div class='card h-100'>
+                  <div class='card-body'>
+                    <a href={join([BLOG_CATEGORIES_ROOT, category])} class='btn btn-link'>
+                      {category}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</BootstrapLayout>
