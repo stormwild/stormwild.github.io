@@ -1,70 +1,149 @@
 ---
 import Card from '@components/astro/bootstrap/card.astro'
-import Tags from '@components/astro/bootstrap/tags.astro'
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { BLOG_POST_ROOT, BLOG_CATEGORIES_ROOT } from '@lib/common/constants'
+import {
+  getAllCategories,
+  getCategory,
+  getCategoryBreadcrumbs,
+  getChildCategories,
+} from '@lib/categories/taxonomy'
 import type { GetStaticPathsResult } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const posts = await getCollection('posts')
-  const uniqueCategories = [
-    ...new Set(
-      posts
-        .map((post) => post.data.categories)
-        .filter((cats) => cats !== undefined)
-        .flat()
-    ),
-  ]
+  const allCategories = getAllCategories()
 
-  return uniqueCategories.map((category) => {
+  return allCategories.map((category) => {
     const filteredPosts = posts.filter(
-      (post) => post.data.categories && post.data.categories.includes(category)
+      (post) =>
+        post.data.category === category.slug ||
+        (post.data.categories && post.data.categories.includes(category.slug))
     )
     return {
-      params: { category },
-      props: { posts: filteredPosts, categories: uniqueCategories },
+      params: { category: category.slug },
+      props: { posts: filteredPosts },
     }
   })
 }
 
 interface CategoryProps {
   posts: CollectionEntry<'posts'>[]
-  categories: string[]
 }
 
-const { category } = Astro.params
-const { posts, categories } = Astro.props as unknown as CategoryProps
+const { category: categorySlug } = Astro.params
+const { posts } = Astro.props as unknown as CategoryProps
+
+const currentCategory = getCategory(categorySlug as string)
+const breadcrumbs = getCategoryBreadcrumbs(categorySlug as string)
+const childCategories = getChildCategories(categorySlug as string)
+
+if (!currentCategory) {
+  return Astro.redirect('/404')
+}
 ---
 
-<BootstrapLayout title={category as string}>
+<BootstrapLayout title={currentCategory.name}>
   <div class='container container-xl pt-5'>
+    <!-- Breadcrumbs -->
+    <nav aria-label='breadcrumb' class='mb-4'>
+      <ol class='breadcrumb'>
+        <li class='breadcrumb-item'>
+          <a href={BLOG_CATEGORIES_ROOT}>Categories</a>
+        </li>
+        {
+          breadcrumbs.map((crumb, index) => {
+            const isLast = index === breadcrumbs.length - 1
+            return isLast ? (
+              <li class='breadcrumb-item active' aria-current='page'>
+                {crumb.name}
+              </li>
+            ) : (
+              <li class='breadcrumb-item'>
+                <a href={`${BLOG_CATEGORIES_ROOT}${crumb.slug}`}>{crumb.name}</a>
+              </li>
+            )
+          })
+        }
+      </ol>
+    </nav>
+
     <div class='row'>
       <div class='col col-md-8 mb-3 mb-md-0'>
-        <h1 class='display-4 mb-5'>
-          Posts in <code><kbd>{category}</kbd></code>
-        </h1>
-        <div class='row row-cols-1 row-cols-md-3 g-4'>
-          {
-            posts.map((post) => (
-              <div class='col'>
-                <Card prefix={BLOG_POST_ROOT} post={post} />
+        <h1 class='display-4 mb-3'>{currentCategory.name}</h1>
+        {currentCategory.description && <p class='lead mb-4'>{currentCategory.description}</p>}
+
+        <!-- Subcategories -->
+        {
+          childCategories.length > 0 && (
+            <div class='alert alert-info mb-4'>
+              <h5 class='alert-heading'>Subcategories</h5>
+              <div class='d-flex flex-wrap gap-2 mt-3'>
+                {childCategories.map((child) => (
+                  <a
+                    href={`${BLOG_CATEGORIES_ROOT}${child.slug}`}
+                    class='btn btn-sm btn-outline-primary'
+                  >
+                    {child.name}
+                  </a>
+                ))}
               </div>
-            ))
-          }
-        </div>
+            </div>
+          )
+        }
+
+        <!-- Posts -->
+        {
+          posts.length > 0 ? (
+            <>
+              <h2 class='h4 mb-4'>
+                Posts in this category ({posts.length})
+              </h2>
+              <div class='row row-cols-1 row-cols-md-2 g-4'>
+                {posts.map((post) => (
+                  <div class='col'>
+                    <Card prefix={BLOG_POST_ROOT} post={post} />
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div class='alert alert-warning'>
+              <p class='mb-0'>No posts in this category yet.</p>
+            </div>
+          )
+        }
       </div>
+
+      <!-- Sidebar -->
       <div class='col col-md-4'>
-        <h5 class='mb-3'>All Categories</h5>
-        <div class='d-flex flex-wrap gap-2'>
-          {
-            categories.map((cat) => (
-              <a href={`${BLOG_CATEGORIES_ROOT}${cat}`} class='badge bg-primary text-decoration-none'>
-                {cat}
-              </a>
-            ))
-          }
+        <div class='card'>
+          <div class='card-body'>
+            <h5 class='card-title'>Category Navigation</h5>
+            <hr />
+
+            {/* Parent Category */}
+            {
+              currentCategory.parent && (
+                <div class='mb-3'>
+                  <h6 class='text-muted small'>Parent Category</h6>
+                  <a
+                    href={`${BLOG_CATEGORIES_ROOT}${currentCategory.parent}`}
+                    class='btn btn-sm btn-outline-secondary w-100'
+                  >
+                    ← {getCategory(currentCategory.parent)?.name}
+                  </a>
+                </div>
+              )
+            }
+
+            {/* Browse All */}
+            <a href={BLOG_CATEGORIES_ROOT} class='btn btn-sm btn-primary w-100'>
+              Browse All Categories
+            </a>
+          </div>
         </div>
       </div>
     </div>

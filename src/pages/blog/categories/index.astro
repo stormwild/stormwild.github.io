@@ -1,18 +1,26 @@
 ---
 import BootstrapLayout from '@layouts/bootstrap-layout.astro'
 import { BLOG_CATEGORIES_ROOT } from '@lib/common/constants'
-import { join } from '@lib/util/join'
+import { getRootCategories, getChildCategories, type CategoryNode } from '@lib/categories/taxonomy'
 import { getCollection } from 'astro:content'
 
 const posts = await getCollection('posts')
-const categories = [
-  ...new Set(
-    posts
-      .map((post) => post.data.categories)
-      .filter((cats) => cats !== undefined)
-      .flat()
-  ),
-]
+const rootCategories = getRootCategories()
+
+// Count posts per category
+function getPostCount(slug: string): number {
+  return posts.filter(
+    (post) =>
+      post.data.category === slug ||
+      (post.data.categories && post.data.categories.includes(slug))
+  ).length
+}
+
+// Recursive component for rendering category tree
+interface CategoryTreeProps {
+  category: CategoryNode
+  level: number
+}
 ---
 
 <BootstrapLayout title='Categories'>
@@ -20,19 +28,51 @@ const categories = [
     <div class='row'>
       <div class='col'>
         <h1 class='display-4 mb-5'>Blog Categories</h1>
-        <div class='row row-cols-1 row-cols-md-3 g-4'>
+        <p class='lead mb-4'>Browse posts by category. Categories are organized hierarchically for easy navigation.</p>
+
+        <div class='row row-cols-1 row-cols-md-2 g-4'>
           {
-            (categories as string[]).map((category: string) => (
-              <div class='col'>
-                <div class='card h-100'>
-                  <div class='card-body'>
-                    <a href={join([BLOG_CATEGORIES_ROOT, category])} class='btn btn-link'>
-                      {category}
-                    </a>
+            rootCategories.map((category) => {
+              const children = getChildCategories(category.slug)
+              const postCount = getPostCount(category.slug)
+
+              return (
+                <div class='col'>
+                  <div class='card h-100'>
+                    <div class='card-body'>
+                      <h5 class='card-title'>
+                        <a href={`${BLOG_CATEGORIES_ROOT}${category.slug}`} class='text-decoration-none'>
+                          {category.name}
+                        </a>
+                        <span class='badge bg-secondary ms-2'>{postCount}</span>
+                      </h5>
+                      {category.description && (
+                        <p class='card-text text-muted small'>{category.description}</p>
+                      )}
+
+                      {children.length > 0 && (
+                        <div class='mt-3'>
+                          <h6 class='text-muted small mb-2'>Subcategories:</h6>
+                          <div class='d-flex flex-wrap gap-2'>
+                            {children.map((child) => {
+                              const childPostCount = getPostCount(child.slug)
+                              return (
+                                <a
+                                  href={`${BLOG_CATEGORIES_ROOT}${child.slug}`}
+                                  class='badge bg-light text-dark text-decoration-none'
+                                >
+                                  {child.name} ({childPostCount})
+                                </a>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              )
+            })
           }
         </div>
       </div>

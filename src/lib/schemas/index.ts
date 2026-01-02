@@ -12,7 +12,8 @@ export const postSchema = ({ image }: SchemaProps) =>
     description: z.string(),
     image: image(),
     tags: z.array(z.string()),
-    categories: z.array(z.string()).optional(),
+    category: z.string().optional(), // Primary category
+    categories: z.array(z.string()).optional(), // All categories (including primary)
     draft: z.boolean().optional(),
   })
 

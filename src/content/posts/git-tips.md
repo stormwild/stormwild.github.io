@@ -4,7 +4,8 @@ published: 2015-02-24
 description: 'Git Tips (Rough Draft)'
 image: '@assets/posts/placeholder-alien-city.png'
 tags: ["Git", "Version Control", "Tips"]
-categories: ["Development Tools", "Version Control"]
+category: "version-control"
+categories: ["version-control", "development-tools"]
 ---
 
 Git Tips (Rough Draft)
