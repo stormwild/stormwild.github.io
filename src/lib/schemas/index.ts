@@ -1,8 +1,20 @@
 import { z, type ImageFunction } from 'astro:content'
+import { categoryExists } from '@lib/categories/taxonomy'
 
 export interface SchemaProps {
   image: ImageFunction
 }
+
+/**
+ * Category slug validator
+ * Ensures the category slug exists in the taxonomy
+ */
+const validateCategorySlug = z.string().refine(
+  (slug) => categoryExists(slug),
+  (slug) => ({
+    message: `Category "${slug}" does not exist in taxonomy. Add it to src/lib/categories/taxonomy.ts first.`,
+  })
+)
 
 export const postSchema = ({ image }: SchemaProps) =>
   z.object({
@@ -12,8 +24,8 @@ export const postSchema = ({ image }: SchemaProps) =>
     description: z.string(),
     image: image(),
     tags: z.array(z.string()),
-    category: z.string().optional(), // Primary category
-    categories: z.array(z.string()).optional(), // All categories (including primary)
+    category: validateCategorySlug.optional(), // Primary category (validated slug/ID)
+    categories: z.array(validateCategorySlug).optional(), // All categories (validated slugs/IDs)
     draft: z.boolean().optional(),
   })
 
