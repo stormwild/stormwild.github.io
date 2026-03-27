@@ -1,5 +1,5 @@
 ---
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import StarwindLayout from '@layouts/starwind-layout.astro'
 import { BLOG_TAGS_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import { getCollection } from 'astro:content'
@@ -8,27 +8,20 @@ const posts = await getCollection('posts')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 ---
 
-<BootstrapLayout title='Tags'>
-  <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <h1 class='display-4 mb-5'>Tags used by posts</h1>
-        <div class='row row-cols-1 row-cols-md-3 g-4'>
-          {
-            (tags as string[]).map((tag: string) => (
-              <div class='col'>
-                <div class='card h-100'>
-                  <div class='card-body'>
-                    <a href={join([BLOG_TAGS_ROOT, tag])} class='btn btn-link '>
-                      {tag}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
+<StarwindLayout title='Tags'>
+  <div class='max-w-7xl mx-auto px-4 pt-10 pb-16'>
+    <h1 class='text-4xl font-bold text-white mb-8'>Tags</h1>
+    <div class='flex flex-wrap gap-3'>
+      {
+        (tags as string[]).map((tag: string) => (
+          <a
+            href={join([BLOG_TAGS_ROOT, tag])}
+            class='px-4 py-2 bg-gray-900 border border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white rounded text-sm capitalize transition-colors'
+          >
+            {tag}
+          </a>
+        ))
+      }
     </div>
   </div>
-</BootstrapLayout>
+</StarwindLayout>

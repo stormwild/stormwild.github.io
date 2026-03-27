@@ -1,0 +1,78 @@
+---
+import { BLOG_POST_ROOT, BLOG_TAGS_ROOT } from '@lib/common/constants'
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+import { trunc } from '@lib/util/trunc'
+import { join } from '@lib/util/join'
+import ContinueReadingBtn from './continue-reading-btn.astro'
+
+const posts = await getCollection('posts')
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
+)
+const featured = sortedPosts.filter((post) =>
+  post.data.tags.includes('featured')
+)
+const main = featured[0]
+const sub = featured.slice(1)
+const prefix = BLOG_POST_ROOT
+---
+
+<div
+  class='relative rounded-lg overflow-hidden mb-8 min-h-64'
+  style={`background-image: url(${main.data.image.src}); background-size: cover; background-position: center;`}
+>
+  <div class='absolute inset-0 bg-black/60'></div>
+  <div class='relative p-8 lg:p-12 max-w-lg'>
+    <h1 class='text-3xl font-bold text-white mb-3'>
+      {trunc(main.data.title, 50)}
+    </h1>
+    <p class='text-gray-300 mb-4'>{trunc(main.data.description, 150)}</p>
+    <a
+      href={join([prefix, main.slug])}
+      class='text-gray-400 hover:text-white text-sm transition-colors'
+    >
+      Continue reading...
+    </a>
+  </div>
+</div>
+
+<div class='grid grid-cols-1 md:grid-cols-2 gap-6 mb-8'>
+  {
+    sub.map((post) => (
+      <div class='bg-gray-900 border border-gray-800 rounded-lg overflow-hidden flex hover:border-gray-600 transition-colors'>
+        <div class='flex-1 p-4 flex flex-col'>
+          <a
+            href={join([BLOG_TAGS_ROOT, post.data.tags[0]])}
+            class='text-green-400 text-xs font-semibold uppercase tracking-wide mb-2 hover:text-green-300 transition-colors'
+          >
+            {post.data.tags[0]}
+          </a>
+          <h3 class='text-white font-semibold mb-2 leading-snug'>
+            {trunc(post.data.title, 50)}
+          </h3>
+          <div class='text-gray-500 text-xs mb-2'>
+            {new Date(post.data.published).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </div>
+          <p class='text-gray-400 text-sm mb-3 flex-1'>
+            {trunc(post.data.description, 80)}
+          </p>
+          <ContinueReadingBtn paths={[prefix, post.slug]} />
+        </div>
+        <div class='w-32 flex-shrink-0 hidden lg:block'>
+          <Image
+            src={post.data.image}
+            alt={post.data.title}
+            class='w-full h-full object-cover'
+            height={250}
+          />
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,52 @@
+---
+
+---
+
+<div class='relative'>
+  <input
+    id='search'
+    class='bg-gray-800 text-gray-200 border border-gray-700 rounded px-3 py-1.5 text-sm w-48 focus:outline-none focus:border-gray-500 placeholder-gray-500'
+    type='search'
+    placeholder='Search...'
+    aria-label='Search'
+    autocomplete='off'
+  />
+  <ul
+    id='results'
+    class='absolute right-0 top-full mt-1 w-80 bg-gray-800 border border-gray-700 rounded shadow-xl z-50 hidden max-h-96 overflow-y-auto'
+  >
+    <li class='search-item'>
+      <a href='#' class='block px-4 py-3 hover:bg-gray-700'>
+        <h3 class='text-sm font-semibold text-gray-200'>Type to search.</h3>
+        <p class='text-xs text-gray-500'>Press enter to navigate.</p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script is:inline type='module'>
+  const search = document.querySelector('#search')
+  const results = document.querySelector('#results')
+  window.pagefind = await import('/pagefind/pagefind.js')
+
+  search?.addEventListener('focus', () => results?.classList.remove('hidden'))
+  search?.addEventListener('blur', () =>
+    setTimeout(() => results?.classList.add('hidden'), 200)
+  )
+
+  search?.addEventListener('input', async (e) => {
+    const query = await window.pagefind.search(e.target.value)
+    results.innerHTML = ''
+    results.classList.remove('hidden')
+    for (const result of query.results) {
+      const data = await result.data()
+      results.insertAdjacentHTML(
+        'beforeend',
+        `<li><a href="${data.url}" class="block px-4 py-3 hover:bg-gray-700 border-b border-gray-700">
+          <h3 class="text-sm font-semibold text-gray-200">${data.meta.title}</h3>
+          <p class="text-xs text-gray-400 mt-1">${data.excerpt}</p>
+        </a></li>`
+      )
+    }
+  })
+</script>

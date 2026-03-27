@@ -15,20 +15,23 @@
     "@astrojs/check": "^0.9.6",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/tailwind": "^6.0.2",
     "@popperjs/core": "^2.11.8",
     "astro": "5.16.4",
     "bootstrap": "5.3.3",
     "playwright": "^1.54.2",
     "rehype-mermaid": "^3.0.0",
     "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.16",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/bootstrap": "^5.2.10",
+    "clsx": "^2.1.1",
     "pagefind": "^1.1.0",
+    "starwind": "^1.0.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwindcss": "^4.0.0",
     "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"

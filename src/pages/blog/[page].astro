@@ -1,39 +1,33 @@
 ---
-import Card from '@components/astro/bootstrap/card.astro'
-import Paginate from '@components/astro/bootstrap/paginate.astro'
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import Card from '@components/astro/starwind/card.astro'
+import Paginate from '@components/astro/starwind/paginate.astro'
+import StarwindLayout from '@layouts/starwind-layout.astro'
 import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 import { BLOG_PAGE_ROOT, BLOG_POST_ROOT } from '@lib/common/constants'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection('posts')
-
-  // earliest to latest Date ascending
   const sortedPosts = posts.sort(
     (a, b) =>
       new Date(a.data.published).getTime() -
       new Date(b.data.published).getTime()
   )
-
   return paginate(sortedPosts, { pageSize: 6 })
 }) satisfies GetStaticPaths
 
 const { page } = Astro.props
 ---
 
-<BootstrapLayout title='Blog Posts'>
-  <div class='container container-xl pt-5'>
-    <div class='row row-cols-1 row-cols-md-3 g-4 mb-5'>
+<StarwindLayout title='Blog Posts'>
+  <div class='max-w-7xl mx-auto px-4 pt-10'>
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-6 mb-6'>
       {
         page.data.map((post) => (
-          <div class='col'>
-            <Card prefx={BLOG_POST_ROOT} post={post} />
-          </div>
+          <Card prefix={BLOG_POST_ROOT} post={post} />
         ))
       }
     </div>
-
-    <Paginate prefx={BLOG_PAGE_ROOT} page={page} />
+    <Paginate prefix={BLOG_PAGE_ROOT} page={page} />
   </div>
-</BootstrapLayout>
+</StarwindLayout>

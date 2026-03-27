@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string
+  title: string
+  description: string
+  isActive: boolean | string
+}
+
+const { href, title, description, isActive } = Astro.props
+const active = isActive === true || isActive === 'true'
+---
+
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  class={`block p-4 rounded-lg border transition-colors ${active ? 'bg-blue-950 border-blue-800' : 'bg-gray-900 border-gray-800 hover:border-gray-600'}`}
+  aria-current={active ? 'true' : 'false'}
+>
+  <div class='flex items-center justify-between mb-1'>
+    <strong class='text-white text-sm font-semibold'>{title}</strong>
+    {
+      active ? (
+        <span class='text-green-400 text-xs'>&#10003; Active</span>
+      ) : (
+        <span class='text-gray-600 text-xs'>&#33;</span>
+      )
+    }
+  </div>
+  <p class='text-gray-400 text-sm leading-relaxed'>{description}</p>
+</a>

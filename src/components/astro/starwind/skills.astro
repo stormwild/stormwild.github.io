@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+const skills = await getCollection('skills')
+skills.sort((a, b) => a.data.order - b.data.order)
+---
+
+<div class='max-w-7xl mx-auto px-4 mb-12'>
+  <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+    {
+      skills.map((skill) => (
+        <div class='bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-gray-600 transition-colors'>
+          <div class='bg-gray-800 flex items-center justify-center h-40 p-4'>
+            <Image
+              src={skill.data.logo}
+              alt={skill.data.skill}
+              class='max-h-32 w-auto object-contain'
+              loading='eager'
+            />
+          </div>
+          <div class='p-4'>
+            <h4 class='text-white font-semibold text-lg mb-2'>
+              {skill.data.skill}
+            </h4>
+            <div class='flex items-center gap-2 text-sm text-gray-400 mb-1'>
+              <span>Proficiency:</span>
+              <span class='bg-blue-900 text-blue-200 px-2 py-0.5 rounded text-xs font-medium'>
+                {skill.data.proficiency}/10
+              </span>
+            </div>
+            <p class='text-gray-500 text-sm'>{skill.data.label}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

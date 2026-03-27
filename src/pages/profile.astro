@@ -1,45 +1,40 @@
 ---
-import ProjectLink from '@components/astro/bootstrap/project-link.astro'
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import ProjectLink from '@components/astro/starwind/project-link.astro'
+import StarwindLayout from '@layouts/starwind-layout.astro'
 ---
 
-<BootstrapLayout title='Profile'>
-  <div class='container text-center pt-5'>
-    <div class='row mb-5'>
-      <div class='col'>
-        <div class='list-group list-group-horizontal'>
-          <div
-            class='list-group-item list-group-item-action list-group-item-dark'
-          >
-            CV Download
-          </div>
-          <a
-            href='/cv/Alexander-Torrijos-Cv.docx'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Word Doc</a
-          >
-          <a
-            href='/cv/Resume-Alexander-Torrijos.pdf'
-            target='_blank'
-            class='list-group-item list-group-item-action'>PDF</a
-          >
-        </div>
+<StarwindLayout title='Profile'>
+  <div class='max-w-7xl mx-auto px-4 pt-10 pb-16'>
+    <div class='mb-8'>
+      <div class='flex items-center gap-3'>
+        <span class='text-gray-500 text-sm'>CV Download:</span>
+        <a
+          href='/cv/Alexander-Torrijos-Cv.docx'
+          target='_blank'
+          class='px-4 py-1.5 text-sm border border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white rounded transition-colors'
+        >
+          Word Doc
+        </a>
+        <a
+          href='/cv/Resume-Alexander-Torrijos.pdf'
+          target='_blank'
+          class='px-4 py-1.5 text-sm border border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white rounded transition-colors'
+        >
+          PDF
+        </a>
       </div>
     </div>
-    <div class='row'>
-      <div class='col-12 col-md-6'>
-        <div
-          class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
-        >
-          <div
-            class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
-          >
+
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div class='md:col-span-2'>
+        <div class='mb-6'>
+          <div class='flex items-center gap-2 px-4 py-3 bg-gray-900 border border-gray-800 rounded-t-lg'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
+              width='18'
+              height='18'
               fill='currentColor'
-              class='bi bi-briefcase-fill me-3'
+              class='text-gray-400'
               viewBox='0 0 16 16'
             >
               <path
@@ -49,9 +44,9 @@ import BootstrapLayout from '@layouts/bootstrap-layout.astro'
                 d='M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z'
               ></path>
             </svg>
-            <span class='fs-5 fw-semibold'>Sample Work</span>
+            <span class='text-white font-semibold text-sm'>Sample Work</span>
           </div>
-          <div class='list-group list-group-flush border-bottom scrollarea'>
+          <div class='flex flex-col gap-3 p-3 bg-gray-900 border border-t-0 border-gray-800 rounded-b-lg'>
             <ProjectLink
               href='https://modest-kirch-7e8ca1.netlify.app/'
               title='React Quiz'
@@ -60,7 +55,7 @@ import BootstrapLayout from '@layouts/bootstrap-layout.astro'
             />
             <ProjectLink
               href='http://bcshotels.azurewebsites.net/'
-              title='.NET 4 Web Api '
+              title='.NET 4 Web Api'
               description='Sample Hotel Listing with Sorting and Pagination'
               isActive='true'
             />
@@ -91,66 +86,56 @@ import BootstrapLayout from '@layouts/bootstrap-layout.astro'
           </div>
         </div>
       </div>
-      <div class='col-12 col-md'>
-        <div class='list-group mb-5'>
-          <div class='list-group-item list-group-item-dark'>Dev Profiles</div>
-          <a
-            href='https://github.com/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Github</a
-          >
-          <a
-            href='https://stackoverflow.com/users/92189/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Stackoverflow</a
-          >
-          <a
-            href='https://codepen.io/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>CodePen</a
-          >
-          <a
-            href='https://www.linkedin.com/in/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>LinkedIn</a
-          >
-          <a
-            href='https://www.hackerrank.com/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>HackerRank</a
-          >
-        </div>
-      </div>
-      <div class='col-12 col-md'>
-        <div class='list-group mb-5'>
-          <div class='list-group-item list-group-item-dark'>
-            Design Profiles
+
+      <div class='flex flex-col gap-6'>
+        <div class='bg-gray-900 border border-gray-800 rounded-lg overflow-hidden'>
+          <div class='px-4 py-3 bg-gray-800 text-white font-semibold text-sm'>Dev Profiles</div>
+          <div class='divide-y divide-gray-800'>
+            {
+              [
+                { href: 'https://github.com/stormwild/', label: 'Github' },
+                { href: 'https://stackoverflow.com/users/92189/stormwild', label: 'Stackoverflow' },
+                { href: 'https://codepen.io/stormwild/', label: 'CodePen' },
+                { href: 'https://www.linkedin.com/in/stormwild/', label: 'LinkedIn' },
+                { href: 'https://www.hackerrank.com/stormwild', label: 'HackerRank' },
+              ].map((link) => (
+                <a
+                  href={link.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition-colors'
+                >
+                  {link.label}
+                </a>
+              ))
+            }
           </div>
-          <a
-            href='https://www.behance.net/gallery/47208/Web-Design-Studies'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Behance</a
-          >
-          <a
-            href='http://www.coroflot.com/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Coroflot</a
-          >
-          <a
-            href='http://stormwild.deviantart.com/gallery/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>DeviantArt</a
-          >
-          <a
-            href='https://stormwild.carbonmade.com/'
-            target='_blank'
-            aria-disabled='true'
-            style='pointer-events: none;'
-            class='list-group-item list-group-item-action disabled'
-            >Carbonmade (offline/disabled)</a
-          >
+        </div>
+
+        <div class='bg-gray-900 border border-gray-800 rounded-lg overflow-hidden'>
+          <div class='px-4 py-3 bg-gray-800 text-white font-semibold text-sm'>Design Profiles</div>
+          <div class='divide-y divide-gray-800'>
+            {
+              [
+                { href: 'https://www.behance.net/gallery/47208/Web-Design-Studies', label: 'Behance', disabled: false },
+                { href: 'http://www.coroflot.com/stormwild', label: 'Coroflot', disabled: false },
+                { href: 'http://stormwild.deviantart.com/gallery/', label: 'DeviantArt', disabled: false },
+                { href: 'https://stormwild.carbonmade.com/', label: 'Carbonmade (offline)', disabled: true },
+              ].map((link) => (
+                <a
+                  href={link.disabled ? undefined : link.href}
+                  target={link.disabled ? undefined : '_blank'}
+                  rel='noopener noreferrer'
+                  class={`block px-4 py-2 text-sm transition-colors ${link.disabled ? 'text-gray-600 cursor-not-allowed' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                  aria-disabled={link.disabled}
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
   </div>
-</BootstrapLayout>
+</StarwindLayout>
