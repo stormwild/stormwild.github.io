@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets'
+import alex from '@assets/img/alex-torrijos.jpg'
+---
+
+<section class='max-w-6xl mx-auto px-6 py-16'>
+  <div class='grid grid-cols-1 lg:grid-cols-3 gap-12 items-start'>
+    <div class='lg:col-span-2'>
+      <p class='font-mono text-teal-600 text-sm mb-3'>$ whoami</p>
+      <h1 class='text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4'>
+        alexander r.<br />torrijos
+      </h1>
+      <p class='text-xl text-gray-500 mb-6 font-light'>full stack developer</p>
+      <p class='text-gray-600 max-w-lg leading-relaxed mb-3'>
+        Excels as an individual contributor, with strong problem-solving and
+        communication skills. Building applications from scratch, enhancing
+        existing ones, working as part of a team or independently.
+      </p>
+      <p class='text-gray-600 max-w-lg leading-relaxed mb-8'>
+        Committed to delivering high-quality software solutions, adhering to
+        the best practices of SOLID design principles, and writing clean,
+        efficient, and well-tested code.
+      </p>
+      <div class='flex flex-wrap gap-2 mb-8'>
+        {
+          ['C#', '.NET', 'EF Core', 'SQL Server', 'ReactJs', 'Angular'].map(
+            (s) => (
+              <span class='px-3 py-1 text-xs font-mono bg-gray-100 text-gray-700 rounded border border-gray-200'>
+                {s}
+              </span>
+            )
+          )
+        }
+      </div>
+      <div class='flex flex-wrap gap-3 mb-8'>
+        <a
+          href='/profile'
+          class='px-5 py-2 bg-teal-600 text-white rounded text-sm font-medium hover:bg-teal-700 transition-colors'
+        >
+          View Profile
+        </a>
+        <a
+          href='/blog'
+          class='px-5 py-2 border border-gray-300 text-gray-700 rounded text-sm font-medium hover:border-gray-400 transition-colors'
+        >
+          Read Blog
+        </a>
+      </div>
+      <div class='flex flex-wrap gap-3'>
+        {
+          [
+            { href: 'https://www.linkedin.com/in/stormwild/', label: 'LinkedIn' },
+            { href: 'https://github.com/stormwild/', label: 'Github' },
+            { href: 'https://stackoverflow.com/users/92189/stormwild', label: 'Stackoverflow' },
+            { href: 'https://codepen.io/stormwild/', label: 'CodePen' },
+          ].map((link) => (
+            <a
+              href={link.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              class='text-gray-500 hover:text-teal-600 text-sm font-mono transition-colors'
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class='flex flex-col gap-8'>
+      <div class='text-center'>
+        <Image
+          src={alex}
+          alt='Alexander Torrijos'
+          width='200'
+          height='200'
+          class='rounded-full border-4 border-gray-100 shadow-md mx-auto object-cover'
+          loading='eager'
+        />
+        <p class='text-gray-400 text-xs mt-2 font-mono'>Alexander R. Torrijos</p>
+      </div>
+      <div class='flex flex-col gap-5'>
+        {
+          [
+            { value: '10+', label: 'Years of experience' },
+            { value: '90+', label: 'Projects completed' },
+            { value: '15+', label: 'Clients served' },
+          ].map((stat) => (
+            <div class='text-right'>
+              <div class='text-3xl font-bold text-gray-900'>{stat.value}</div>
+              <div class='text-sm text-gray-500'>{stat.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

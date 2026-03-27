@@ -1,0 +1,30 @@
+---
+import { BLOG_PAGE_ROOT } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+
+const { prefix = BLOG_PAGE_ROOT, page } = Astro.props
+const totalPages = Math.ceil(page.total / page.size)
+---
+
+<div class='flex flex-wrap items-center gap-2 my-8'>
+  {page.currentPage !== 1 ? (
+    <a href={join([prefix, '1'])} class='px-3 py-1.5 text-sm border border-gray-200 text-gray-500 hover:border-teal-400 hover:text-teal-600 rounded font-mono transition-colors'>&laquo; First</a>
+  ) : null}
+  {page.url.prev ? (
+    <a href={page.url.prev} class='px-3 py-1.5 text-sm border border-gray-200 text-gray-500 hover:border-teal-400 hover:text-teal-600 rounded font-mono transition-colors'>&lt; Prev</a>
+  ) : null}
+  {Array.from({ length: totalPages }, (_, i) => (
+    <a
+      href={join([prefix, i + 1 + ''])}
+      class={`px-3 py-1.5 text-sm border rounded font-mono transition-colors ${page.currentPage === i + 1 ? 'border-teal-500 bg-teal-50 text-teal-700' : 'border-gray-200 text-gray-500 hover:border-teal-400 hover:text-teal-600'}`}
+    >
+      {i + 1}
+    </a>
+  ))}
+  {page.url.next ? (
+    <a href={page.url.next} class='px-3 py-1.5 text-sm border border-gray-200 text-gray-500 hover:border-teal-400 hover:text-teal-600 rounded font-mono transition-colors'>Next &gt;</a>
+  ) : null}
+  {page.currentPage !== page.lastPage ? (
+    <a href={join([prefix, page.lastPage])} class='px-3 py-1.5 text-sm border border-gray-200 text-gray-500 hover:border-teal-400 hover:text-teal-600 rounded font-mono transition-colors'>Last &raquo;</a>
+  ) : null}
+</div>

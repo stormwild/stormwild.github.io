@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+
+const skills = await getCollection('skills')
+skills.sort((a, b) => a.data.order - b.data.order)
+---
+
+<section class='bg-gray-50 py-16'>
+  <div class='max-w-6xl mx-auto px-6'>
+    <p class='font-mono text-sm text-gray-400 mb-1'>
+      <span class='text-teal-600'>//</span> tech_stack
+    </p>
+    <h2 class='text-2xl font-bold text-gray-900 mb-10'>Technologies &amp; Tools</h2>
+    <div class='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4'>
+      {
+        skills.map((skill) => (
+          <div class='bg-white border border-gray-100 rounded-lg p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow'>
+            <Image
+              src={skill.data.logo}
+              alt={skill.data.skill}
+              width={60}
+              height={60}
+              class='object-contain mb-3'
+              loading='eager'
+            />
+            <h4 class='text-gray-900 font-semibold text-sm mb-1'>{skill.data.skill}</h4>
+            <div class='w-full bg-gray-100 rounded-full h-1.5 mt-2'>
+              <div
+                class='bg-teal-500 h-1.5 rounded-full'
+                style={`width: ${skill.data.proficiency * 10}%`}
+              ></div>
+            </div>
+            <span class='text-xs text-gray-400 mt-1'>{skill.data.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  href: string
+  title: string
+  description: string
+  isActive: string
+}
+const { href, title, description, isActive } = Astro.props
+const active = isActive === 'true'
+---
+
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  class={`block px-4 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors group ${!active ? 'opacity-50 pointer-events-none' : ''}`}
+>
+  <div class='flex items-start gap-2'>
+    <span class='font-mono text-teal-600 text-xs mt-1'>{active ? '>' : 'x'}</span>
+    <div>
+      <p class='text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors'>{title}</p>
+      <p class='text-xs text-gray-500 mt-0.5'>{description}</p>
+    </div>
+  </div>
+</a>

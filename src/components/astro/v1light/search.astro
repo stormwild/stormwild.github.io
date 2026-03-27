@@ -1,0 +1,67 @@
+---
+---
+
+<div class='relative'>
+  <div id='search-container' class='relative'>
+    <input
+      id='pagefind-search'
+      type='text'
+      placeholder='search...'
+      class='w-full px-3 py-1.5 bg-white border border-gray-200 rounded text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-teal-400 font-mono'
+      autocomplete='off'
+    />
+    <div
+      id='search-results'
+      class='absolute top-full left-0 right-0 bg-white border border-gray-200 rounded mt-1 shadow-lg z-50 hidden max-h-80 overflow-y-auto'
+    >
+    </div>
+  </div>
+</div>
+
+<script>
+  let pagefind: any = null
+
+  async function initPagefind() {
+    try {
+      pagefind = await import('/pagefind/pagefind.js' as any)
+      await pagefind.init()
+    } catch (e) {
+      // pagefind not available in dev
+    }
+  }
+
+  initPagefind()
+
+  const input = document.getElementById('pagefind-search') as HTMLInputElement
+  const results = document.getElementById('search-results') as HTMLDivElement
+
+  if (input && results) {
+    input.addEventListener('input', async (e) => {
+      const query = (e.target as HTMLInputElement).value.trim()
+      if (!query || !pagefind) {
+        results.classList.add('hidden')
+        results.innerHTML = ''
+        return
+      }
+      const search = await pagefind.search(query)
+      const data = await Promise.all(search.results.slice(0, 8).map((r: any) => r.data()))
+      if (data.length === 0) {
+        results.innerHTML = '<p class="px-4 py-3 text-sm text-gray-500 font-mono">no results found</p>'
+      } else {
+        results.innerHTML = data.map((d: any) =>
+          `<a href="${d.url}" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0">
+            <p class="text-sm font-medium text-gray-900">${d.meta?.title || 'Untitled'}</p>
+            <p class="text-xs text-gray-500 truncate mt-0.5">${d.excerpt || ''}</p>
+          </a>`
+        ).join('')
+      }
+      results.classList.remove('hidden')
+    })
+
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target as Node) && !results.contains(e.target as Node)) {
+        results.classList.add('hidden')
+      }
+    })
+  }
+</script>

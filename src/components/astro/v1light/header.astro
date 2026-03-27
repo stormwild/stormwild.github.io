@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets'
+import logo from '@assets/svg/stormwild-logo.svg'
+import { pages } from '@lib/nav/pages'
+---
+
+<header class='border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-sm z-50'>
+  <nav class='max-w-6xl mx-auto px-6 flex items-center justify-between h-14'>
+    <a
+      href='/'
+      class='font-mono text-gray-900 font-semibold text-sm tracking-tight hover:text-teal-600 transition-colors'
+    >
+      &gt; stormwild
+    </a>
+
+    <div class='hidden md:flex items-center gap-8'>
+      {
+        pages.map((page) => (
+          <a
+            href={page.href}
+            class='nav-link text-gray-500 hover:text-gray-900 text-sm transition-colors font-mono capitalize'
+          >
+            {page.text}
+          </a>
+        ))
+      }
+      <a href='/rss.xml' class='text-gray-400 hover:text-gray-700' title='RSS'>
+        <svg class='w-4 h-4' fill='currentColor' viewBox='0 0 20 20'>
+          <path
+            d='M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z'
+          ></path>
+          <path
+            d='M4 9a1 1 0 000 2 7 7 0 017 7 1 1 0 102 0 9 9 0 00-9-9z'
+          ></path>
+          <circle cx='3' cy='19' r='2'></circle>
+        </svg>
+      </a>
+    </div>
+
+    <button
+      id='mobile-toggle'
+      class='md:hidden text-gray-600 hover:text-gray-900 p-1'
+      aria-label='Toggle menu'
+    >
+      <svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div id='mobile-nav' class='hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-4'>
+    {
+      pages.map((page) => (
+        <a href={page.href} class='nav-link text-gray-600 hover:text-gray-900 text-sm font-mono capitalize'>
+          {page.text}
+        </a>
+      ))
+    }
+  </div>
+</header>
+
+<script>
+  document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-nav')?.classList.toggle('hidden')
+  })
+
+  const pathname = window.location.pathname
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const href = link.getAttribute('href')
+    if (href === pathname || href === pathname.slice(0, -1)) {
+      link.classList.add('text-gray-900', 'font-semibold', 'text-teal-700')
+    }
+  })
+</script>

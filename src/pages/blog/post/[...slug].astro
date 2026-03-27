@@ -1,6 +1,6 @@
 ---
-import Navigate from '@components/astro/bootstrap/navigate.astro'
-import PostLayout from '@layouts/post-layout.astro'
+import Navigate from '@components/astro/v1light/navigate.astro'
+import V1LightPostLayout from '@layouts/v1-light-post-layout.astro'
 import { BLOG_POST_ROOT } from '@lib/common/constants'
 import { getCollection } from 'astro:content'
 
@@ -19,25 +19,9 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await entry.render()
-
-const pathname = Astro.url.pathname
-console.log('pathname', pathname)
 ---
 
-<PostLayout frontmatter={entry.data}>
-  <main class='content'>
-    <Content />
-  </main>
+<V1LightPostLayout frontmatter={entry.data}>
+  <Content />
   <Navigate prefix={BLOG_POST_ROOT} post={entry} posts={posts} />
-</PostLayout>
-
-<style>
-  .content {
-    p,
-    li {
-      font-size: calc(var(--bs-body-font-size) * 1.25);
-      font-weight: 300;
-      line-height: 32px;
-    }
-  }
-</style>
+</V1LightPostLayout>

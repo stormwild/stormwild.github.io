@@ -1,54 +1,46 @@
 ---
-import Card from '@components/astro/bootstrap/card.astro'
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import Card from '@components/astro/v1light/card.astro'
+import V1LightLayout from '@layouts/v1-light-layout.astro'
 import { getCollection } from 'astro:content'
 import { BLOG_PAGE_ROOT, BLOG_POST_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
-import Featured from '@components/astro/bootstrap/featured.astro'
+import Featured from '@components/astro/v1light/featured.astro'
 
-// Filter out drafts in production, show all in development
 const posts = await getCollection('posts', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true
 })
 
-// latest to earliest Date descending
 const sortedPosts = posts.sort(
-  (a, b) =>
-    new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
+  (a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
 )
 
-const notFeatured = sortedPosts.filter(
-  (post) => !post.data.tags.includes('featured')
-)
-
+const notFeatured = sortedPosts.filter((post) => !post.data.tags.includes('featured'))
 const latestPosts = notFeatured.slice(0, 10)
-
 const prefix = BLOG_PAGE_ROOT
 ---
 
-<BootstrapLayout title='Blog'>
-  <div class='container container-xl pt-5'>
+<V1LightLayout title='Blog'>
+  <div class='max-w-6xl mx-auto px-6 pt-10 pb-16'>
+    <p class='font-mono text-teal-600 text-sm mb-1'>$ ls /blog ~/→~/recent_posts</p>
+    <h1 class='text-4xl font-bold text-gray-900 mb-2'># blog</h1>
+    <p class='text-gray-500 mb-10'>notes on .net, web development, and clean architecture</p>
+
     <Featured />
 
-    <!-- Latest Blog Posts -->
-    <div class='row row-cols-1 row-cols-md-3 g-4 mb-4'>
-      {
-        latestPosts.map((post) => (
-          <div class='col'>
-            <Card prefix={BLOG_POST_ROOT} post={post} />
-          </div>
-        ))
-      }
+    <p class='font-mono text-sm text-gray-400 mb-6'>
+      <span class='text-teal-600'>//</span> recent_posts
+    </p>
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
+      {latestPosts.map((post) => <Card prefix={BLOG_POST_ROOT} post={post} />)}
     </div>
 
-    <div class='row'>
-      <div class='col'>
-        <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
-          <a href={join([prefix, '1'])} class='btn btn-outline-primary'
-            >View All Posts &raquo;</a
-          >
-        </div>
-      </div>
+    <div class='flex justify-end'>
+      <a
+        href={join([prefix, '1'])}
+        class='px-5 py-2 border border-gray-200 text-gray-600 hover:border-teal-400 hover:text-teal-600 rounded text-sm font-mono transition-colors'
+      >
+        view_all_posts →
+      </a>
     </div>
   </div>
-</BootstrapLayout>
+</V1LightLayout>

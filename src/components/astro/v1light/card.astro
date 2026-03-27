@@ -1,0 +1,36 @@
+---
+import { BLOG_POST_ROOT } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+import { Image } from 'astro:assets'
+
+const { prefix = BLOG_POST_ROOT, post } = Astro.props
+---
+
+<div class='bg-white border border-gray-100 rounded-lg overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md transition-shadow'>
+  <Image
+    src={post.data.image}
+    alt={post.data.title}
+    class='w-full h-44 object-cover'
+  />
+  <div class='p-4 flex flex-col flex-1'>
+    <h5 class='text-gray-900 font-semibold mb-2 leading-snug'>{post.data.title}</h5>
+    <p class='text-gray-500 text-sm mb-4 flex-1 leading-relaxed'>{post.data.description}</p>
+    <a
+      href={join([prefix, post.slug])}
+      class='text-teal-600 hover:text-teal-700 text-sm flex items-center gap-1 transition-colors font-mono'
+    >
+      read_more →
+    </a>
+  </div>
+  <div class='px-4 py-2 border-t border-gray-100'>
+    <small class='text-gray-400 text-xs font-mono'>
+      {
+        new Date(post.data.published).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        })
+      }
+    </small>
+  </div>
+</div>

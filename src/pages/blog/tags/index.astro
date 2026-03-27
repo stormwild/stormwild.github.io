@@ -1,5 +1,5 @@
 ---
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import V1LightLayout from '@layouts/v1-light-layout.astro'
 import { BLOG_TAGS_ROOT } from '@lib/common/constants'
 import { join } from '@lib/util/join'
 import { getCollection } from 'astro:content'
@@ -8,27 +8,21 @@ const posts = await getCollection('posts')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 ---
 
-<BootstrapLayout title='Tags'>
-  <div class='container container-xl pt-5'>
-    <div class='row'>
-      <div class='col'>
-        <h1 class='display-4 mb-5'>Tags used by posts</h1>
-        <div class='row row-cols-1 row-cols-md-3 g-4'>
-          {
-            (tags as string[]).map((tag: string) => (
-              <div class='col'>
-                <div class='card h-100'>
-                  <div class='card-body'>
-                    <a href={join([BLOG_TAGS_ROOT, tag])} class='btn btn-link '>
-                      {tag}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
+<V1LightLayout title='Tags'>
+  <div class='max-w-6xl mx-auto px-6 pt-10 pb-16'>
+    <p class='font-mono text-teal-600 text-sm mb-1'>$ ls /blog/tags</p>
+    <h1 class='text-3xl font-bold text-gray-900 mb-8'># tags</h1>
+    <div class='flex flex-wrap gap-3'>
+      {
+        (tags as string[]).map((tag: string) => (
+          <a
+            href={join([BLOG_TAGS_ROOT, tag])}
+            class='px-4 py-2 border border-gray-200 rounded text-sm text-gray-600 hover:border-teal-400 hover:text-teal-600 font-mono transition-colors'
+          >
+            {tag}
+          </a>
+        ))
+      }
     </div>
   </div>
-</BootstrapLayout>
+</V1LightLayout>
