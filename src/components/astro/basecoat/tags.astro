@@ -1,0 +1,28 @@
+---
+import { BLOG_TAGS_ROOT } from '@lib/common/constants'
+import { join } from '@lib/util/join'
+
+const { prefix = BLOG_TAGS_ROOT, tags } = Astro.props
+---
+
+<div class='bg-gray-900 border border-gray-800 rounded-lg mb-6'>
+  <div class='flex items-center gap-2 px-4 py-3 border-b border-gray-800'>
+    <a href={join([BLOG_TAGS_ROOT])} class='text-gray-200 font-semibold text-sm hover:text-white transition-colors'>
+      Tags
+    </a>
+  </div>
+  <ul class='divide-y divide-gray-800'>
+    {
+      tags.map((tag: string) => (
+        <li>
+          <a
+            href={join([prefix, tag])}
+            class='block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition-colors capitalize'
+          >
+            {tag}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

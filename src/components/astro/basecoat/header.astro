@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets'
+import logo from '@assets/svg/stormwild-logo.svg'
+import { pages } from '@lib/nav/pages'
+import Search from './search.astro'
+---
+
+<nav class='bg-gray-900 border-b border-gray-800 sticky top-0 z-50' x-data='{ open: false }'>
+  <div class='max-w-7xl mx-auto px-4 flex items-center justify-between h-16'>
+    <a href='/' class='flex items-center gap-2 text-white font-bold uppercase tracking-wide text-sm'>
+      <Image src={logo} alt='Stormwild' width='28' height='28' loading='eager' />
+      <span>Stormwild</span>
+    </a>
+
+    <button @click='open = !open' class='lg:hidden text-gray-300 hover:text-white p-2' aria-label='Toggle navigation'>
+      <svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' x-show='!open' d='M4 6h16M4 12h16M4 18h16'></path>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' x-show='open' x-cloak d='M6 18L18 6M6 6l12 12'></path>
+      </svg>
+    </button>
+
+    <div class='hidden lg:flex items-center gap-6'>
+      {pages.map((page) => (
+        <a href={page.href} class='nav-link text-gray-300 hover:text-white text-sm transition-colors capitalize'>{page.text}</a>
+      ))}
+      <a href='/rss.xml' class='text-gray-400 hover:text-white' title='RSS'>
+        <svg class='bi bi-rss-fill w-4 h-4' width='16' height='16'><use xlink:href='#rss-fill'></use></svg>
+      </a>
+      <Search />
+    </div>
+  </div>
+
+  <div x-show='open' x-cloak class='lg:hidden bg-gray-900 border-t border-gray-800 px-4 py-3 flex flex-col gap-3'>
+    {pages.map((page) => (
+      <a href={page.href} class='nav-link text-gray-300 hover:text-white text-sm capitalize'>{page.text}</a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const pathname = window.location.pathname
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const href = link.getAttribute('href')
+    if (href === pathname || href === pathname.slice(0, -1)) {
+      link.classList.add('text-white', 'font-semibold')
+      link.setAttribute('aria-current', 'page')
+    }
+  })
+</script>

@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import rehypeMermaid from 'rehype-mermaid'
-
-// import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,6 +28,7 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     ssr: {
       noExternal: ['bootstrap'],
     },

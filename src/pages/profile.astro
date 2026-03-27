@@ -1,156 +1,57 @@
 ---
-import ProjectLink from '@components/astro/bootstrap/project-link.astro'
-import BootstrapLayout from '@layouts/bootstrap-layout.astro'
+import ProjectLink from '@components/astro/basecoat/project-link.astro'
+import BasecoatLayout from '@layouts/basecoat-layout.astro'
 ---
 
-<BootstrapLayout title='Profile'>
-  <div class='container text-center pt-5'>
-    <div class='row mb-5'>
-      <div class='col'>
-        <div class='list-group list-group-horizontal'>
-          <div
-            class='list-group-item list-group-item-action list-group-item-dark'
-          >
-            CV Download
-          </div>
-          <a
-            href='/cv/Alexander-Torrijos-Cv.docx'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Word Doc</a
-          >
-          <a
-            href='/cv/Resume-Alexander-Torrijos.pdf'
-            target='_blank'
-            class='list-group-item list-group-item-action'>PDF</a
-          >
-        </div>
-      </div>
+<BasecoatLayout title='Profile'>
+  <div class='max-w-7xl mx-auto px-4 pt-10 pb-16'>
+    <h1 class='text-3xl font-bold text-white mb-8'>Profile</h1>
+
+    <div class='flex gap-3 mb-8'>
+      <span class='px-3 py-1.5 bg-gray-800 text-gray-300 rounded text-sm border border-gray-700'>CV Download</span>
+      <a href='/cv/Alexander-Torrijos-Cv.docx' target='_blank' class='px-3 py-1.5 bg-gray-900 border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 rounded text-sm transition-colors'>Word Doc</a>
+      <a href='/cv/Resume-Alexander-Torrijos.pdf' target='_blank' class='px-3 py-1.5 bg-gray-900 border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 rounded text-sm transition-colors'>PDF</a>
     </div>
-    <div class='row'>
-      <div class='col-12 col-md-6'>
-        <div
-          class='d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary mb-5'
-        >
-          <div
-            class='d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom'
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
-              fill='currentColor'
-              class='bi bi-briefcase-fill me-3'
-              viewBox='0 0 16 16'
-            >
-              <path
-                d='M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5'
-              ></path>
-              <path
-                d='M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z'
-              ></path>
+
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+      <div class='md:col-span-1'>
+        <div class='bg-gray-900 border border-gray-700 rounded-lg overflow-hidden mb-6'>
+          <div class='flex items-center gap-3 p-4 border-b border-gray-700'>
+            <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='currentColor' class='text-gray-400' viewBox='0 0 16 16'>
+              <path d='M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5'/>
+              <path d='M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z'/>
             </svg>
-            <span class='fs-5 fw-semibold'>Sample Work</span>
+            <span class='font-semibold text-white'>Sample Work</span>
           </div>
-          <div class='list-group list-group-flush border-bottom scrollarea'>
-            <ProjectLink
-              href='https://modest-kirch-7e8ca1.netlify.app/'
-              title='React Quiz'
-              description='Demo of a quiz app built with React.'
-              isActive='true'
-            />
-            <ProjectLink
-              href='http://bcshotels.azurewebsites.net/'
-              title='.NET 4 Web Api '
-              description='Sample Hotel Listing with Sorting and Pagination'
-              isActive='true'
-            />
-            <ProjectLink
-              href='http://stickyevents.azurewebsites.net/'
-              title='Angularjs Google Maps Integration'
-              description='Sample Angularjs Google Maps Integration'
-              isActive='true'
-            />
-            <ProjectLink
-              href='https://stormwild.github.io/speech/'
-              title='Angular 7 SPA'
-              description='Speech - Sample Angular 7 SPA for job application test'
-              isActive='true'
-            />
-            <ProjectLink
-              href='https://stormwild.github.io/angular-github-user-search/'
-              title='Angular Github User Search API'
-              description='Github User Search API frontend built with Angular.'
-              isActive='false'
-            />
-            <ProjectLink
-              href='https://stormwild.github.io/spacex/build/'
-              title='React Redux SpaceX Flight API'
-              description='SpaceX Flight API frontend built with React and Redux.'
-              isActive='false'
-            />
-          </div>
+          <ProjectLink href='https://modest-kirch-7e8ca1.netlify.app/' title='React Quiz' description='Demo of a quiz app built with React.' isActive='true' />
+          <ProjectLink href='http://bcshotels.azurewebsites.net/' title='.NET 4 Web Api' description='Sample Hotel Listing with Sorting and Pagination' isActive='true' />
+          <ProjectLink href='http://stickyevents.azurewebsites.net/' title='Angularjs Google Maps Integration' description='Sample Angularjs Google Maps Integration' isActive='true' />
+          <ProjectLink href='https://stormwild.github.io/speech/' title='Angular 7 SPA' description='Speech - Sample Angular 7 SPA for job application test' isActive='true' />
+          <ProjectLink href='https://stormwild.github.io/angular-github-user-search/' title='Angular Github User Search API' description='Github User Search API frontend built with Angular.' isActive='false' />
+          <ProjectLink href='https://stormwild.github.io/spacex/build/' title='React Redux SpaceX Flight API' description='SpaceX Flight API frontend built with React and Redux.' isActive='false' />
         </div>
       </div>
-      <div class='col-12 col-md'>
-        <div class='list-group mb-5'>
-          <div class='list-group-item list-group-item-dark'>Dev Profiles</div>
-          <a
-            href='https://github.com/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Github</a
-          >
-          <a
-            href='https://stackoverflow.com/users/92189/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Stackoverflow</a
-          >
-          <a
-            href='https://codepen.io/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>CodePen</a
-          >
-          <a
-            href='https://www.linkedin.com/in/stormwild/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>LinkedIn</a
-          >
-          <a
-            href='https://www.hackerrank.com/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>HackerRank</a
-          >
+
+      <div class='md:col-span-1'>
+        <div class='bg-gray-900 border border-gray-700 rounded-lg overflow-hidden mb-6'>
+          <div class='p-3 border-b border-gray-700 text-sm font-semibold text-gray-300'>Dev Profiles</div>
+          <a href='https://github.com/stormwild/' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>Github</a>
+          <a href='https://stackoverflow.com/users/92189/stormwild' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>Stackoverflow</a>
+          <a href='https://codepen.io/stormwild/' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>CodePen</a>
+          <a href='https://www.linkedin.com/in/stormwild/' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>LinkedIn</a>
+          <a href='https://www.hackerrank.com/stormwild' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 text-sm transition-colors'>HackerRank</a>
         </div>
       </div>
-      <div class='col-12 col-md'>
-        <div class='list-group mb-5'>
-          <div class='list-group-item list-group-item-dark'>
-            Design Profiles
-          </div>
-          <a
-            href='https://www.behance.net/gallery/47208/Web-Design-Studies'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Behance</a
-          >
-          <a
-            href='http://www.coroflot.com/stormwild'
-            target='_blank'
-            class='list-group-item list-group-item-action'>Coroflot</a
-          >
-          <a
-            href='http://stormwild.deviantart.com/gallery/'
-            target='_blank'
-            class='list-group-item list-group-item-action'>DeviantArt</a
-          >
-          <a
-            href='https://stormwild.carbonmade.com/'
-            target='_blank'
-            aria-disabled='true'
-            style='pointer-events: none;'
-            class='list-group-item list-group-item-action disabled'
-            >Carbonmade (offline/disabled)</a
-          >
+
+      <div class='md:col-span-1'>
+        <div class='bg-gray-900 border border-gray-700 rounded-lg overflow-hidden mb-6'>
+          <div class='p-3 border-b border-gray-700 text-sm font-semibold text-gray-300'>Design Profiles</div>
+          <a href='https://www.behance.net/gallery/47208/Web-Design-Studies' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>Behance</a>
+          <a href='http://www.coroflot.com/stormwild' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>Coroflot</a>
+          <a href='http://stormwild.deviantart.com/gallery/' target='_blank' class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 border-b border-gray-800 text-sm transition-colors'>DeviantArt</a>
+          <span class='block px-4 py-3 text-gray-600 text-sm'>Carbonmade (offline/disabled)</span>
         </div>
       </div>
     </div>
   </div>
-</BootstrapLayout>
+</BasecoatLayout>
