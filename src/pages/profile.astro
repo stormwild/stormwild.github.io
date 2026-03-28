@@ -5,21 +5,21 @@ import V1LightLayout from '@layouts/v1-light-layout.astro'
 
 <V1LightLayout title='Profile'>
   <div class='max-w-6xl mx-auto px-6 pt-10 pb-16'>
-    <p class='font-mono text-teal-600 text-sm mb-1'>$ cat ~/profile</p>
-    <h1 class='text-3xl font-bold text-gray-900 mb-8'># profile</h1>
+    <p class='font-mono text-th-accent text-sm mb-1'>$ cat ~/profile</p>
+    <h1 class='text-3xl font-bold text-th-text mb-8'># profile</h1>
 
     <div class='flex gap-3 mb-8'>
-      <span class='px-3 py-1.5 bg-gray-100 text-gray-600 rounded text-sm font-mono border border-gray-200'>CV Download</span>
-      <a href='/cv/Alexander-Torrijos-Cv.docx' target='_blank' class='px-3 py-1.5 border border-gray-200 text-gray-600 hover:border-teal-400 hover:text-teal-600 rounded text-sm font-mono transition-colors'>Word Doc</a>
-      <a href='/cv/Resume-Alexander-Torrijos.pdf' target='_blank' class='px-3 py-1.5 border border-gray-200 text-gray-600 hover:border-teal-400 hover:text-teal-600 rounded text-sm font-mono transition-colors'>PDF</a>
+      <span class='px-3 py-1.5 bg-th-raised text-th-muted rounded text-sm font-mono border border-th-border'>CV Download</span>
+      <a href='/cv/Alexander-Torrijos-Cv.docx' target='_blank' class='px-3 py-1.5 border border-th-border text-th-muted hover:border-th-accent hover:text-th-accent rounded text-sm font-mono transition-colors'>Word Doc</a>
+      <a href='/cv/Resume-Alexander-Torrijos.pdf' target='_blank' class='px-3 py-1.5 border border-th-border text-th-muted hover:border-th-accent hover:text-th-accent rounded text-sm font-mono transition-colors'>PDF</a>
     </div>
 
     <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
       <div class='md:col-span-1'>
-        <div class='bg-white border border-gray-200 rounded-lg overflow-hidden mb-6 shadow-sm'>
-          <div class='flex items-center gap-2 p-4 border-b border-gray-100'>
-            <span class='font-mono text-teal-600 text-sm'>//</span>
-            <span class='font-semibold text-gray-900 text-sm'>sample_work</span>
+        <div class='bg-th-surface border border-th-border rounded-lg overflow-hidden mb-6 shadow-sm'>
+          <div class='flex items-center gap-2 p-4 border-b border-th-border'>
+            <span class='font-mono text-th-accent text-sm'>//</span>
+            <span class='font-semibold text-th-text text-sm'>sample_work</span>
           </div>
           <ProjectLink href='https://modest-kirch-7e8ca1.netlify.app/' title='React Quiz' description='Demo of a quiz app built with React.' isActive='true' />
           <ProjectLink href='http://bcshotels.azurewebsites.net/' title='.NET 4 Web Api' description='Sample Hotel Listing with Sorting and Pagination' isActive='true' />
@@ -31,29 +31,29 @@ import V1LightLayout from '@layouts/v1-light-layout.astro'
       </div>
 
       <div class='md:col-span-1'>
-        <div class='bg-white border border-gray-200 rounded-lg overflow-hidden mb-6 shadow-sm'>
-          <div class='flex items-center gap-2 p-4 border-b border-gray-100'>
-            <span class='font-mono text-teal-600 text-sm'>//</span>
-            <span class='font-semibold text-gray-900 text-sm'>dev_profiles</span>
+        <div class='bg-th-surface border border-th-border rounded-lg overflow-hidden mb-6 shadow-sm'>
+          <div class='flex items-center gap-2 p-4 border-b border-th-border'>
+            <span class='font-mono text-th-accent text-sm'>//</span>
+            <span class='font-semibold text-th-text text-sm'>dev_profiles</span>
           </div>
-          <a href='https://github.com/stormwild/' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>github →</a>
-          <a href='https://stackoverflow.com/users/92189/stormwild' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>stackoverflow →</a>
-          <a href='https://codepen.io/stormwild/' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>codepen →</a>
-          <a href='https://www.linkedin.com/in/stormwild/' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>linkedin →</a>
-          <a href='https://www.hackerrank.com/stormwild' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 text-sm font-mono transition-colors'>hackerrank →</a>
+          <a href='https://github.com/stormwild/' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>github →</a>
+          <a href='https://stackoverflow.com/users/92189/stormwild' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>stackoverflow →</a>
+          <a href='https://codepen.io/stormwild/' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>codepen →</a>
+          <a href='https://www.linkedin.com/in/stormwild/' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>linkedin →</a>
+          <a href='https://www.hackerrank.com/stormwild' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised text-sm font-mono transition-colors'>hackerrank →</a>
         </div>
       </div>
 
       <div class='md:col-span-1'>
-        <div class='bg-white border border-gray-200 rounded-lg overflow-hidden mb-6 shadow-sm'>
-          <div class='flex items-center gap-2 p-4 border-b border-gray-100'>
-            <span class='font-mono text-teal-600 text-sm'>//</span>
-            <span class='font-semibold text-gray-900 text-sm'>design_profiles</span>
+        <div class='bg-th-surface border border-th-border rounded-lg overflow-hidden mb-6 shadow-sm'>
+          <div class='flex items-center gap-2 p-4 border-b border-th-border'>
+            <span class='font-mono text-th-accent text-sm'>//</span>
+            <span class='font-semibold text-th-text text-sm'>design_profiles</span>
           </div>
-          <a href='https://www.behance.net/gallery/47208/Web-Design-Studies' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>behance →</a>
-          <a href='http://www.coroflot.com/stormwild' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>coroflot →</a>
-          <a href='http://stormwild.deviantart.com/gallery/' target='_blank' class='block px-4 py-3 text-gray-600 hover:text-teal-600 hover:bg-gray-50 border-b border-gray-100 text-sm font-mono transition-colors'>deviantart →</a>
-          <span class='block px-4 py-3 text-gray-400 text-sm font-mono'>carbonmade (offline)</span>
+          <a href='https://www.behance.net/gallery/47208/Web-Design-Studies' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>behance →</a>
+          <a href='http://www.coroflot.com/stormwild' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>coroflot →</a>
+          <a href='http://stormwild.deviantart.com/gallery/' target='_blank' class='block px-4 py-3 text-th-muted hover:text-th-accent hover:bg-th-raised border-b border-th-border text-sm font-mono transition-colors'>deviantart →</a>
+          <span class='block px-4 py-3 text-th-faint text-sm font-mono'>carbonmade (offline)</span>
         </div>
       </div>
     </div>

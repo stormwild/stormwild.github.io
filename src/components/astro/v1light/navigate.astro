@@ -9,31 +9,21 @@ const prev = currentIndex > 0 ? posts[currentIndex - 1] : null
 const next = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
 ---
 
-<div class='border-t border-gray-100 mt-10 pt-6'>
+<div class='border-t border-th-border mt-10 pt-6'>
   <div class='flex justify-between gap-4'>
     <div class='flex-1'>
-      {
-        prev ? (
-          <a
-            href={join([prefix, prev.slug])}
-            class='flex items-center gap-2 text-gray-400 hover:text-teal-600 text-sm transition-colors font-mono'
-          >
-            ← <span class='line-clamp-1'>{prev.data.title}</span>
-          </a>
-        ) : null
-      }
+      {prev ? (
+        <a href={join([prefix, prev.slug])} class='flex items-center gap-2 text-th-faint hover:text-th-accent text-sm transition-colors font-mono'>
+          ← <span class='line-clamp-1'>{prev.data.title}</span>
+        </a>
+      ) : null}
     </div>
     <div class='flex-1 text-right'>
-      {
-        next ? (
-          <a
-            href={join([prefix, next.slug])}
-            class='flex items-center justify-end gap-2 text-gray-400 hover:text-teal-600 text-sm transition-colors font-mono'
-          >
-            <span class='line-clamp-1'>{next.data.title}</span> →
-          </a>
-        ) : null
-      }
+      {next ? (
+        <a href={join([prefix, next.slug])} class='flex items-center justify-end gap-2 text-th-faint hover:text-th-accent text-sm transition-colors font-mono'>
+          <span class='line-clamp-1'>{next.data.title}</span> →
+        </a>
+      ) : null}
     </div>
   </div>
 </div>

@@ -10,14 +10,14 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 
 <V1LightLayout title='Tags'>
   <div class='max-w-6xl mx-auto px-6 pt-10 pb-16'>
-    <p class='font-mono text-teal-600 text-sm mb-1'>$ ls /blog/tags</p>
-    <h1 class='text-3xl font-bold text-gray-900 mb-8'># tags</h1>
+    <p class='font-mono text-th-accent text-sm mb-1'>$ ls /blog/tags</p>
+    <h1 class='text-3xl font-bold text-th-text mb-8'># tags</h1>
     <div class='flex flex-wrap gap-3'>
       {
         (tags as string[]).map((tag: string) => (
           <a
             href={join([BLOG_TAGS_ROOT, tag])}
-            class='px-4 py-2 border border-gray-200 rounded text-sm text-gray-600 hover:border-teal-400 hover:text-teal-600 font-mono transition-colors'
+            class='px-4 py-2 border border-th-border rounded text-sm text-th-muted hover:border-th-accent hover:text-th-accent font-mono transition-colors'
           >
             {tag}
           </a>

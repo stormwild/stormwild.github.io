@@ -13,13 +13,13 @@ const active = isActive === 'true'
   href={href}
   target='_blank'
   rel='noopener noreferrer'
-  class={`block px-4 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors group ${!active ? 'opacity-50 pointer-events-none' : ''}`}
+  class={`block px-4 py-3 border-b border-th-border hover:bg-th-raised transition-colors group ${!active ? 'opacity-40 pointer-events-none' : ''}`}
 >
   <div class='flex items-start gap-2'>
-    <span class='font-mono text-teal-600 text-xs mt-1'>{active ? '>' : 'x'}</span>
+    <span class='font-mono text-th-accent text-xs mt-1'>{active ? '>' : 'x'}</span>
     <div>
-      <p class='text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors'>{title}</p>
-      <p class='text-xs text-gray-500 mt-0.5'>{description}</p>
+      <p class='text-sm font-semibold text-th-text group-hover:text-th-accent transition-colors'>{title}</p>
+      <p class='text-xs text-th-muted mt-0.5'>{description}</p>
     </div>
   </div>
 </a>

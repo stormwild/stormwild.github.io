@@ -1,4 +1,110 @@
-/* The integration's default injected base.css file */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme='light'] {
+    --th-bg: #ffffff;
+    --th-surface: #ffffff;
+    --th-raised: #f9fafb;
+    --th-border: #f3f4f6;
+    --th-ring: #e5e7eb;
+    --th-text: #111827;
+    --th-muted: #6b7280;
+    --th-faint: #9ca3af;
+    --th-accent: #0d9488;
+    --th-accent-h: #0f766e;
+    --th-header-bg: rgba(255, 255, 255, 0.95);
+    --th-code-bg: #f3f4f6;
+    --th-code-text: #111827;
+    --th-prose-text: #374151;
+    --th-prose-heading: #111827;
+    --th-prose-link: #0d9488;
+    --th-prose-link-h: #0f766e;
+    --th-prose-blockquote-border: #d1d5db;
+    --th-prose-blockquote-bg: #f9fafb;
+    --th-prose-blockquote-text: #6b7280;
+    --th-prose-table-border: #e5e7eb;
+    --th-prose-table-head-bg: #f3f4f6;
+    --th-prose-table-stripe: #f9fafb;
+  }
+
+  [data-theme='dark'] {
+    --th-bg: #030712;
+    --th-surface: #111827;
+    --th-raised: #1f2937;
+    --th-border: #1f2937;
+    --th-ring: #374151;
+    --th-text: #f9fafb;
+    --th-muted: #9ca3af;
+    --th-faint: #6b7280;
+    --th-accent: #2dd4bf;
+    --th-accent-h: #5eead4;
+    --th-header-bg: rgba(3, 7, 18, 0.95);
+    --th-code-bg: #1f2937;
+    --th-code-text: #e5e7eb;
+    --th-prose-text: #d1d5db;
+    --th-prose-heading: #f9fafb;
+    --th-prose-link: #2dd4bf;
+    --th-prose-link-h: #5eead4;
+    --th-prose-blockquote-border: #4b5563;
+    --th-prose-blockquote-bg: #1f2937;
+    --th-prose-blockquote-text: #9ca3af;
+    --th-prose-table-border: #374151;
+    --th-prose-table-head-bg: #1f2937;
+    --th-prose-table-stripe: #111827;
+  }
+
+  [data-theme='neon'] {
+    --th-bg: #07070f;
+    --th-surface: #0f0f1a;
+    --th-raised: #16162a;
+    --th-border: #1e1e30;
+    --th-ring: #2a2a42;
+    --th-text: #e2e8f0;
+    --th-muted: #94a3b8;
+    --th-faint: #64748b;
+    --th-accent: #00ff88;
+    --th-accent-h: #00e077;
+    --th-header-bg: rgba(7, 7, 15, 0.95);
+    --th-code-bg: #0a0a14;
+    --th-code-text: #00ff88;
+    --th-prose-text: #cbd5e1;
+    --th-prose-heading: #e2e8f0;
+    --th-prose-link: #00ff88;
+    --th-prose-link-h: #00e077;
+    --th-prose-blockquote-border: #2a2a42;
+    --th-prose-blockquote-bg: #0f0f1a;
+    --th-prose-blockquote-text: #94a3b8;
+    --th-prose-table-border: #1e1e30;
+    --th-prose-table-head-bg: #16162a;
+    --th-prose-table-stripe: #0f0f1a;
+  }
+
+  [data-theme='dune'] {
+    --th-bg: #fdf6e9;
+    --th-surface: #fff8f0;
+    --th-raised: #f5e8d0;
+    --th-border: #e8d5b0;
+    --th-ring: #d4b896;
+    --th-text: #2c1a0e;
+    --th-muted: #7a5c3a;
+    --th-faint: #a08060;
+    --th-accent: #c2571a;
+    --th-accent-h: #a0440f;
+    --th-header-bg: rgba(253, 246, 233, 0.95);
+    --th-code-bg: #f5e8d0;
+    --th-code-text: #2c1a0e;
+    --th-prose-text: #3d2512;
+    --th-prose-heading: #2c1a0e;
+    --th-prose-link: #c2571a;
+    --th-prose-link-h: #a0440f;
+    --th-prose-blockquote-border: #d4b896;
+    --th-prose-blockquote-bg: #f5e8d0;
+    --th-prose-blockquote-text: #7a5c3a;
+    --th-prose-table-border: #e8d5b0;
+    --th-prose-table-head-bg: #f5e8d0;
+    --th-prose-table-stripe: #fff8f0;
+  }
+}

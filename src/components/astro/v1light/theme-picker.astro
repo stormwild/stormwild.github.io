@@ -1,0 +1,82 @@
+---
+const themes = [
+  { id: 'light', label: 'Light',  bg: '#ffffff', dot: '#0d9488' },
+  { id: 'dark',  label: 'Dark',   bg: '#111827', dot: '#2dd4bf' },
+  { id: 'neon',  label: 'Neon',   bg: '#0f0f1a', dot: '#00ff88' },
+  { id: 'dune',  label: 'Dune',   bg: '#fdf6e9', dot: '#c2571a' },
+]
+---
+
+<div class='theme-picker relative'>
+  <button
+    class='theme-picker-trigger p-1.5 rounded transition-colors'
+    style='color: var(--th-muted)'
+    aria-label='Select theme'
+    title='Select theme'
+  >
+    <svg class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+      <circle cx='12' cy='12' r='4'/>
+      <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+        d='M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M18.36 5.64l1.41-1.41'/>
+    </svg>
+  </button>
+
+  <div
+    class='theme-picker-panel hidden absolute right-0 top-full mt-2 rounded-lg shadow-xl p-2 z-50 min-w-[130px] border'
+    style='background: var(--th-surface); border-color: var(--th-border);'
+  >
+    {themes.map((t) => (
+      <button
+        class='theme-opt w-full flex items-center gap-2.5 px-2.5 py-2 rounded text-sm font-mono text-left transition-colors'
+        style='color: var(--th-text)'
+        data-theme={t.id}
+      >
+        <span
+          class='w-4 h-4 rounded-full border flex-shrink-0 flex items-center justify-center'
+          style={`background:${t.bg}; border-color: var(--th-ring)`}
+        >
+          <span class='w-2 h-2 rounded-full block' style={`background:${t.dot}`}></span>
+        </span>
+        {t.label}
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+  function initThemePickers() {
+    // Toggle panel open/close
+    document.querySelectorAll<HTMLElement>('.theme-picker').forEach((picker) => {
+      const trigger = picker.querySelector('.theme-picker-trigger')
+      const panel = picker.querySelector('.theme-picker-panel')
+
+      trigger?.addEventListener('click', (e) => {
+        e.stopPropagation()
+        // Close all other panels first
+        document.querySelectorAll('.theme-picker-panel').forEach((p) => {
+          if (p !== panel) p.classList.add('hidden')
+        })
+        panel?.classList.toggle('hidden')
+      })
+    })
+
+    // Theme selection
+    document.querySelectorAll<HTMLElement>('.theme-opt').forEach((opt) => {
+      opt.addEventListener('click', () => {
+        const theme = opt.dataset.theme
+        if (theme) {
+          document.documentElement.setAttribute('data-theme', theme)
+          localStorage.setItem('theme', theme)
+        }
+        document.querySelectorAll('.theme-picker-panel').forEach((p) => p.classList.add('hidden'))
+      })
+    })
+
+    // Close panels on outside click
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.theme-picker-panel').forEach((p) => p.classList.add('hidden'))
+    })
+  }
+
+  initThemePickers()
+</script>

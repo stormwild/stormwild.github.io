@@ -6,58 +6,46 @@ import { trunc } from '@lib/util/trunc'
 import { join } from '@lib/util/join'
 
 const posts = await getCollection('posts')
-const sortedPosts = posts.sort(
-  (a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
-)
+const sortedPosts = posts.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime())
 const featured = sortedPosts.filter((post) => post.data.tags.includes('featured'))
 const main = featured[0]
 const sub = featured.slice(1)
 const prefix = BLOG_POST_ROOT
 ---
 
-<div class='relative rounded-xl overflow-hidden mb-10 min-h-72 shadow-sm border border-gray-100'
+<div
+  class='relative rounded-xl overflow-hidden mb-10 min-h-72 border border-th-border'
   style={`background-image: url(${main.data.image.src}); background-size: cover; background-position: center;`}
 >
-  <div class='absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent'></div>
+  <div class='absolute inset-0' style='background: linear-gradient(to right, var(--th-bg) 0%, color-mix(in srgb, var(--th-bg) 70%, transparent) 60%, transparent 100%)'></div>
   <div class='relative p-8 lg:p-12 max-w-xl'>
-    <h1 class='text-3xl font-bold text-gray-900 mb-3 leading-tight'>{trunc(main.data.title, 50)}</h1>
-    <p class='text-gray-600 mb-4'>{trunc(main.data.description, 150)}</p>
-    <a
-      href={join([prefix, main.slug])}
-      class='text-teal-600 hover:text-teal-700 text-sm font-mono transition-colors'
-    >
+    <h1 class='text-3xl font-bold text-th-text mb-3 leading-tight'>{trunc(main.data.title, 50)}</h1>
+    <p class='text-th-muted mb-4'>{trunc(main.data.description, 150)}</p>
+    <a href={join([prefix, main.slug])} class='text-th-accent hover:text-th-accent-h text-sm font-mono transition-colors'>
       read_more →
     </a>
   </div>
 </div>
 
 <div class='grid grid-cols-1 md:grid-cols-2 gap-6 mb-10'>
-  {
-    sub.map((post) => (
-      <div class='bg-white border border-gray-100 rounded-lg overflow-hidden flex shadow-sm hover:shadow-md transition-shadow'>
-        <div class='flex-1 p-4 flex flex-col'>
-          <a
-            href={join([BLOG_TAGS_ROOT, post.data.tags[0]])}
-            class='text-teal-600 text-xs font-mono font-semibold uppercase tracking-wide mb-2 hover:text-teal-700 transition-colors'
-          >
-            {post.data.tags[0]}
-          </a>
-          <h3 class='text-gray-900 font-semibold mb-2 leading-snug'>{trunc(post.data.title, 50)}</h3>
-          <div class='text-gray-400 text-xs mb-2 font-mono'>
-            {new Date(post.data.published).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-          </div>
-          <p class='text-gray-500 text-sm mb-3 flex-1'>{trunc(post.data.description, 80)}</p>
-          <a
-            href={join([prefix, post.slug])}
-            class='text-teal-600 hover:text-teal-700 text-sm font-mono transition-colors'
-          >
-            read_more →
-          </a>
+  {sub.map((post) => (
+    <div class='bg-th-surface border border-th-border rounded-lg overflow-hidden flex hover:border-th-ring transition-colors'>
+      <div class='flex-1 p-4 flex flex-col'>
+        <a href={join([BLOG_TAGS_ROOT, post.data.tags[0]])} class='text-th-accent text-xs font-mono font-semibold uppercase tracking-wide mb-2 hover:text-th-accent-h transition-colors'>
+          {post.data.tags[0]}
+        </a>
+        <h3 class='text-th-text font-semibold mb-2 leading-snug'>{trunc(post.data.title, 50)}</h3>
+        <div class='text-th-faint text-xs mb-2 font-mono'>
+          {new Date(post.data.published).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
         </div>
-        <div class='w-28 flex-shrink-0 hidden lg:block'>
-          <Image src={post.data.image} alt={post.data.title} class='w-full h-full object-cover' height={200} />
-        </div>
+        <p class='text-th-muted text-sm mb-3 flex-1'>{trunc(post.data.description, 80)}</p>
+        <a href={join([prefix, post.slug])} class='text-th-accent hover:text-th-accent-h text-sm font-mono transition-colors'>
+          read_more →
+        </a>
       </div>
-    ))
-  }
+      <div class='w-28 flex-shrink-0 hidden lg:block'>
+        <Image src={post.data.image} alt={post.data.title} class='w-full h-full object-cover' height={200} />
+      </div>
+    </div>
+  ))}
 </div>

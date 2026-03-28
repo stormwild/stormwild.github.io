@@ -2,10 +2,10 @@
 const { variant = 'info' } = Astro.props
 
 const variantClasses: Record<string, string> = {
-  info: 'bg-blue-50 border-blue-200 text-blue-800',
-  success: 'bg-green-50 border-green-200 text-green-800',
-  warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
-  danger: 'bg-red-50 border-red-200 text-red-800',
+  info:    'bg-blue-50   border-blue-200   text-blue-800   [data-theme=dark_&]:bg-blue-950/40   [data-theme=dark_&]:border-blue-800   [data-theme=dark_&]:text-blue-300',
+  success: 'bg-green-50  border-green-200  text-green-800  [data-theme=dark_&]:bg-green-950/40  [data-theme=dark_&]:border-green-800  [data-theme=dark_&]:text-green-300',
+  warning: 'bg-yellow-50 border-yellow-200 text-yellow-800 [data-theme=dark_&]:bg-yellow-950/40 [data-theme=dark_&]:border-yellow-800 [data-theme=dark_&]:text-yellow-300',
+  danger:  'bg-red-50    border-red-200    text-red-800    [data-theme=dark_&]:bg-red-950/40    [data-theme=dark_&]:border-red-800    [data-theme=dark_&]:text-red-300',
 }
 
 const classes = variantClasses[variant] ?? variantClasses.info

@@ -31,9 +31,9 @@ const { posts, tags } = Astro.props as unknown as TagProps
 
 <V1LightLayout title={tag as string}>
   <div class='max-w-6xl mx-auto px-6 pt-10 pb-16'>
-    <p class='font-mono text-teal-600 text-sm mb-1'>$ ls /blog/tags/{tag}</p>
-    <h1 class='text-3xl font-bold text-gray-900 mb-2'># {tag}</h1>
-    <p class='text-gray-500 mb-8 font-mono text-sm'>posts tagged with <span class='text-teal-600'>{tag}</span></p>
+    <p class='font-mono text-th-accent text-sm mb-1'>$ ls /blog/tags/{tag}</p>
+    <h1 class='text-3xl font-bold text-th-text mb-2'># {tag}</h1>
+    <p class='text-th-muted mb-8 font-mono text-sm'>posts tagged with <span class='text-th-accent'>{tag}</span></p>
     <div class='flex flex-col md:flex-row gap-8'>
       <div class='md:w-2/3'>
         <div class='grid grid-cols-1 gap-6'>
